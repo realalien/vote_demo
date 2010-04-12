@@ -1,4 +1,7 @@
 class QuestionsController < ApplicationController
+
+  before_filter :get_survey
+	
   # GET /questions
   # GET /questions.xml
   def index
@@ -81,5 +84,9 @@ class QuestionsController < ApplicationController
       format.html { redirect_to(questions_url) }
       format.xml  { head :ok }
     end
+  end
+
+  def get_survey
+	@survey = Survey.find(params[:])
   end
 end

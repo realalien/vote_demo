@@ -9,7 +9,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100412053608) do
+ActiveRecord::Schema.define(:version => 20100412070644) do
+
+  create_table "comments", :force => true do |t|
+    t.string   "title",            :limit => 50, :default => ""
+    t.text     "comment"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
+  add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
   create_table "questions", :force => true do |t|
     t.string   "title"
@@ -18,6 +32,23 @@ ActiveRecord::Schema.define(:version => 20100412053608) do
     t.boolean  "is_commentable"
     t.boolean  "is_rateable"
     t.boolean  "is_voteable"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "survey_question_assignments", :force => true do |t|
+    t.integer  "survey_id",   :null => false
+    t.integer  "question_id", :null => false
+    t.integer  "sequence"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "surveys", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "category"
+    t.string   "target_audience"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
