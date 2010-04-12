@@ -1,0 +1,23 @@
+<p>
+  <b>Title:</b>
+  <%=h @survey.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @survey.description %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%=h @survey.category %>
+</p>
+
+<p>
+  <b>Target audience:</b>
+  <%=h @survey.target_audience %>
+</p>
+
+<%= link_to 'New question(to this survey)', new_survey_question_url(:survey_id => @survey)%> |
+<%= link_to 'Edit', edit_survey_path(@survey) %> |
+<%= link_to 'Back', surveys_path %>
