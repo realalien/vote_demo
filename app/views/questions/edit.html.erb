@@ -1,0 +1,36 @@
+<h1>Editing question</h1>
+
+<% form_for(@question) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :hint %><br />
+    <%= f.text_area :hint %>
+  </p>
+  <p>
+    <%= f.label :is_commentable %><br />
+    <%= f.check_box :is_commentable %>
+  </p>
+  <p>
+    <%= f.label :is_rateable %><br />
+    <%= f.check_box :is_rateable %>
+  </p>
+  <p>
+    <%= f.label :is_voteable %><br />
+    <%= f.check_box :is_voteable %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @question %> |
+<%= link_to 'Back', questions_path %>

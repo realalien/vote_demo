@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  hint: MyText
+  is_commentable: false
+  is_rateable: false
+  is_voteable: false
+
+two:
+  title: MyString
+  description: MyText
+  hint: MyText
+  is_commentable: false
+  is_rateable: false
+  is_voteable: false

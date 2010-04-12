@@ -9,7 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100401132628) do
+ActiveRecord::Schema.define(:version => 20100412053608) do
+
+  create_table "questions", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "hint"
+    t.boolean  "is_commentable"
+    t.boolean  "is_rateable"
+    t.boolean  "is_voteable"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "travel_places", :force => true do |t|
     t.string   "name"
