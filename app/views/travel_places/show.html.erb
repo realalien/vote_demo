@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @travel_place.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @travel_place.description %>
+</p>
+
+<p>
+  <b>Photo:</b>
+  <%=h @travel_place.photo %>
+</p>
+
+
+<%= link_to 'Edit', edit_travel_place_path(@travel_place) %> |
+<%= link_to 'Back', travel_places_path %>

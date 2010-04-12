@@ -1,0 +1,18 @@
+
+<% unless !logged_in? ||
+		current_user.voted_on?(@place) #||
+		#travel_place.users.include?(current_user)
+%>
+
+<%= link_to "up", 
+		:url => user_travel_place_votes_path(travel_place.user, travel_place, :vote => :true),
+		@method => :post %>
+
+<%= link_to "down", 
+		:url => user_travel_place_votes_path(travel_place.user, travel_place, :vote => :false),
+		:method => :post %>
+
+<% else %>
+  please log in or don't revote!
+
+<% end %>

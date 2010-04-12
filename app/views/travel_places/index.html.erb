@@ -1,0 +1,44 @@
+<h1>Listing travel_places</h1>
+
+
+
+<%# for @place in @travel_places %>
+	<%#= render :partial => "votes/travel_place_vote", :locals => {:travel_place => @place} %>
+<%# end  %> 
+
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+	<th>Voting</th>
+    <th>Photo</th>
+  </tr>
+
+<% for travel_place in @travel_places %>
+  <tr>
+    <td><%=h travel_place.name %></td>
+    <td><%=h travel_place.description %></td>
+	<% if current_user.voted_on?(travel_place) %>
+			<% link_enable = false  %>
+	<% else %>
+			<% link_enable = true  %>
+	<% end %>
+	<% if logged_in? %>
+			<td> <% if link_enable %>
+						<%= link_to 'Up', :controller => "users", :action=>"vote_for", :id=> travel_place.id%>
+				<% else %>  Up
+				<% end %>(<%= TravelPlace.find(travel_place.id).votes_for %>) | <% if link_enable %>	<%= link_to 'Down', :controller => "users", :action=>"vote_against", :id=> travel_place.id%><% else %> Down <% end %> (<%= TravelPlace.find(travel_place.id).votes_against %>) </td>
+	<% else %>
+		<td>Please login in to rate. </td>
+	<% end %>
+    <td><%=h travel_place.photo %></td>
+    <td><%= link_to 'Show', travel_place %></td>
+    <td><%= link_to 'Edit', edit_travel_place_path(travel_place) %></td>
+    <td><%= link_to 'Destroy', travel_place, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New travel_place', new_travel_place_path %>
