@@ -12301,3 +12301,56 @@ Completed in 183ms (View: 142, DB: 17) | 200 OK [http://localhost/surveys/1]
 ** vote_fu: initialized properly.
 ** vote_fu: setting up load paths
 ** vote_fu: initialized properly.
+** vote_fu: setting up load paths
+** vote_fu: initialized properly.
+** vote_fu: setting up load paths
+** vote_fu: initialized properly.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (17.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTravelPlaces (20100401123342)
+Migrating to VoteFuMigration (20100401123420)
+Migrating to CreateUsers (20100401132628)
+Migrating to CreateQuestions (20100412053608)
+Migrating to CreateComments (20100412062450)
+Migrating to CreateSurveys (20100412065253)
+Migrating to CreateSurveyQuestionAssignments (20100412070644)
+Migrating to CreateAnswers (20100413095259)
+  [4;36;1mSQL (14.0ms)[0m   [0;1mCREATE TABLE `answers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100413095259')[0m
+Migrating to QuestionAnswerByUsers (20100413095950)
+  [4;36;1mSQL (24.0ms)[0m   [0;1mCREATE TABLE `question_answer_by_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `question_id` int(11) NOT NULL, `answer_id` int(11) NOT NULL, `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100413095950')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mdescribe `answers`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW KEYS FROM `answers`[0m
+  [4;36;1mSQL (44.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mdescribe `comments`[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSHOW KEYS FROM `comments`[0m
+  [4;35;1mSQL (7.0ms)[0m   [0mSHOW FIELDS FROM `question_answer_by_users`[0m
+  [4;36;1mSQL (8.0ms)[0m   [0;1mdescribe `question_answer_by_users`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW KEYS FROM `question_answer_by_users`[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mSQL (10.0ms)[0m   [0mdescribe `questions`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW KEYS FROM `questions`[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mSHOW FIELDS FROM `survey_question_assignments`[0m
+  [4;36;1mSQL (8.0ms)[0m   [0;1mdescribe `survey_question_assignments`[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mSHOW KEYS FROM `survey_question_assignments`[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mSHOW FIELDS FROM `surveys`[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mdescribe `surveys`[0m
+  [4;36;1mSQL (80.0ms)[0m   [0;1mSHOW KEYS FROM `surveys`[0m
+  [4;35;1mSQL (52.0ms)[0m   [0mSHOW FIELDS FROM `travel_places`[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mdescribe `travel_places`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW KEYS FROM `travel_places`[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;35;1mSQL (11.0ms)[0m   [0mSHOW FIELDS FROM `votes`[0m
+  [4;36;1mSQL (9.0ms)[0m   [0;1mdescribe `votes`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW KEYS FROM `votes`[0m
+** vote_fu: setting up load paths
+** vote_fu: initialized properly.
