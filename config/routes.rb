@@ -1,8 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :surveys do | survey |
-	survey.resources :questions
+  	survey.resources :questions
   end
 
+  #map.resources :surveys, has_many :questions
   map.resources :questions
 
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'

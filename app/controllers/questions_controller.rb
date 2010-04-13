@@ -5,7 +5,8 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.xml
   def index
-    @questions = Question.find(:all)
+	@survey = Survey.find(params[:survey_id])
+    @questions = @survey.questions #Question.find(:all)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,7 +17,7 @@ class QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.xml
   def show
-    @question = Question.find(params[:id])
+    @question = Question.find(params[:id]) # This is not necessary! #@survey = Survey.find(params[:survey_id]) 
 
     respond_to do |format|
       format.html # show.html.erb
@@ -43,12 +44,13 @@ class QuestionsController < ApplicationController
   # POST /questions
   # POST /questions.xml
   def create
+	@survey = Survey.find(params[:survey_id])
     @question = Question.new(params[:question])
-
+	@survey.questions << @question
     respond_to do |format|
-      if @question.save
-        flash[:notice] = 'Question was successfully created.'
-        format.html { redirect_to(@question) }
+      if @survey.save #@question.save
+        flash[:notice] = 'Question was successfully created into a survey.'
+        format.html { redirect_to(@survey, @question) }
         format.xml  { render :xml => @question, :status => :created, :location => @question }
       else
         format.html { render :action => "new" }
@@ -60,12 +62,13 @@ class QuestionsController < ApplicationController
   # PUT /questions/1
   # PUT /questions/1.xml
   def update
+    @survey = Survey.find(params[:survey_id])
     @question = Question.find(params[:id])
 
     respond_to do |format|
       if @question.update_attributes(params[:question])
         flash[:notice] = 'Question was successfully updated.'
-        format.html { redirect_to(@question) }
+        format.html { redirect_to(@survey,@question) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -87,6 +90,6 @@ class QuestionsController < ApplicationController
   end
 
   def get_survey
-	@survey = Survey.find(params[:])
+	@survey = Survey.find(params[:survey_id])
   end
 end

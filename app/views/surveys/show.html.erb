@@ -17,7 +17,31 @@
   <b>Target audience:</b>
   <%=h @survey.target_audience %>
 </p>
-
-<%= link_to 'New question(to this survey)', new_survey_question_url(:survey_id => @survey)%> |
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
 <%= link_to 'Back', surveys_path %>
+
+<br />
+<hr />
+<br />
+
+
+<strong>List of questions</strong>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Hint</th>
+    <th>Is commentable</th>
+    <th>Is rateable</th>
+    <th>Is voteable</th>
+  </tr>
+
+<% for @question in @questions %>
+    <%= render :partial => "/questions/question", :object  => @question %>
+<% end %>
+</table>
+
+
+<%= link_to 'Add new question(to this survey)', new_survey_question_url(:survey_id => @survey)%> |
+

@@ -18,8 +18,8 @@
     <td><%=h question.is_commentable %></td>
     <td><%=h question.is_rateable %></td>
     <td><%=h question.is_voteable %></td>
-    <td><%= link_to 'Show', question %></td>
-    <td><%= link_to 'Edit', edit_question_path(question) %></td>
+    <td><%= link_to 'Show', survey_question_path(@survey, question) %></td>
+    <td><%= link_to 'Edit', edit_survey_question_path(@survey, question) %></td>
     <td><%= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -27,6 +27,6 @@
 
 <br />
 
-<%= link_to 'New question(to questions reposity)', new_question_path %> |
+<!--%= link_to 'New question(to questions reposity)', new_question_path %--> |
 <%= link_to 'New question(to this survey)', new_survey_question_path %>
 
