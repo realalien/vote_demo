@@ -1,0 +1,13 @@
+
+  <tr>
+    <td><%=h question.title %></td>
+    <td><%=h question.description %></td>
+    <td><%=h question.hint %></td>
+    <td><%=h question.is_commentable %></td>
+    <td><%=h question.is_rateable %></td>
+    <td><%=h question.is_voteable %></td>
+    <td><%= link_to 'Show', survey_question_path(@survey, question) %></td>
+    <td><%= link_to 'Edit', edit_survey_question_path(@survey, question) %></td>
+    <td><%= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+
