@@ -12293,3 +12293,11 @@ Rendered questions/_question (7.0ms)
 Rendered questions/_question (5.0ms)
 Rendered questions/_question (5.0ms)
 Completed in 183ms (View: 142, DB: 17) | 200 OK [http://localhost/surveys/1]
+** vote_fu: setting up load paths
+** vote_fu: initialized properly.
+** vote_fu: setting up load paths
+** vote_fu: initialized properly.
+** vote_fu: setting up load paths
+** vote_fu: initialized properly.
+** vote_fu: setting up load paths
+** vote_fu: initialized properly.
