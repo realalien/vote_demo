@@ -1,0 +1,26 @@
+
+
+20100414: 
+
+Q: what's the best practice in view? e.g. for each model, a partial _form?
+A:  
+ 
+ 
+ 
+TODO: make the survey defining pages a multiple model in one form!
+
+
+RESEARCH:
+http://github.com/alloy/complex-form-examples
+
+
+Study:
+ form_for and fields_for
+ 
+
+ !!!!!!
+SUG: HINT: it probably could be easier if we have sheet-to-answer one-to-many relations,
+  the relation tables can be added with additional info like user_id, question_id?? 
+  the relation tables can be versioned.
+  
+  The problem lies in if the answers are corresponding to the questions.

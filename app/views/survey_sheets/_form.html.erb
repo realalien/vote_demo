@@ -1,0 +1,15 @@
+
+
+<%= error_messages_for :project %>
+<% form_for @survey_sheet do |f| -%>
+	<p>
+	Currently is filling in by : <%= f.label self.current_user || "No log in, bug! " %>
+	</p>
+	<div id="questions" >
+	<%= render :partial => 'question_with_answer', :collection => @survey_sheet.questions %>
+	</div>
+	<!--TODO, SUG: create useful links here-->
+	<p>
+	<%= f.submit "Submit" %>
+	</p>
+<% end -%>

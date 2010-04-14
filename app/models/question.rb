@@ -3,6 +3,19 @@ class Question < ActiveRecord::Base
 	has_many :survey_question_assignments, :dependent => :nullify
 	has_many :surveys,	:through => :survey_question_assignments
 	
+   
 	has_many :question_answer_by_users, :dependent => :nullify
 	has_many :answers, :through => :question_answer_by_users
+  
+  
+    has_many :sheet_question_relations, :dependent => :nullify
+    has_many :survey_sheets, :through => :sheet_question_relations
+  
+  # http://railscasts.com/episodes/75-complex-forms-part-3
+  
+  def new_answer_attributes=(answer_attributes)
+    answers_attributes.each do |attributes|
+      answers.build(attributes)
+    end
+  end
 end

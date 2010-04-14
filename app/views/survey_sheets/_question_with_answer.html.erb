@@ -1,0 +1,17 @@
+
+
+<div class="question_with_answer" >
+<!--% new_or_existing = task.new_record? ? 'new' : 'existing' %-->
+<% prefix = "sheet[#{new_or_existing}_task_attributes][]" %>
+
+<% fields_for prefix, task do | qa_form| -%>
+<p>
+
+Question : <%= qa_form.label :description %>
+<!--%= link_to_function "remove" , "$(this).up('.task').remove()" %-->
+
+
+
+</p>
+<% end -%>
+</div>
