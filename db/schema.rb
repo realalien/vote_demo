@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100414071014) do
+ActiveRecord::Schema.define(:version => 20100415011737) do
 
   create_table "answers", :force => true do |t|
     t.text     "description"
@@ -46,6 +46,14 @@ ActiveRecord::Schema.define(:version => 20100414071014) do
     t.boolean  "is_commentable"
     t.boolean  "is_rateable"
     t.boolean  "is_voteable"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sheet_answer_relations", :force => true do |t|
+    t.integer  "survey_sheet_id"
+    t.integer  "answer_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -27,16 +27,13 @@ class SurveySheetsController < ApplicationController
               @survey_sheet = SurveySheet.new
               @survey_sheet.questions << survey_def.questions # create a new survey_sheet
               # Q: what about the change of survey_def?
-               
+              @survey_sheet.questions.size.times { @survey_sheet.answers.build } 
           end
           
-          
-          
-          @questions = survey.questions  # TODO: sort by sequence
-          @question.each do | qu |
-               qu.answers.build  # create answer in the memory, Q: what's the use of 'build',  what about the associated model
-               
-          end
+          #@questions = survey.questions  # TODO: sort by sequence
+          #@question.each do | qu |
+          #     qu.answers.build  # create answer in the memory, Q: what's the use of 'build',  what about the associated model
+          #end
         end
     end
   

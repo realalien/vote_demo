@@ -1,5 +1,12 @@
 
 
+
+
+http://github.com/springbok/smerf
+
+http://guides.rubyonrails.org/2_3_release_notes.html#nested-object-forms
+
+
 20100414: 
 
 Q: what's the best practice in view? e.g. for each model, a partial _form?
@@ -24,3 +31,5 @@ SUG: HINT: it probably could be easier if we have sheet-to-answer one-to-many re
   the relation tables can be versioned.
   
   The problem lies in if the answers are corresponding to the questions.
+  
+  
