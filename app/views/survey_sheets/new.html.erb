@@ -1,8 +1,8 @@
 
 
-<%= error_messages_for :project %>
+<%= error_messages_for :survey_sheet %>
 <% form_for @survey_sheet do | sheet_form | -%>
-	<%= sheet_form.label  %>
+	<%= sheet_form.label  :title %>
 
 	<p>
 	Currently is filling in by : <%= sheet_form.label self.current_user || "No log in, bug! " %>

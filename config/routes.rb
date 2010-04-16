@@ -25,6 +25,8 @@ ActionController::Routing::Routes.draw do |map|
 		 map.resources :votes
   end
 
+  
+
   map.connect 'user/vote_for/:id', :controller => :user,:action=>'vote_for'
 		  		
 

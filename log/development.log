@@ -17735,3 +17735,1666 @@ ActiveRecord::RecordNotFound (Couldn't find Survey with ID=1):
 Rendered D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_trace (75.0ms)
 Rendered D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_request_and_response (2.0ms)
 Rendering D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (not_found)
+** vote_fu: setting up load paths
+** vote_fu: initialized properly.
+** vote_fu: setting up load paths
+** vote_fu: initialized properly.
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-16 16:05:41) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering sessions/new
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-16 16:05:50) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"7b9f0a2e462e54a3da70293b7857fbb1e1f866dc", "login"=>"realalien", "password"=>"tiodiosim"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;36;1mUser Columns (59.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (18.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'realalien') LIMIT 1[0m
+Failed login for 'realalien' from 127.0.0.1 at Fri Apr 16 08:05:50 UTC 2010
+Rendering sessions/new
+Completed in 179ms (View: 6, DB: 78) | 200 OK [http://localhost/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-16 16:05:54) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"7b9f0a2e462e54a3da70293b7857fbb1e1f866dc", "login"=>"realalien", "password"=>"123456"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;36;1mUser Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'realalien') LIMIT 1[0m
+  [4;36;1mSQL (13.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Cookie set: auth_token=; path=/
+Redirected to /
+Completed in 62ms (DB: 22) | 302 Found [http://localhost/session]
+
+
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-16 16:06:00) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSurvey Load (45.0ms)[0m   [0;1mSELECT * FROM `surveys` [0m
+Rendering template within layouts/surveys
+Rendering surveys/index
+Completed in 80ms (View: 26, DB: 46) | 200 OK [http://localhost/surveys]
+
+
+Processing SurveysController#new (for 127.0.0.1 at 2010-04-16 16:06:03) [GET]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSurvey Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `surveys`[0m
+Rendering template within layouts/surveys
+Rendering surveys/new
+Completed in 44ms (View: 22, DB: 9) | 200 OK [http://localhost/surveys/new]
+
+
+Processing SurveysController#create (for 127.0.0.1 at 2010-04-16 16:06:19) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"7b9f0a2e462e54a3da70293b7857fbb1e1f866dc", "survey"=>{"category"=>"non", "title"=>"survy_def_1", "description"=>"demo survy", "target_audience"=>"none"}}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSurvey Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `surveys`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSurvey Create (53.0ms)[0m   [0;1mINSERT INTO `surveys` (`category`, `updated_at`, `title`, `description`, `target_audience`, `created_at`) VALUES('non', '2010-04-16 08:06:19', 'survy_def_1', 'demo survy', 'none', '2010-04-16 08:06:19')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+Redirected to #<Survey:0x5f86e0c>
+Completed in 81ms (DB: 60) | 302 Found [http://localhost/surveys]
+
+
+Processing SurveysController#create (for 127.0.0.1 at 2010-04-16 16:06:19) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"7b9f0a2e462e54a3da70293b7857fbb1e1f866dc", "survey"=>{"category"=>"non", "title"=>"survy_def_1", "description"=>"demo survy", "target_audience"=>"none"}}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSurvey Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `surveys`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSurvey Create (1.0ms)[0m   [0;1mINSERT INTO `surveys` (`category`, `updated_at`, `title`, `description`, `target_audience`, `created_at`) VALUES('non', '2010-04-16 08:06:19', 'survy_def_1', 'demo survy', 'none', '2010-04-16 08:06:19')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+Redirected to #<Survey:0x5e68f5c>
+Completed in 22ms (DB: 9) | 302 Found [http://localhost/surveys]
+
+
+Processing SurveysController#show (for 127.0.0.1 at 2010-04-16 16:06:19) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSurvey Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `surveys`[0m
+  [4;35;1mSurvey Load (1.0ms)[0m   [0mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 2) [0m
+Rendering template within layouts/surveys
+Rendering surveys/show
+  [4;36;1mQuestion Load (88.0ms)[0m   [0;1mSELECT `questions`.* FROM `questions` INNER JOIN survey_question_assignments ON questions.id = survey_question_assignments.question_id WHERE ((`survey_question_assignments`.survey_id = 2)) [0m
+Completed in 149ms (View: 39, DB: 94) | 200 OK [http://localhost/surveys/2]
+
+
+Processing QuestionsController#new (for 127.0.0.1 at 2010-04-16 16:06:26) [GET]
+  Parameters: {"survey_id"=>"2"}
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSurvey Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `surveys`[0m
+  [4;36;1mSurvey Load (2.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 2) [0m
+  [4;35;1mQuestion Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+Rendering template within layouts/questions
+Rendering questions/new
+Completed in 49ms (View: 14, DB: 14) | 200 OK [http://localhost/surveys/2/questions/new]
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2010-04-16 16:06:36) [POST]
+  Parameters: {"commit"=>"Create", "survey_id"=>"2", "authenticity_token"=>"7b9f0a2e462e54a3da70293b7857fbb1e1f866dc", "question"=>{"title"=>"q1", "is_commentable"=>"1", "description"=>"q1", "is_voteable"=>"0", "hint"=>"", "is_rateable"=>"1"}}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSurvey Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `surveys`[0m
+  [4;35;1mSurvey Load (3.0ms)[0m   [0mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 2) [0m
+  [4;35;1mQuestion Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuestion Create (0.0ms)[0m   [0mINSERT INTO `questions` (`updated_at`, `title`, `is_commentable`, `description`, `hint`, `is_voteable`, `is_rateable`, `created_at`) VALUES('2010-04-16 08:06:36', 'q1', 1, 'q1', '', 0, 1, '2010-04-16 08:06:36')[0m
+  [4;36;1mSurveyQuestionAssignment Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `survey_question_assignments`[0m
+  [4;35;1mSurveyQuestionAssignment Create (0.0ms)[0m   [0mINSERT INTO `survey_question_assignments` (`sequence`, `updated_at`, `question_id`, `survey_id`, `created_at`) VALUES(NULL, '2010-04-16 08:06:36', 1, 2, '2010-04-16 08:06:36')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to #<Survey:0x60a1bc0>
+Completed in 87ms (DB: 26) | 302 Found [http://localhost/surveys/2/questions]
+
+
+Processing SurveysController#show (for 127.0.0.1 at 2010-04-16 16:06:36) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSurvey Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `surveys`[0m
+  [4;36;1mSurvey Load (2.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 2) [0m
+Rendering template within layouts/surveys
+Rendering surveys/show
+  [4;35;1mQuestion Load (0.0ms)[0m   [0mSELECT `questions`.* FROM `questions` INNER JOIN survey_question_assignments ON questions.id = survey_question_assignments.question_id WHERE ((`survey_question_assignments`.survey_id = 2)) [0m
+  [4;36;1mQuestion Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+Rendered questions/_question (4.0ms)
+Completed in 57ms (View: 30, DB: 11) | 200 OK [http://localhost/surveys/2]
+
+
+Processing QuestionsController#new (for 127.0.0.1 at 2010-04-16 16:06:38) [GET]
+  Parameters: {"survey_id"=>"2"}
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSurvey Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `surveys`[0m
+  [4;36;1mSurvey Load (1.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 2) [0m
+  [4;35;1mQuestion Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+Rendering template within layouts/questions
+Rendering questions/new
+Completed in 155ms (View: 21, DB: 16) | 200 OK [http://localhost/surveys/2/questions/new]
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2010-04-16 16:06:47) [POST]
+  Parameters: {"commit"=>"Create", "survey_id"=>"2", "authenticity_token"=>"7b9f0a2e462e54a3da70293b7857fbb1e1f866dc", "question"=>{"title"=>"q2", "is_commentable"=>"1", "description"=>"q2", "is_voteable"=>"0", "hint"=>"", "is_rateable"=>"1"}}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSurvey Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `surveys`[0m
+  [4;35;1mSurvey Load (3.0ms)[0m   [0mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 2) [0m
+  [4;35;1mQuestion Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuestion Create (1.0ms)[0m   [0mINSERT INTO `questions` (`updated_at`, `title`, `is_commentable`, `description`, `hint`, `is_voteable`, `is_rateable`, `created_at`) VALUES('2010-04-16 08:06:47', 'q2', 1, 'q2', '', 0, 1, '2010-04-16 08:06:47')[0m
+  [4;36;1mSurveyQuestionAssignment Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `survey_question_assignments`[0m
+  [4;35;1mSurveyQuestionAssignment Create (1.0ms)[0m   [0mINSERT INTO `survey_question_assignments` (`sequence`, `updated_at`, `question_id`, `survey_id`, `created_at`) VALUES(NULL, '2010-04-16 08:06:47', 2, 2, '2010-04-16 08:06:47')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to #<Survey:0x61b0fd4>
+Completed in 85ms (DB: 29) | 302 Found [http://localhost/surveys/2/questions]
+
+
+Processing SurveysController#show (for 127.0.0.1 at 2010-04-16 16:06:47) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSurvey Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `surveys`[0m
+  [4;36;1mSurvey Load (3.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 2) [0m
+Rendering template within layouts/surveys
+Rendering surveys/show
+  [4;35;1mQuestion Load (1.0ms)[0m   [0mSELECT `questions`.* FROM `questions` INNER JOIN survey_question_assignments ON questions.id = survey_question_assignments.question_id WHERE ((`survey_question_assignments`.survey_id = 2)) [0m
+  [4;36;1mQuestion Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+Rendered questions/_question (6.0ms)
+Rendered questions/_question (6.0ms)
+Completed in 95ms (View: 52, DB: 19) | 200 OK [http://localhost/surveys/2]
+
+
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-16 16:06:56) [GET]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSurvey Load (1.0ms)[0m   [0mSELECT * FROM `surveys` [0m
+Rendering template within layouts/surveys
+Rendering surveys/index
+  [4;36;1mSurvey Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `surveys`[0m
+Completed in 42ms (View: 20, DB: 9) | 200 OK [http://localhost/surveys]
+
+
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-16 16:07:03) [GET]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSurvey Load (0.0ms)[0m   [0mSELECT * FROM `surveys` [0m
+Rendering template within layouts/surveys
+Rendering surveys/index
+  [4;36;1mSurvey Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `surveys`[0m
+Completed in 41ms (View: 21, DB: 7) | 200 OK [http://localhost/surveys]
+
+
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-16 16:07:04) [GET]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSurvey Load (1.0ms)[0m   [0mSELECT * FROM `surveys` [0m
+Rendering template within layouts/surveys
+Rendering surveys/index
+  [4;36;1mSurvey Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `surveys`[0m
+Completed in 42ms (View: 21, DB: 8) | 200 OK [http://localhost/surveys]
+
+
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-16 16:07:04) [GET]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSurvey Load (0.0ms)[0m   [0mSELECT * FROM `surveys` [0m
+Rendering template within layouts/surveys
+Rendering surveys/index
+  [4;36;1mSurvey Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `surveys`[0m
+Completed in 43ms (View: 21, DB: 7) | 200 OK [http://localhost/surveys]
+
+
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-16 16:07:04) [GET]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSurvey Load (0.0ms)[0m   [0mSELECT * FROM `surveys` [0m
+Rendering template within layouts/surveys
+Rendering surveys/index
+  [4;36;1mSurvey Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `surveys`[0m
+Completed in 42ms (View: 21, DB: 8) | 200 OK [http://localhost/surveys]
+
+
+Processing SurveysController#show (for 127.0.0.1 at 2010-04-16 16:07:07) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSurvey Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `surveys`[0m
+  [4;36;1mSurvey Load (2.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 2) [0m
+Rendering template within layouts/surveys
+Rendering surveys/show
+  [4;35;1mQuestion Load (1.0ms)[0m   [0mSELECT `questions`.* FROM `questions` INNER JOIN survey_question_assignments ON questions.id = survey_question_assignments.question_id WHERE ((`survey_question_assignments`.survey_id = 2)) [0m
+  [4;36;1mQuestion Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+Rendered questions/_question (5.0ms)
+Rendered questions/_question (5.0ms)
+Completed in 182ms (View: 140, DB: 18) | 200 OK [http://localhost/surveys/2]
+
+
+Processing SurveysController#show (for 127.0.0.1 at 2010-04-16 16:07:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSurvey Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `surveys`[0m
+  [4;36;1mSurvey Load (2.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 2) [0m
+Rendering template within layouts/surveys
+Rendering surveys/show
+  [4;35;1mQuestion Load (0.0ms)[0m   [0mSELECT `questions`.* FROM `questions` INNER JOIN survey_question_assignments ON questions.id = survey_question_assignments.question_id WHERE ((`survey_question_assignments`.survey_id = 2)) [0m
+  [4;36;1mQuestion Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+Rendered questions/_question (5.0ms)
+Rendered questions/_question (5.0ms)
+Completed in 87ms (View: 49, DB: 14) | 200 OK [http://localhost/surveys/2]
+
+
+Processing SurveysController#show (for 127.0.0.1 at 2010-04-16 16:07:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSurvey Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `surveys`[0m
+  [4;36;1mSurvey Load (1.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 2) [0m
+Rendering template within layouts/surveys
+Rendering surveys/show
+  [4;35;1mQuestion Load (0.0ms)[0m   [0mSELECT `questions`.* FROM `questions` INNER JOIN survey_question_assignments ON questions.id = survey_question_assignments.question_id WHERE ((`survey_question_assignments`.survey_id = 2)) [0m
+  [4;36;1mQuestion Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+Rendered questions/_question (6.0ms)
+Rendered questions/_question (5.0ms)
+Completed in 95ms (View: 54, DB: 14) | 200 OK [http://localhost/surveys/2]
+
+
+Processing SurveysController#show (for 127.0.0.1 at 2010-04-16 16:07:09) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSurvey Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `surveys`[0m
+  [4;36;1mSurvey Load (2.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 2) [0m
+Rendering template within layouts/surveys
+Rendering surveys/show
+  [4;35;1mQuestion Load (1.0ms)[0m   [0mSELECT `questions`.* FROM `questions` INNER JOIN survey_question_assignments ON questions.id = survey_question_assignments.question_id WHERE ((`survey_question_assignments`.survey_id = 2)) [0m
+  [4;36;1mQuestion Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+Rendered questions/_question (4.0ms)
+Rendered questions/_question (3.0ms)
+Completed in 66ms (View: 35, DB: 15) | 200 OK [http://localhost/surveys/2]
+
+
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-16 16:07:11) [GET]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSurvey Load (0.0ms)[0m   [0mSELECT * FROM `surveys` [0m
+Rendering template within layouts/surveys
+Rendering surveys/index
+  [4;36;1mSurvey Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `surveys`[0m
+Completed in 42ms (View: 21, DB: 7) | 200 OK [http://localhost/surveys]
+
+
+Processing SurveysController#edit (for 127.0.0.1 at 2010-04-16 16:07:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSurvey Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `surveys`[0m
+  [4;36;1mSurvey Load (2.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 1) [0m
+Rendering template within layouts/surveys
+Rendering surveys/edit
+Completed in 45ms (View: 22, DB: 10) | 200 OK [http://localhost/surveys/1/edit]
+
+
+Processing SurveysController#show (for 127.0.0.1 at 2010-04-16 16:08:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSurvey Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `surveys`[0m
+  [4;36;1mSurvey Load (2.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 1) [0m
+Rendering template within layouts/surveys
+Rendering surveys/show
+  [4;35;1mQuestion Load (1.0ms)[0m   [0mSELECT `questions`.* FROM `questions` INNER JOIN survey_question_assignments ON questions.id = survey_question_assignments.question_id WHERE ((`survey_question_assignments`.survey_id = 1)) [0m
+Completed in 158ms (View: 122, DB: 10) | 200 OK [http://localhost/surveys/1]
+
+
+Processing SurveysController#show (for 127.0.0.1 at 2010-04-16 16:08:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSurvey Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `surveys`[0m
+  [4;35;1mSurvey Load (2.0ms)[0m   [0mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 1) [0m
+Rendering template within layouts/surveys
+Rendering surveys/show
+  [4;36;1mQuestion Load (1.0ms)[0m   [0;1mSELECT `questions`.* FROM `questions` INNER JOIN survey_question_assignments ON questions.id = survey_question_assignments.question_id WHERE ((`survey_question_assignments`.survey_id = 1)) [0m
+Completed in 70ms (View: 33, DB: 10) | 200 OK [http://localhost/surveys/1]
+
+
+Processing SurveysController#show (for 127.0.0.1 at 2010-04-16 16:08:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSurvey Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `surveys`[0m
+  [4;36;1mSurvey Load (2.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 1) [0m
+Rendering template within layouts/surveys
+Rendering surveys/show
+  [4;35;1mQuestion Load (1.0ms)[0m   [0mSELECT `questions`.* FROM `questions` INNER JOIN survey_question_assignments ON questions.id = survey_question_assignments.question_id WHERE ((`survey_question_assignments`.survey_id = 1)) [0m
+Completed in 69ms (View: 34, DB: 10) | 200 OK [http://localhost/surveys/1]
+
+
+Processing SurveysController#show (for 127.0.0.1 at 2010-04-16 16:08:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSurvey Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `surveys`[0m
+  [4;35;1mSurvey Load (3.0ms)[0m   [0mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 1) [0m
+Rendering template within layouts/surveys
+Rendering surveys/show
+  [4;36;1mQuestion Load (1.0ms)[0m   [0;1mSELECT `questions`.* FROM `questions` INNER JOIN survey_question_assignments ON questions.id = survey_question_assignments.question_id WHERE ((`survey_question_assignments`.survey_id = 1)) [0m
+Completed in 162ms (View: 34, DB: 11) | 200 OK [http://localhost/surveys/1]
+
+
+Processing SurveysController#show (for 127.0.0.1 at 2010-04-16 16:08:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSurvey Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `surveys`[0m
+  [4;36;1mSurvey Load (0.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 1) [0m
+Rendering template within layouts/surveys
+Rendering surveys/show
+  [4;35;1mQuestion Load (0.0ms)[0m   [0mSELECT `questions`.* FROM `questions` INNER JOIN survey_question_assignments ON questions.id = survey_question_assignments.question_id WHERE ((`survey_question_assignments`.survey_id = 1)) [0m
+Completed in 64ms (View: 32, DB: 7) | 200 OK [http://localhost/surveys/1]
+
+
+Processing SurveysController#show (for 127.0.0.1 at 2010-04-16 16:08:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSurvey Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `surveys`[0m
+  [4;35;1mSurvey Load (2.0ms)[0m   [0mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 1) [0m
+Rendering template within layouts/surveys
+Rendering surveys/show
+  [4;36;1mQuestion Load (0.0ms)[0m   [0;1mSELECT `questions`.* FROM `questions` INNER JOIN survey_question_assignments ON questions.id = survey_question_assignments.question_id WHERE ((`survey_question_assignments`.survey_id = 1)) [0m
+Completed in 105ms (View: 82, DB: 6) | 200 OK [http://localhost/surveys/1]
+
+
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-16 16:09:01) [GET]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSurvey Load (1.0ms)[0m   [0mSELECT * FROM `surveys` [0m
+Rendering template within layouts/surveys
+Rendering surveys/index
+  [4;36;1mSurvey Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `surveys`[0m
+Completed in 42ms (View: 21, DB: 8) | 200 OK [http://localhost/surveys]
+
+
+Processing SurveySheetsController#new (for 127.0.0.1 at 2010-04-16 16:22:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mSurvey Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `surveys`[0m
+  [4;36;1mSurvey Load (2.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 1) [0m
+  [4;35;1mQuestion Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mSQL (29.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `questions` INNER JOIN survey_question_assignments ON questions.id = survey_question_assignments.question_id WHERE ((`survey_question_assignments`.survey_id = 1)) [0m
+Rendering survey_sheets/new
+
+
+ActionView::TemplateError (Missing template survey_sheets/__form.erb in view path D:/zjc/wr2/vote_demo/app/views:) on line #3 of app/views/survey_sheets/new.html.erb:
+1: 
+2: 
+3: <% render :partial => '_form', :object => @survey_sheet %>
+
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/template.rb:95:in `find_full_path'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/template.rb:16:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/base.rb:334:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/base.rb:334:in `_unmemoized__pick_template'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/memoizable.rb:70:in `_pick_template'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/partials.rb:199:in `_unmemoized__pick_partial_template'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/memoizable.rb:70:in `_pick_partial_template'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/partials.rb:152:in `render_partial'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/base.rb:258:in `render'
+    app/views/survey_sheets/new.html.erb:3
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/template.rb:73:in `render_template'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/base.rb:256:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1177:in `render_for_file'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1251:in `default_render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1257:in `perform_action_without_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:76:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:74:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:74:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:282:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:128:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/command.rb:212:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:281
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_trace (194.0ms)
+Rendered D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_request_and_response (2.0ms)
+Rendering D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing SurveySheetsController#new (for 127.0.0.1 at 2010-04-16 16:22:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mSurvey Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `surveys`[0m
+  [4;36;1mSurvey Load (2.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 1) [0m
+  [4;35;1mQuestion Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `questions` INNER JOIN survey_question_assignments ON questions.id = survey_question_assignments.question_id WHERE ((`survey_question_assignments`.survey_id = 1)) [0m
+Rendering survey_sheets/new
+
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #4 of app/views/survey_sheets/_form.html.erb:
+1: 
+2: 
+3: <%= error_messages_for :project %>
+4: <% form_for @survey_sheet do | sheet_form | -%>
+5: 	<%= sheet_form.label  %>
+6: 
+7: 	<p>
+
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/record_identifier.rb:76:in `dom_id'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/helpers/record_identification_helper.rb:16:in `dom_id'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/helpers/form_helper.rb:264:in `apply_form_for_options!'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/helpers/form_helper.rb:248:in `form_for'
+    app/views/survey_sheets/_form.html.erb:4
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable_partial.rb:20:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable_partial.rb:19:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/template.rb:73:in `render_template'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable_partial.rb:45:in `render_partial'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/partials.rb:152:in `render_partial'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/base.rb:258:in `render'
+    app/views/survey_sheets/new.html.erb:3
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/template.rb:73:in `render_template'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/base.rb:256:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1177:in `render_for_file'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1251:in `default_render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1257:in `perform_action_without_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:76:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:74:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:74:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:282:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:128:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/command.rb:212:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:281
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_trace (181.0ms)
+Rendered D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_request_and_response (1.0ms)
+Rendering D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSurveySheet Load (31.0ms)[0m   [0;1mSELECT * FROM `survey_sheets` [0m
+
+
+Processing SurveySheetsController#new (for 127.0.0.1 at 2010-04-16 16:24:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mSurvey Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `surveys`[0m
+  [4;36;1mSurvey Load (2.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 1) [0m
+  [4;35;1mQuestion Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `questions` INNER JOIN survey_question_assignments ON questions.id = survey_question_assignments.question_id WHERE ((`survey_question_assignments`.survey_id = 1)) [0m
+Rendering survey_sheets/new
+
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #4 of app/views/survey_sheets/new.html.erb:
+1: 
+2: 
+3: <%= error_messages_for :project %>
+4: <% form_for @survey_sheet do | sheet_form | -%>
+5: 	<%= sheet_form.label  :title %>
+6: 
+7: 	<p>
+
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/record_identifier.rb:76:in `dom_id'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/helpers/record_identification_helper.rb:16:in `dom_id'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/helpers/form_helper.rb:264:in `apply_form_for_options!'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/helpers/form_helper.rb:248:in `form_for'
+    app/views/survey_sheets/new.html.erb:4
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/template.rb:73:in `render_template'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/base.rb:256:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1177:in `render_for_file'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1251:in `default_render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1257:in `perform_action_without_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:76:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:74:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:74:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:282:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:128:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/command.rb:212:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:281
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_trace (137.0ms)
+Rendered D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_request_and_response (1.0ms)
+Rendering D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+  [4;35;1mSurveySheet Load (1.0ms)[0m   [0mSELECT * FROM `survey_sheets` [0m
+
+
+Processing SurveySheetsController#new (for 127.0.0.1 at 2010-04-16 16:57:04) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mSurvey Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `surveys`[0m
+  [4;36;1mSurvey Load (2.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 2) [0m
+
+
+ActionController::RenderError (You called render with invalid options : "no such survey definition!"):
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:875:in `render_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    /app/controllers/survey_sheets_controller.rb:29:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1256:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1256:in `perform_action_without_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:76:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:74:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:282:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:128:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/command.rb:212:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:281
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_trace (48.0ms)
+Rendered D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_request_and_response (1.0ms)
+Rendering D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing SurveySheetsController#new (for 127.0.0.1 at 2010-04-16 16:57:14) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (3.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mSurvey Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `surveys`[0m
+  [4;36;1mSurvey Load (2.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 2) [0m
+Completed in 63ms (View: 0, DB: 18) | 200 OK [http://localhost/survey_sheets/new/2]
+
+
+Processing SurveySheetsController#new (for 127.0.0.1 at 2010-04-16 16:57:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mSurvey Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `surveys`[0m
+  [4;36;1mSurvey Load (2.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 1) [0m
+Completed in 165ms (View: 0, DB: 18) | 200 OK [http://localhost/survey_sheets/new/1]
+
+
+Processing SurveySheetsController#new (for 127.0.0.1 at 2010-04-16 16:57:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mSurvey Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `surveys`[0m
+  [4;36;1mSurvey Load (3.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 1) [0m
+Completed in 65ms (View: 0, DB: 19) | 200 OK [http://localhost/survey_sheets/new/1]
+
+
+Processing SurveysController#show (for 127.0.0.1 at 2010-04-16 16:57:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSurvey Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `surveys`[0m
+  [4;36;1mSurvey Load (2.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 1) [0m
+Rendering template within layouts/surveys
+Rendering surveys/show
+  [4;35;1mQuestion Load (1.0ms)[0m   [0mSELECT `questions`.* FROM `questions` INNER JOIN survey_question_assignments ON questions.id = survey_question_assignments.question_id WHERE ((`survey_question_assignments`.survey_id = 1)) [0m
+Completed in 70ms (View: 35, DB: 10) | 200 OK [http://localhost/surveys/1]
+  [4;36;1mSurveySheet Load (0.0ms)[0m   [0;1mSELECT * FROM `survey_sheets` [0m
+
+
+Processing SurveySheetsController#new (for 127.0.0.1 at 2010-04-16 17:02:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mSurvey Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `surveys`[0m
+  [4;35;1mSurvey Load (3.0ms)[0m   [0mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 1) [0m
+  [4;36;1mSurveySheet Load (1.0ms)[0m   [0;1mSELECT * FROM `survey_sheets` WHERE (user_id = 1 and survey_id = '1') LIMIT 1[0m
+  [4;35;1mSurveySheet Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `survey_sheets`[0m
+
+
+NoMethodError (undefined method `questions' for #<SurveySheet:0x5e53b34>):
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/attribute_methods.rb:260:in `method_missing'
+    /app/controllers/survey_sheets_controller.rb:42:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1256:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1256:in `perform_action_without_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:76:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:74:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:282:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:128:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/command.rb:212:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:281
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_trace (156.0ms)
+Rendered D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_request_and_response (1.0ms)
+Rendering D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing SurveySheetsController#new (for 127.0.0.1 at 2010-04-16 17:02:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mSurvey Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `surveys`[0m
+  [4;35;1mSurvey Load (3.0ms)[0m   [0mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 1) [0m
+  [4;36;1mSurveySheet Load (1.0ms)[0m   [0;1mSELECT * FROM `survey_sheets` WHERE (user_id = 1 and survey_id = '1') LIMIT 1[0m
+  [4;35;1mSurveySheet Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `survey_sheets`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuestion Load (1.0ms)[0m   [0mSELECT `questions`.* FROM `questions` INNER JOIN survey_question_assignments ON questions.id = survey_question_assignments.question_id WHERE ((`survey_question_assignments`.survey_id = 1)) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Rendering survey_sheets/new
+
+
+ActionView::TemplateError (undefined method `survey_sheets_path' for #<ActionView::Base:0x61c4840>) on line #4 of app/views/survey_sheets/new.html.erb:
+1: 
+2: 
+3: <%= error_messages_for :project %>
+4: <% form_for @survey_sheet do | sheet_form | -%>
+5: 	<%= sheet_form.label  :title %>
+6: 
+7: 	<p>
+
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/polymorphic_routes.rb:112:in `__send__'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/polymorphic_routes.rb:112:in `polymorphic_url'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/polymorphic_routes.rb:119:in `polymorphic_path'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/helpers/form_helper.rb:269:in `apply_form_for_options!'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/helpers/form_helper.rb:248:in `form_for'
+    app/views/survey_sheets/new.html.erb:4
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/template.rb:73:in `render_template'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/base.rb:256:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1177:in `render_for_file'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1251:in `default_render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1257:in `perform_action_without_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:76:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:74:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:74:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:282:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:128:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/command.rb:212:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:281
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_trace (146.0ms)
+Rendered D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_request_and_response (1.0ms)
+Rendering D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing SurveySheetsController#new (for 127.0.0.1 at 2010-04-16 17:03:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mSurvey Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `surveys`[0m
+  [4;36;1mSurvey Load (2.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 1) [0m
+  [4;35;1mSurveySheet Load (0.0ms)[0m   [0mSELECT * FROM `survey_sheets` WHERE (user_id = 1 and survey_id = '1') LIMIT 1[0m
+  [4;36;1mSurveySheet Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `survey_sheets`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuestion Load (1.0ms)[0m   [0;1mSELECT `questions`.* FROM `questions` INNER JOIN survey_question_assignments ON questions.id = survey_question_assignments.question_id WHERE ((`survey_question_assignments`.survey_id = 1)) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Rendering survey_sheets/new
+
+
+ActionView::TemplateError (undefined method `survey_sheets_path' for #<ActionView::Base:0x60126a0>) on line #4 of app/views/survey_sheets/new.html.erb:
+1: 
+2: 
+3: <%= error_messages_for :survey_sheet %>
+4: <% form_for @survey_sheet do | sheet_form | -%>
+5: 	<%= sheet_form.label  :title %>
+6: 
+7: 	<p>
+
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/polymorphic_routes.rb:112:in `__send__'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/polymorphic_routes.rb:112:in `polymorphic_url'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/polymorphic_routes.rb:119:in `polymorphic_path'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/helpers/form_helper.rb:269:in `apply_form_for_options!'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/helpers/form_helper.rb:248:in `form_for'
+    app/views/survey_sheets/new.html.erb:4
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/template.rb:73:in `render_template'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/base.rb:256:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1177:in `render_for_file'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1251:in `default_render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1257:in `perform_action_without_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:76:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:74:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:74:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:282:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:128:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/command.rb:212:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:281
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_trace (85.0ms)
+Rendered D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_request_and_response (2.0ms)
+Rendering D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing SurveySheetsController#new (for 127.0.0.1 at 2010-04-16 17:12:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mSurvey Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `surveys`[0m
+  [4;35;1mSurvey Load (3.0ms)[0m   [0mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 1) [0m
+  [4;36;1mSurveySheet Load (1.0ms)[0m   [0;1mSELECT * FROM `survey_sheets` WHERE (user_id = 1 and survey_id = '1') LIMIT 1[0m
+  [4;35;1mSurveySheet Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `survey_sheets`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuestion Load (0.0ms)[0m   [0mSELECT `questions`.* FROM `questions` INNER JOIN survey_question_assignments ON questions.id = survey_question_assignments.question_id WHERE ((`survey_question_assignments`.survey_id = 1)) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Rendering survey_sheets/new
+
+
+ActionView::TemplateError (undefined method `survey_sheets_path' for #<ActionView::Base:0x5e89ae0>) on line #4 of app/views/survey_sheets/new.html.erb:
+1: 
+2: 
+3: <%= error_messages_for :survey_sheet %>
+4: <% form_for @survey_sheet do | sheet_form | -%>
+5: 	<%= sheet_form.label  :title %>
+6: 
+7: 	<p>
+
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/polymorphic_routes.rb:112:in `__send__'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/polymorphic_routes.rb:112:in `polymorphic_url'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/polymorphic_routes.rb:119:in `polymorphic_path'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/helpers/form_helper.rb:269:in `apply_form_for_options!'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/helpers/form_helper.rb:248:in `form_for'
+    app/views/survey_sheets/new.html.erb:4
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/template.rb:73:in `render_template'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/base.rb:256:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1177:in `render_for_file'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1251:in `default_render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1257:in `perform_action_without_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:76:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:74:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:74:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:282:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:128:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/command.rb:212:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:281
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_trace (93.0ms)
+Rendered D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_request_and_response (2.0ms)
+Rendering D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+** vote_fu: setting up load paths
+** vote_fu: initialized properly.
+
+
+Processing SurveySheetsController#new (for 127.0.0.1 at 2010-04-16 17:13:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mSurvey Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `surveys`[0m
+  [4;35;1mSurvey Load (2.0ms)[0m   [0mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 1) [0m
+  [4;36;1mSurveySheet Load (1.0ms)[0m   [0;1mSELECT * FROM `survey_sheets` WHERE (user_id = 1 and survey_id = '1') LIMIT 1[0m
+  [4;35;1mSurveySheet Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `survey_sheets`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuestion Load (1.0ms)[0m   [0mSELECT `questions`.* FROM `questions` INNER JOIN survey_question_assignments ON questions.id = survey_question_assignments.question_id WHERE ((`survey_question_assignments`.survey_id = 1)) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Rendering survey_sheets/new
+
+
+ActionView::TemplateError (undefined method `survey_sheets_path' for #<ActionView::Base:0x5e40ebc>) on line #4 of app/views/survey_sheets/new.html.erb:
+1: 
+2: 
+3: <%= error_messages_for :survey_sheet %>
+4: <% form_for @survey_sheet do | sheet_form | -%>
+5: 	<%= sheet_form.label  :title %>
+6: 
+7: 	<p>
+
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/polymorphic_routes.rb:112:in `__send__'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/polymorphic_routes.rb:112:in `polymorphic_url'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/polymorphic_routes.rb:119:in `polymorphic_path'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/helpers/form_helper.rb:269:in `apply_form_for_options!'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/helpers/form_helper.rb:248:in `form_for'
+    app/views/survey_sheets/new.html.erb:4
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/template.rb:73:in `render_template'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/base.rb:256:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1177:in `render_for_file'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1251:in `default_render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1257:in `perform_action_without_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:76:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:74:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:74:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:282:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:128:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/command.rb:212:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:281
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_trace (59.0ms)
+Rendered D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_request_and_response (1.0ms)
+Rendering D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing SurveySheetsController#new (for 127.0.0.1 at 2010-04-16 17:13:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mSurvey Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `surveys`[0m
+  [4;36;1mSurvey Load (2.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 1) [0m
+  [4;35;1mSurveySheet Load (0.0ms)[0m   [0mSELECT * FROM `survey_sheets` WHERE (user_id = 1 and survey_id = '1') LIMIT 1[0m
+  [4;36;1mSurveySheet Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `survey_sheets`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuestion Load (0.0ms)[0m   [0;1mSELECT `questions`.* FROM `questions` INNER JOIN survey_question_assignments ON questions.id = survey_question_assignments.question_id WHERE ((`survey_question_assignments`.survey_id = 1)) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Rendering survey_sheets/new
+
+
+ActionView::TemplateError (undefined method `survey_sheets_path' for #<ActionView::Base:0x5e6b388>) on line #4 of app/views/survey_sheets/new.html.erb:
+1: 
+2: 
+3: <%= error_messages_for :survey_sheet %>
+4: <% form_for @survey_sheet do | sheet_form | -%>
+5: 	<%= sheet_form.label  :title %>
+6: 
+7: 	<p>
+
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/polymorphic_routes.rb:112:in `__send__'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/polymorphic_routes.rb:112:in `polymorphic_url'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/polymorphic_routes.rb:119:in `polymorphic_path'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/helpers/form_helper.rb:269:in `apply_form_for_options!'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/helpers/form_helper.rb:248:in `form_for'
+    app/views/survey_sheets/new.html.erb:4
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/template.rb:73:in `render_template'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/base.rb:256:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1177:in `render_for_file'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1251:in `default_render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1257:in `perform_action_without_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:76:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:74:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:74:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:282:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:128:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/command.rb:212:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:281
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_trace (62.0ms)
+Rendered D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_request_and_response (1.0ms)
+Rendering D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing SurveySheetsController#index (for 127.0.0.1 at 2010-04-16 17:13:14) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+
+
+ActionController::UnknownAction (No action responded to index. Actions: edit, new, and show):
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:76:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:74:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:282:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:128:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/command.rb:212:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:281
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing SurveysController#show (for 127.0.0.1 at 2010-04-16 17:13:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSurvey Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `surveys`[0m
+  [4;35;1mSurvey Load (2.0ms)[0m   [0mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 1) [0m
+Rendering template within layouts/surveys
+Rendering surveys/show
+  [4;36;1mQuestion Load (1.0ms)[0m   [0;1mSELECT `questions`.* FROM `questions` INNER JOIN survey_question_assignments ON questions.id = survey_question_assignments.question_id WHERE ((`survey_question_assignments`.survey_id = 1)) [0m
+Completed in 49ms (View: 23, DB: 9) | 200 OK [http://localhost/surveys/1]
+
+
+Processing SurveySheetsController#show (for 127.0.0.1 at 2010-04-16 17:13:34) [GET]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendering survey_sheets/show
+Completed in 49ms (View: 7, DB: 10) | 200 OK [http://localhost/survey_sheets/show]
+
+
+Processing SurveySheetsController#new (for 127.0.0.1 at 2010-04-16 17:13:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mSurvey Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `surveys`[0m
+  [4;36;1mSurvey Load (3.0ms)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 1) [0m
+  [4;35;1mSurveySheet Load (0.0ms)[0m   [0mSELECT * FROM `survey_sheets` WHERE (user_id = 1 and survey_id = '1') LIMIT 1[0m
+  [4;36;1mSurveySheet Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `survey_sheets`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuestion Load (1.0ms)[0m   [0;1mSELECT `questions`.* FROM `questions` INNER JOIN survey_question_assignments ON questions.id = survey_question_assignments.question_id WHERE ((`survey_question_assignments`.survey_id = 1)) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Rendering survey_sheets/new
+
+
+ActionView::TemplateError (undefined method `survey_sheets_path' for #<ActionView::Base:0x5fd07b4>) on line #4 of app/views/survey_sheets/new.html.erb:
+1: 
+2: 
+3: <%= error_messages_for :survey_sheet %>
+4: <% form_for @survey_sheet do | sheet_form | -%>
+5: 	<%= sheet_form.label  :title %>
+6: 
+7: 	<p>
+
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/polymorphic_routes.rb:112:in `__send__'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/polymorphic_routes.rb:112:in `polymorphic_url'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/polymorphic_routes.rb:119:in `polymorphic_path'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/helpers/form_helper.rb:269:in `apply_form_for_options!'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/helpers/form_helper.rb:248:in `form_for'
+    app/views/survey_sheets/new.html.erb:4
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/template.rb:73:in `render_template'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_view/base.rb:256:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1177:in `render_for_file'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1251:in `default_render'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1257:in `perform_action_without_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:76:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:74:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/rails.rb:74:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:282:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:128:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/command.rb:212:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:281
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/zjc/devtools/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_trace (94.0ms)
+Rendered D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_request_and_response (1.0ms)
+Rendering D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-16 18:29:25) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering sessions/new
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/login]

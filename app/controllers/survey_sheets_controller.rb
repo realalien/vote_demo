@@ -20,24 +20,36 @@ class SurveySheetsController < ApplicationController
     # TODO: how to make user into such controller/action?
     def new
         if params["id"]
+          suppose_survey_def_id = params["id"]
           # create a SurveySheet according to the Survey(definition) 
-          survey_def = Survey.find(params["id"])
-
-          if survey_def.questions.size > 0
-              @survey_sheet = SurveySheet.new
-              @survey_sheet.questions << survey_def.questions # create a new survey_sheet
-              # Q: what about the change of survey_def?
-              @survey_sheet.questions.size.times { @survey_sheet.answers.build } 
+          survey_def = Survey.find(suppose_survey_def_id)
+          
+          
+          if not survey_def:  
+              render :text => "no such survey definition!"  # flash and redirect
+          else
+              # find if login user has that sheet, if any, go to edit page
+              # Q: if find(:first) not sequencely first, else how?
+              @survey_sheet = SurveySheet.find(:first, 
+                                          :conditions => ["user_id = :user_id and survey_id = :survey_id", 
+                                                          { :user_id => self.current_user.id, 
+                                                            :survey_id => suppose_survey_def_id }  ] )
+            
+              if @survey_sheet
+                  # TODO: go to edit page   edit/:target_survey_id
+              else # create a new survey_sheet.
+                @survey_sheet = SurveySheet.new
+                @survey_sheet.questions << survey_def.questions # create a new survey_sheet
+                # Q: what about the change of survey_def?
+                @survey_sheet.questions.size.times { @survey_sheet.answers.build }
+              end
           end
           
-          #@questions = survey.questions  # TODO: sort by sequence
-          #@question.each do | qu |
-          #     qu.answers.build  # create answer in the memory, Q: what's the use of 'build',  what about the associated model
-          #end
+           
+          
         end
     end
   
-    # allow user to modify the answers, there will be
     def edit
       
     end

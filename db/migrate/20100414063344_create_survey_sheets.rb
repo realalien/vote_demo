@@ -1,6 +1,7 @@
 class CreateSurveySheets < ActiveRecord::Migration
   def self.up
     create_table :survey_sheets do |t|
+     t.string :title
 	t.timestamps :created_when
 	t.timestamps :last_modified_when
 	t.integer :modification_count

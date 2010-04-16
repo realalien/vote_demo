@@ -2,6 +2,35 @@
 
 
 
+20100416:
+* TODO: setup up a example project to demonstrate the EXP below.
+
+* a very good tutorial
+http://railscasts.com/episodes/197-nested-model-form-part-2
+
+
+* about the nested object update
+http://api.rubyonrails.org/classes/ActiveRecord/NestedAttributes/ClassMethods.html#M002132
+
+EXP: make question-to-answer a one-to-many association, also create  a user_id accessor?
+
+
+
+
+TODO: in accepts_nested_attributes_for :posts, :reject_if, I need to check the params['current_user'] or check the session data
+TODO: create a user_id accessor on the answers model? 
+
+SUG: ask on forum for a nested resource update with many-to-many filtering situasion.
+
+
+
+
+
+
+20100415: 
+
+
+
 http://github.com/springbok/smerf
 
 http://guides.rubyonrails.org/2_3_release_notes.html#nested-object-forms
