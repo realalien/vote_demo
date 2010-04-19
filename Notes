@@ -1,6 +1,12 @@
 
 
 
+20100419:
+* after studying the code of smerf, I found that project bypassed the relations by using 
+  a data dump of a form, instead of an individual questions.
+  
+  
+
 
 20100416:
 * TODO: setup up a example project to demonstrate the EXP below.
