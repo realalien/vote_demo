@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # :secret => '9086dd55d844edef4f232916f64fa66a'
   
   include AuthenticatedSystem
-
+  include Smerf
   # See ActionController::Base for details 
   # Uncomment this to filter the contents of submitted sensitive data parameters
   # from your application log (in this case, all fields with names like "password"). 

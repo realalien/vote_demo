@@ -7,6 +7,8 @@ class Question < ActiveRecord::Base
 	has_many :question_answer_by_users, :dependent => :nullify
 	has_many :answers, :through => :question_answer_by_users
   
+  accepts_nested_attributes_for :answers, :allow_destroy => true
+  accepts_nested_attributes_for :question_answer_by_users
   
     has_many :sheet_question_relations, :dependent => :nullify
     has_many :survey_sheets, :through => :sheet_question_relations

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100415011737) do
+ActiveRecord::Schema.define(:version => 20100419033456) do
 
   create_table "answers", :force => true do |t|
     t.text     "description"
@@ -63,6 +63,28 @@ ActiveRecord::Schema.define(:version => 20100415011737) do
     t.integer  "question_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "smerf_forms", :force => true do |t|
+    t.string   "name",       :null => false
+    t.string   "code",       :null => false
+    t.integer  "active",     :null => false
+    t.text     "cache"
+    t.datetime "cache_date"
+  end
+
+  add_index "smerf_forms", ["code"], :name => "index_smerf_forms_on_code", :unique => true
+
+  create_table "smerf_forms_users", :force => true do |t|
+    t.integer "user_id",       :null => false
+    t.integer "smerf_form_id", :null => false
+    t.text    "responses",     :null => false
+  end
+
+  create_table "smerf_responses", :force => true do |t|
+    t.integer "smerf_forms_user_id", :null => false
+    t.string  "question_code",       :null => false
+    t.text    "response",            :null => false
   end
 
   create_table "survey_question_assignments", :force => true do |t|

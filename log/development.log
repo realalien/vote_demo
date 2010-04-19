@@ -19398,3 +19398,182 @@ Processing SessionsController#new (for 127.0.0.1 at 2010-04-16 18:29:25) [GET]
   [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
 Rendering sessions/new
 Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/login]
+** vote_fu: setting up load paths
+** vote_fu: initialized properly.
+** vote_fu: setting up load paths
+** vote_fu: initialized properly.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (250.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (17.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTravelPlaces (20100401123342)
+Migrating to VoteFuMigration (20100401123420)
+Migrating to CreateUsers (20100401132628)
+Migrating to CreateQuestions (20100412053608)
+Migrating to CreateComments (20100412062450)
+Migrating to CreateSurveys (20100412065253)
+Migrating to CreateSurveyQuestionAssignments (20100412070644)
+Migrating to CreateAnswers (20100413095259)
+Migrating to QuestionAnswerByUsers (20100413095950)
+Migrating to CreateSurveySheets (20100414063344)
+Migrating to CreateSheetQuestionRelations (20100414071014)
+Migrating to CreateSheetAnswerRelations (20100415011737)
+Migrating to CreateSmerfs (20100419033456)
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (60.0ms)[0m   [0mCREATE TABLE `smerf_forms` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `code` varchar(255) NOT NULL, `active` int(11) NOT NULL, `cache` text, `cache_date` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (30.0ms)[0m   [0;1mCREATE UNIQUE INDEX `index_smerf_forms_on_code` ON `smerf_forms` (`code`)[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (20.0ms)[0m   [0;1mCREATE TABLE `smerf_forms_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) NOT NULL, `smerf_form_id` int(11) NOT NULL, `responses` text NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (18.0ms)[0m   [0;1mCREATE TABLE `smerf_responses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `smerf_forms_user_id` int(11) NOT NULL, `question_code` varchar(255) NOT NULL, `response` text NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (12.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100419033456')[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (7.0ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+  [4;36;1mSQL (9.0ms)[0m   [0;1mdescribe `answers`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW KEYS FROM `answers`[0m
+  [4;36;1mSQL (37.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mSQL (10.0ms)[0m   [0mdescribe `comments`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW KEYS FROM `comments`[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mSHOW FIELDS FROM `question_answer_by_users`[0m
+  [4;36;1mSQL (8.0ms)[0m   [0;1mdescribe `question_answer_by_users`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW KEYS FROM `question_answer_by_users`[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mSQL (9.0ms)[0m   [0mdescribe `questions`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW KEYS FROM `questions`[0m
+  [4;35;1mSQL (7.0ms)[0m   [0mSHOW FIELDS FROM `sheet_answer_relations`[0m
+  [4;36;1mSQL (9.0ms)[0m   [0;1mdescribe `sheet_answer_relations`[0m
+  [4;35;1mSQL (61.0ms)[0m   [0mSHOW KEYS FROM `sheet_answer_relations`[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mSHOW FIELDS FROM `sheet_question_relations`[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mdescribe `sheet_question_relations`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW KEYS FROM `sheet_question_relations`[0m
+  [4;35;1mSQL (7.0ms)[0m   [0mSHOW FIELDS FROM `smerf_forms`[0m
+  [4;36;1mSQL (9.0ms)[0m   [0;1mdescribe `smerf_forms`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW KEYS FROM `smerf_forms`[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mSHOW FIELDS FROM `smerf_forms_users`[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mdescribe `smerf_forms_users`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW KEYS FROM `smerf_forms_users`[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mSHOW FIELDS FROM `smerf_responses`[0m
+  [4;36;1mSQL (9.0ms)[0m   [0;1mdescribe `smerf_responses`[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mSHOW KEYS FROM `smerf_responses`[0m
+  [4;36;1mSQL (10.0ms)[0m   [0;1mSHOW FIELDS FROM `survey_question_assignments`[0m
+  [4;35;1mSQL (9.0ms)[0m   [0mdescribe `survey_question_assignments`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW KEYS FROM `survey_question_assignments`[0m
+  [4;35;1mSQL (62.0ms)[0m   [0mSHOW FIELDS FROM `survey_sheets`[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mdescribe `survey_sheets`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW KEYS FROM `survey_sheets`[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mSHOW FIELDS FROM `surveys`[0m
+  [4;35;1mSQL (9.0ms)[0m   [0mdescribe `surveys`[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSHOW KEYS FROM `surveys`[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mSHOW FIELDS FROM `travel_places`[0m
+  [4;36;1mSQL (8.0ms)[0m   [0;1mdescribe `travel_places`[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mSHOW KEYS FROM `travel_places`[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (2344.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mSHOW FIELDS FROM `votes`[0m
+  [4;36;1mSQL (9.0ms)[0m   [0;1mdescribe `votes`[0m
+  [4;35;1mSQL (9.0ms)[0m   [0mSHOW KEYS FROM `votes`[0m
+** vote_fu: setting up load paths
+** vote_fu: initialized properly.
+
+
+Processing SmerfTestController#index (for 127.0.0.1 at 2010-04-19 11:47:30) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering smerf_test/index
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/smerf_test]
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2010-04-19 11:47:32) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSmerfForm Load (1.0ms)[0m   [0;1mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;35;1mSmerfForm Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `smerf_forms`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSmerfForm Exists (0.0ms)[0m   [0mSELECT `smerf_forms`.id FROM `smerf_forms` WHERE (`smerf_forms`.`code` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSmerfForm Exists (32.0ms)[0m   [0;1mSELECT `smerf_forms`.id FROM `smerf_forms` WHERE (`smerf_forms`.`code` = BINARY 'testsmerf') LIMIT 1[0m
+  [4;35;1mSmerfForm Create (2.0ms)[0m   [0mINSERT INTO `smerf_forms` (`name`, `code`, `cache`, `cache_date`, `active`) VALUES('Test SMERF Form', 'testsmerf', '--- \n:smerfform: &id001 !ruby/object:SmerfMetaForm \n child_items: \n - &id047 !ruby/object:SmerfGroup \n child_items: \n - &id028 !ruby/object:SmerfQuestion \n answers: &id007 \n 1_20: \n default: N\n answer: 1-20\n sort_order: 1\n code: 1\n \">40\": \n default: N\n answer: \"> 40\"\n sort_order: 3\n code: 3\n subquestions: &id004 \n \">40\": \n help: \"Select the <b>one</b> that apply \"\n sort_order: 1\n code: g1q1a3s1\n validation: validate_sub_question\n type: singlechoice\n question: Are you aged over 40\n answers: &id002 \n 41_50: \n default: N\n answer: 41-50\n sort_order: 1\n code: 1\n \">61\": \n default: N\n answer: \"> 61\"\n sort_order: 3\n code: 3\n subquestions: &id003 \n \">61\": \n sort_order: 1\n code: g1q1a3s1a3s1\n validation: validate_sub_question\n type: textfield\n question: If you are older than 61, please specify\n header: \n textfield_size: 10\n 51_60: \n default: N\n answer: 51_60\n sort_order: 2\n code: 2\n 21_40: \n default: N\n answer: 21_40\n sort_order: 2\n code: 2\n child_items: \n - &id045 !ruby/object:SmerfAnswer \n answer: 1-20\n child_items: []\n\n code: \"1\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q1~~1\n parent_id: ~~testsmerf~~1~~g1q1\n sort_order: 1\n subquestions: \n - &id048 !ruby/object:SmerfAnswer \n answer: 21_40\n child_items: []\n\n code: \"2\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q1~~2\n parent_id: ~~testsmerf~~1~~g1q1\n sort_order: 2\n subquestions: \n - &id051 !ruby/object:SmerfAnswer \n answer: \"> 40\"\n child_items: \n - &id023 !ruby/object:SmerfQuestion \n answers: *id002\n child_items: \n - &id015 !ruby/object:SmerfAnswer \n answer: 41-50\n child_items: []\n\n code: \"1\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~1\n parent_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1\n sort_order: 1\n subquestions: \n - &id018 !ruby/object:SmerfAnswer \n answer: 51_60\n child_items: []\n\n code: \"2\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~2\n parent_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1\n sort_order: 2\n subquestions: \n - &id024 !ruby/object:SmerfAnswer \n answer: \"> 61\"\n child_items: \n - &id049 !ruby/object:SmerfQuestion \n answers: \n child_items: []\n\n code: g1q1a3s1a3s1\n form_object: *id001\n header: \n help: \n item_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~3~~g1q1a3s1a3s1\n parent_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~3\n question: If you are older than 61, please specify\n selectionbox_multiplechoice: \n sort_order: 1\n textbox_size: \n textfield_size: 10\n type: textfield\n validation: validate_sub_question\n code: \"3\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~3\n parent_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1\n sort_order: 3\n subquestions: *id003\n code: g1q1a3s1\n form_object: *id001\n header: \n help: \"Select the <b>one</b> that apply \"\n item_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1\n parent_id: ~~testsmerf~~1~~g1q1~~3\n question: Are you aged over 40\n selectionbox_multiplechoice: \n sort_order: 1\n textbox_size: \n textfield_size: \n type: singlechoice\n validation: validate_sub_question\n code: \"3\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q1~~3\n parent_id: ~~testsmerf~~1~~g1q1\n sort_order: 3\n subquestions: *id004\n code: g1q1\n form_object: *id001\n header: \n help: \"Select the <b>one</b> that apply \"\n item_id: ~~testsmerf~~1~~g1q1\n parent_id: ~~testsmerf~~1\n question: \"Specify your ages \"\n selectionbox_multiplechoice: \n sort_order: 1\n textbox_size: \n textfield_size: \n type: singlechoice\n validation: validate_mandatory_question\n - &id032 !ruby/object:SmerfQuestion \n answers: &id009 \n false: \n default: Y\n answer: \"No\"\n sort_order: 1\n code: 1\n true: \n default: N\n answer: \"Yes\"\n sort_order: 2\n code: 2\n child_items: \n - &id021 !ruby/object:SmerfAnswer \n answer: \"No\"\n child_items: []\n\n code: \"1\"\n default: Y\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q2~~1\n parent_id: ~~testsmerf~~1~~g1q2\n sort_order: 1\n subquestions: \n - &id026 !ruby/object:SmerfAnswer \n answer: \"Yes\"\n child_items: []\n\n code: \"2\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q2~~2\n parent_id: ~~testsmerf~~1~~g1q2\n sort_order: 2\n subquestions: \n code: g1q2\n form_object: *id001\n header: \n help: \n item_id: ~~testsmerf~~1~~g1q2\n parent_id: ~~testsmerf~~1\n question: \"Are you married \"\n selectionbox_multiplechoice: \n sort_order: 2\n textbox_size: \n textfield_size: \n type: singlechoice\n validation: \n - &id037 !ruby/object:SmerfQuestion \n answers: &id008 \n chess: \n default: N\n answer: Chess\n sort_order: 1\n code: 1\n woodwork: \n default: N\n answer: Wood work\n sort_order: 2\n code: 2\n sleeping: \n default: N\n answer: Sleeping\n sort_order: 3\n code: 3\n other: \n default: N\n answer: \"Other \"\n sort_order: 4\n code: 4\n subquestions: &id005 \n other_industries: \n help: \"Please specify \"\n textbox_size: 30x3\n sort_order: 1\n code: g1q3a4s1\n validation: validate_sub_question\n type: textbox\n question: \n child_items: \n - &id017 !ruby/object:SmerfAnswer \n answer: Chess\n child_items: []\n\n code: \"1\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q3~~1\n parent_id: ~~testsmerf~~1~~g1q3\n sort_order: 1\n subquestions: \n - &id022 !ruby/object:SmerfAnswer \n answer: Wood work\n child_items: []\n\n code: \"2\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q3~~2\n parent_id: ~~testsmerf~~1~~g1q3\n sort_order: 2\n subquestions: \n - &id027 !ruby/object:SmerfAnswer \n answer: Sleeping\n child_items: []\n\n code: \"3\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q3~~3\n parent_id: ~~testsmerf~~1~~g1q3\n sort_order: 3\n subquestions: \n - &id033 !ruby/object:SmerfAnswer \n answer: \"Other \"\n child_items: \n - &id038 !ruby/object:SmerfQuestion \n answers: \n child_items: []\n\n code: g1q3a4s1\n form_object: *id001\n header: \n help: \"Please specify \"\n item_id: ~~testsmerf~~1~~g1q3~~4~~g1q3a4s1\n parent_id: ~~testsmerf~~1~~g1q3~~4\n question: \n selectionbox_multiplechoice: \n sort_order: 1\n textbox_size: 30x3\n textfield_size: \n type: textbox\n validation: validate_sub_question\n code: \"4\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q3~~4\n parent_id: ~~testsmerf~~1~~g1q3\n sort_order: 4\n subquestions: *id005\n code: g1q3\n form_object: *id001\n header: Another header that you can group questions under\n help: \"Mark <b>all</b> that apply \"\n item_id: ~~testsmerf~~1~~g1q3\n parent_id: ~~testsmerf~~1\n question: \"What are your hobbies \"\n selectionbox_multiplechoice: \n sort_order: 3\n textbox_size: \n textfield_size: \n type: multiplechoice\n validation: \n - &id041 !ruby/object:SmerfQuestion \n answers: &id006 \n green: \n default: N\n answer: \"Green \"\n sort_order: 3\n code: 3\n blue: \n default: Y\n answer: \"Blue \"\n sort_order: 2\n code: 2\n red: \n default: N\n answer: Red\n sort_order: 1\n code: 1\n yellow: \n default: N\n answer: \"Yellow \"\n sort_order: 4\n code: 4\n child_items: \n - &id016 !ruby/object:SmerfAnswer \n answer: Red\n child_items: []\n\n code: \"1\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q4~~1\n parent_id: ~~testsmerf~~1~~g1q4\n sort_order: 1\n subquestions: \n - &id019 !ruby/object:SmerfAnswer \n answer: \"Blue \"\n child_items: []\n\n code: \"2\"\n default: Y\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q4~~2\n parent_id: ~~testsmerf~~1~~g1q4\n sort_order: 2\n subquestions: \n - &id025 !ruby/object:SmerfAnswer \n answer: \"Green \"\n child_items: []\n\n code: \"3\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q4~~3\n parent_id: ~~testsmerf~~1~~g1q4\n sort_order: 3\n subquestions: \n - &id029 !ruby/object:SmerfAnswer \n answer: \"Yellow \"\n child_items: []\n\n code: \"4\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q4~~4\n parent_id: ~~testsmerf~~1~~g1q4\n sort_order: 4\n subquestions: \n code: g1q4\n form_object: *id001\n header: \n help: \"Choose <b>one</b> of the following \"\n item_id: ~~testsmerf~~1~~g1q4\n parent_id: ~~testsmerf~~1\n question: \"What is your favourite colour \"\n selectionbox_multiplechoice: \n sort_order: 4\n textbox_size: \n textfield_size: \n type: selectionbox\n validation: validate_mandatory_question\n - &id044 !ruby/object:SmerfQuestion \n answers: &id010 \n fr: \n default: N\n answer: France\n sort_order: 3\n code: 3\n sa: \n default: N\n answer: \"South Africa \"\n sort_order: 4\n code: 4\n us: \n default: Y\n answer: \"United States \"\n sort_order: 2\n code: 2\n au: \n default: N\n answer: Australia\n sort_order: 1\n code: 1\n child_items: \n - &id020 !ruby/object:SmerfAnswer \n answer: Australia\n child_items: []\n\n code: \"1\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q5~~1\n parent_id: ~~testsmerf~~1~~g1q5\n sort_order: 1\n subquestions: \n - &id031 !ruby/object:SmerfAnswer \n answer: \"United States \"\n child_items: []\n\n code: \"2\"\n default: Y\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q5~~2\n parent_id: ~~testsmerf~~1~~g1q5\n sort_order: 2\n subquestions: \n - &id036 !ruby/object:SmerfAnswer \n answer: France\n child_items: []\n\n code: \"3\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q5~~3\n parent_id: ~~testsmerf~~1~~g1q5\n sort_order: 3\n subquestions: \n - &id040 !ruby/object:SmerfAnswer \n answer: \"South Africa \"\n child_items: []\n\n code: \"4\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q5~~4\n parent_id: ~~testsmerf~~1~~g1q5\n sort_order: 4\n subquestions: \n code: g1q5\n form_object: *id001\n header: \n help: \"Choose <b>all</b> that apply \"\n item_id: ~~testsmerf~~1~~g1q5\n parent_id: ~~testsmerf~~1\n question: \"Which countries have you visited \"\n selectionbox_multiplechoice: Y\n sort_order: 4\n textbox_size: \n textfield_size: \n type: selectionbox\n validation: \n code: \"1\"\n description: |\n This is a brief description of the Personal Details Grouphere we ask you some personal details ...\n\n form_object: *id001\n item_id: ~~testsmerf~~1\n name: Personal Details Group\n parent_id: ~~testsmerf\n questions: &id013 \n favourite_color: \n help: \"Choose <b>one</b> of the following \"\n sort_order: 4\n code: g1q4\n validation: validate_mandatory_question\n type: selectionbox\n question: \"What is your favourite colour \"\n answers: *id006\n specify_your_age: \n help: \"Select the <b>one</b> that apply \"\n sort_order: 1\n code: g1q1\n validation: validate_mandatory_question\n type: singlechoice\n question: \"Specify your ages \"\n answers: *id007\n hobbies: \n help: \"Mark <b>all</b> that apply \"\n sort_order: 3\n code: g1q3\n type: multiplechoice\n header: Another header that you can group questions under\n question: \"What are your hobbies \"\n answers: *id008\n are_you_married: \n help: \n sort_order: 2\n code: g1q2\n type: singlechoice\n question: \"Are you married \"\n answers: *id009\n os_travel: \n help: \"Choose <b>all</b> that apply \"\n sort_order: 4\n code: g1q5\n type: selectionbox\n question: \"Which countries have you visited \"\n answers: *id010\n selectionbox_multiplechoice: Y\n - &id050 !ruby/object:SmerfGroup \n child_items: \n - &id034 !ruby/object:SmerfQuestion \n answers: &id012 \n it: \n default: N\n answer: Information Technology\n sort_order: 1\n code: 1\n finance: \n default: N\n answer: \"Finance \"\n sort_order: 3\n code: 3\n other: \n default: N\n answer: \"Other \"\n sort_order: 4\n code: 4\n subquestions: &id011 \n other_industries: \n help: \"Please specify \"\n textbox_size: 30x3\n sort_order: 1\n code: g2q1a4s1\n validation: validate_sub_question\n type: textbox\n question: \n accounting: \n default: N\n answer: \"Accounting \"\n sort_order: 2\n code: 2\n child_items: \n - &id035 !ruby/object:SmerfAnswer \n answer: Information Technology\n child_items: []\n\n code: \"1\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~2~~g2q1~~1\n parent_id: ~~testsmerf~~2~~g2q1\n sort_order: 1\n subquestions: \n - &id039 !ruby/object:SmerfAnswer \n answer: \"Accounting \"\n child_items: []\n\n code: \"2\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~2~~g2q1~~2\n parent_id: ~~testsmerf~~2~~g2q1\n sort_order: 2\n subquestions: \n - &id043 !ruby/object:SmerfAnswer \n answer: \"Finance \"\n child_items: []\n\n code: \"3\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~2~~g2q1~~3\n parent_id: ~~testsmerf~~2~~g2q1\n sort_order: 3\n subquestions: \n - &id046 !ruby/object:SmerfAnswer \n answer: \"Other \"\n child_items: \n - &id030 !ruby/object:SmerfQuestion \n answers: \n child_items: []\n\n code: g2q1a4s1\n form_object: *id001\n header: \n help: \"Please specify \"\n item_id: ~~testsmerf~~2~~g2q1~~4~~g2q1a4s1\n parent_id: ~~testsmerf~~2~~g2q1~~4\n question: \n selectionbox_multiplechoice: \n sort_order: 1\n textbox_size: 30x3\n textfield_size: \n type: textbox\n validation: validate_sub_question\n code: \"4\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~2~~g2q1~~4\n parent_id: ~~testsmerf~~2~~g2q1\n sort_order: 4\n subquestions: *id011\n code: g2q1\n form_object: *id001\n header: \n help: \"Mark <b>all</b> that apply \"\n item_id: ~~testsmerf~~2~~g2q1\n parent_id: ~~testsmerf~~2\n question: \"Which industries have you worked in \"\n selectionbox_multiplechoice: \n sort_order: 1\n textbox_size: \n textfield_size: \n type: multiplechoice\n validation: validate_mandatory_question\n - &id042 !ruby/object:SmerfQuestion \n answers: \n child_items: []\n\n code: g2q3\n form_object: *id001\n header: \n help: \n item_id: ~~testsmerf~~2~~g2q3\n parent_id: ~~testsmerf~~2\n question: How many years have you worked in the industry\n selectionbox_multiplechoice: \n sort_order: 3\n textbox_size: \n textfield_size: 10\n type: textfield\n validation: validate_mandatory_question, validate_years\n code: \"2\"\n description: \"Brief description of the employment details group \"\n form_object: *id001\n item_id: ~~testsmerf~~2\n name: Employment Details Group\n parent_id: ~~testsmerf\n questions: &id014 \n which_industry: \n help: \"Mark <b>all</b> that apply \"\n sort_order: 1\n code: g2q1\n validation: validate_mandatory_question\n type: multiplechoice\n question: \"Which industries have you worked in \"\n answers: *id012\n how_many_years: \n help: \n sort_order: 3\n code: g2q3\n validation: validate_mandatory_question, validate_years\n type: textfield\n question: How many years have you worked in the industry\n header: \n textfield_size: 10\n code: testsmerf\n errors: {}\n\n form_object: *id001\n group_sort_order_field: code\n groups: \n personal_details: \n name: Personal Details Group\n questions: *id013\n code: 1\n description: |\n This is a brief description of the Personal Details Grouphere we ask you some personal details ...\n\n employment_details: \n name: Employment Details Group\n question_sort_order_field: sort_order\n questions: *id014\n code: 2\n description: \"Brief description of the employment details group \"\n item_id: ~~testsmerf\n item_index: \n ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~1: *id015\n ~~testsmerf~~1~~g1q4~~1: *id016\n ~~testsmerf~~1~~g1q3~~1: *id017\n ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~2: *id018\n ~~testsmerf~~1~~g1q4~~2: *id019\n ~~testsmerf~~1~~g1q5~~1: *id020\n ~~testsmerf~~1~~g1q2~~1: *id021\n ~~testsmerf~~1~~g1q3~~2: *id022\n ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1: *id023\n ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~3: *id024\n ~~testsmerf~~1~~g1q4~~3: *id025\n ~~testsmerf~~1~~g1q2~~2: *id026\n ~~testsmerf~~1~~g1q3~~3: *id027\n ~~testsmerf~~1~~g1q1: *id028\n ~~testsmerf~~1~~g1q4~~4: *id029\n ~~testsmerf~~2~~g2q1~~4~~g2q1a4s1: *id030\n ~~testsmerf~~1~~g1q5~~2: *id031\n ~~testsmerf~~1~~g1q2: *id032\n ~~testsmerf~~1~~g1q3~~4: *id033\n ~~testsmerf~~2~~g2q1: *id034\n ~~testsmerf~~2~~g2q1~~1: *id035\n ~~testsmerf~~1~~g1q5~~3: *id036\n ~~testsmerf~~1~~g1q3: *id037\n ~~testsmerf~~1~~g1q3~~4~~g1q3a4s1: *id038\n ~~testsmerf: *id001\n ~~testsmerf~~2~~g2q1~~2: *id039\n ~~testsmerf~~1~~g1q5~~4: *id040\n ~~testsmerf~~1~~g1q4: *id041\n ~~testsmerf~~2~~g2q3: *id042\n ~~testsmerf~~2~~g2q1~~3: *id043\n ~~testsmerf~~1~~g1q5: *id044\n ~~testsmerf~~1~~g1q1~~1: *id045\n ~~testsmerf~~2~~g2q1~~4: *id046\n ~~testsmerf~~1: *id047\n ~~testsmerf~~1~~g1q1~~2: *id048\n ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~3~~g1q1a3s1a3s1: *id049\n ~~testsmerf~~2: *id050\n ~~testsmerf~~1~~g1q1~~3: *id051\n name: Test SMERF Form\n parent_id: \"\"\n thank_you: |\n <b>Thank you for your input.</b><br><br>\n \n Should you wish to discuss this survey please contact<br>\n Joe Bloggs<br>\n Tel. 12 345 678<br>\n e-mail <A HREF=\\\"mailto:jbloggs@xyz.com.au\\\">Joe\'s email</A><br><br>\n \n February 2007\n\n welcome: |\n <b>Welcome:</b><br>\n Thank you for taking part in our Test survey we appreciate your\n input.<br><br>\n \n <b>PRIVACY STATEMENT</b><br>\n We will keep all the information you provide private and not share\n it with anyone else....<br>\n\n', '2010-04-19 03:34:56', 1)[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSmerfFormsUser Load (1.0ms)[0m   [0mSELECT * FROM `smerf_forms_users` WHERE (smerf_form_id = 1 AND user_id = 1) LIMIT 1[0m
+Rendering smerf_forms/create
+Rendered smerf_forms/_smerf_form (16.0ms)
+Completed in 875ms (View: 21, DB: 46) | 200 OK [http://localhost/smerf_forms/testsmerf]
+
+
+Processing SmerfFormsController#create (for 127.0.0.1 at 2010-04-19 11:48:20) [POST]
+  Parameters: {"responses"=>{"g1q3a4s1"=>"", "g1q1a3s1a3s1"=>"", "g1q2"=>"1", "g2q3"=>"", "g1q4"=>["2"], "g1q5"=>["1", "2", "3", "4"], "g2q1a4s1"=>""}, "commit"=>"Press to Save your answers", "authenticity_token"=>"e9b58640a36f66c8a10afae6b673c434d208967f", "smerf_form_id"=>"1"}
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSmerfForm Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `smerf_forms`[0m
+  [4;35;1mSmerfForm Load (3.0ms)[0m   [0mSELECT * FROM `smerf_forms` WHERE (`smerf_forms`.`id` = 1) [0m
+Rendering smerf_forms/create
+Rendered smerf_forms/_smerf_form (125.0ms)
+Completed in 181ms (View: 133, DB: 11) | 200 OK [http://localhost/smerf_forms]
+
+
+Processing SmerfFormsController#create (for 127.0.0.1 at 2010-04-19 11:48:48) [POST]
+  Parameters: {"responses"=>{"g1q3a4s1"=>"", "g1q1a3s1a3s1"=>"", "g1q1"=>"1", "g2q1"=>{"1"=>"1"}, "g1q2"=>"1", "g1q3"=>{"1"=>"1"}, "g2q3"=>"", "g1q4"=>["2"], "g1q5"=>["1", "2", "3", "4"], "g2q1a4s1"=>""}, "commit"=>"Press to Save your answers", "authenticity_token"=>"e9b58640a36f66c8a10afae6b673c434d208967f", "smerf_form_id"=>"1"}
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSmerfForm Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `smerf_forms`[0m
+  [4;35;1mSmerfForm Load (3.0ms)[0m   [0mSELECT * FROM `smerf_forms` WHERE (`smerf_forms`.`id` = 1) [0m
+Rendering smerf_forms/create
+Rendered smerf_forms/_smerf_form (28.0ms)
+Completed in 83ms (View: 36, DB: 11) | 200 OK [http://localhost/smerf_forms]
+
+
+Processing SmerfFormsController#create (for 127.0.0.1 at 2010-04-19 11:48:56) [POST]
+  Parameters: {"responses"=>{"g1q3a4s1"=>"", "g1q1a3s1a3s1"=>"", "g1q1"=>"1", "g2q1"=>{"1"=>"1"}, "g1q2"=>"1", "g1q3"=>{"1"=>"1"}, "g2q3"=>"12", "g1q4"=>["2"], "g1q5"=>["1", "2", "3", "4"], "g2q1a4s1"=>""}, "commit"=>"Press to Save your answers", "authenticity_token"=>"e9b58640a36f66c8a10afae6b673c434d208967f", "smerf_form_id"=>"1"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSmerfForm Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `smerf_forms`[0m
+  [4;35;1mSmerfForm Load (2.0ms)[0m   [0mSELECT * FROM `smerf_forms` WHERE (`smerf_forms`.`id` = 1) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSmerfFormsUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `smerf_forms_users`[0m
+  [4;36;1mSmerfFormsUser Create (1.0ms)[0m   [0;1mINSERT INTO `smerf_forms_users` (`responses`, `smerf_form_id`, `user_id`) VALUES('--- !map:HashWithIndifferentAccess \ng1q3a4s1: \"\"\ng1q1: \"1\"\ng1q1a3s1a3s1: \"\"\ng1q2: \"1\"\ng2q1: !map:HashWithIndifferentAccess \n \"1\": \"1\"\ng1q3: !map:HashWithIndifferentAccess \n \"1\": \"1\"\ng1q4: \n- \"2\"\ng2q3: \"12\"\ng1q5: \n- \"1\"\n- \"2\"\n- \"3\"\n- \"4\"\ng2q1a4s1: \"\"\n', 1, 1)[0m
+  [4;35;1mSmerfResponse Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `smerf_responses`[0m
+  [4;36;1mSmerfResponse Create (1.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `smerf_forms_user_id`, `question_code`) VALUES('1', 1, 'g1q1')[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `smerf_forms_user_id`, `question_code`) VALUES('1', 1, 'g1q2')[0m
+  [4;36;1mSmerfResponse Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `smerf_forms_user_id`, `question_code`) VALUES('1', 1, 'g2q1')[0m
+  [4;35;1mSmerfResponse Create (1.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `smerf_forms_user_id`, `question_code`) VALUES('1', 1, 'g1q3')[0m
+  [4;36;1mSmerfResponse Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `smerf_forms_user_id`, `question_code`) VALUES('2', 1, 'g1q4')[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `smerf_forms_user_id`, `question_code`) VALUES('12', 1, 'g2q3')[0m
+  [4;36;1mSmerfResponse Create (1.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `smerf_forms_user_id`, `question_code`) VALUES('1', 1, 'g1q5')[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `smerf_forms_user_id`, `question_code`) VALUES('2', 1, 'g1q5')[0m
+  [4;36;1mSmerfResponse Create (1.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `smerf_forms_user_id`, `question_code`) VALUES('3', 1, 'g1q5')[0m
+  [4;35;1mSmerfResponse Create (1.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `smerf_forms_user_id`, `question_code`) VALUES('4', 1, 'g1q5')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCOMMIT[0m
+Rendering smerf_forms/edit
+Rendered smerf_forms/_smerf_form (16.0ms)
+Completed in 125ms (View: 22, DB: 24) | 200 OK [http://localhost/smerf_forms]
+
+
+Processing SmerfFormsController#create (for 127.0.0.1 at 2010-04-19 11:50:19) [POST]
+  Parameters: {"responses"=>{"g1q3a4s1"=>"", "g1q1a3s1a3s1"=>"", "g1q1"=>"1", "g2q1"=>{"1"=>"1"}, "g1q2"=>"1", "g1q3"=>{"1"=>"1"}, "g2q3"=>"12", "g1q4"=>["2"], "g1q5"=>["1", "2", "3", "4"], "g2q1a4s1"=>""}, "commit"=>"Press to Save your answers", "authenticity_token"=>"e9b58640a36f66c8a10afae6b673c434d208967f", "smerf_form_id"=>"1"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSmerfForm Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `smerf_forms`[0m
+  [4;36;1mSmerfForm Load (4.0ms)[0m   [0;1mSELECT * FROM `smerf_forms` WHERE (`smerf_forms`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSmerfFormsUser Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `smerf_forms_users`[0m
+  [4;35;1mSmerfFormsUser Create (0.0ms)[0m   [0mINSERT INTO `smerf_forms_users` (`responses`, `smerf_form_id`, `user_id`) VALUES('--- !map:HashWithIndifferentAccess \ng1q3a4s1: \"\"\ng1q1: \"1\"\ng1q1a3s1a3s1: \"\"\ng1q2: \"1\"\ng2q1: !map:HashWithIndifferentAccess \n \"1\": \"1\"\ng1q3: !map:HashWithIndifferentAccess \n \"1\": \"1\"\ng1q4: \n- \"2\"\ng2q3: \"12\"\ng1q5: \n- \"1\"\n- \"2\"\n- \"3\"\n- \"4\"\ng2q1a4s1: \"\"\n', 1, 1)[0m
+  [4;36;1mSmerfResponse Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `smerf_responses`[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `smerf_forms_user_id`, `question_code`) VALUES('1', 2, 'g1q1')[0m
+  [4;36;1mSmerfResponse Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `smerf_forms_user_id`, `question_code`) VALUES('1', 2, 'g1q2')[0m
+  [4;35;1mSmerfResponse Create (1.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `smerf_forms_user_id`, `question_code`) VALUES('1', 2, 'g2q1')[0m
+  [4;36;1mSmerfResponse Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `smerf_forms_user_id`, `question_code`) VALUES('1', 2, 'g1q3')[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `smerf_forms_user_id`, `question_code`) VALUES('2', 2, 'g1q4')[0m
+  [4;36;1mSmerfResponse Create (1.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `smerf_forms_user_id`, `question_code`) VALUES('12', 2, 'g2q3')[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `smerf_forms_user_id`, `question_code`) VALUES('1', 2, 'g1q5')[0m
+  [4;36;1mSmerfResponse Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `smerf_forms_user_id`, `question_code`) VALUES('2', 2, 'g1q5')[0m
+  [4;35;1mSmerfResponse Create (1.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `smerf_forms_user_id`, `question_code`) VALUES('3', 2, 'g1q5')[0m
+  [4;36;1mSmerfResponse Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `smerf_forms_user_id`, `question_code`) VALUES('4', 2, 'g1q5')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+Rendering smerf_forms/edit
+Rendered smerf_forms/_smerf_form (25.0ms)
+Completed in 264ms (View: 33, DB: 28) | 200 OK [http://localhost/smerf_forms]
