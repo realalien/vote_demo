@@ -1,6 +1,10 @@
 
 
 
+20100420:
+* One question remains and how to bundle page element to the objects?
+
+
 20100419:
 * after studying the code of smerf, I found that project bypassed the relations by using 
   a data dump of a form, instead of an individual questions.

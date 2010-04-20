@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100419033456) do
+ActiveRecord::Schema.define(:version => 20100420030626) do
 
   create_table "answers", :force => true do |t|
     t.text     "description"
@@ -50,9 +50,20 @@ ActiveRecord::Schema.define(:version => 20100419033456) do
     t.datetime "updated_at"
   end
 
+  create_table "responses", :force => true do |t|
+    t.integer  "survey_id"
+    t.integer  "user_id"
+    t.integer  "question_id"
+    t.integer  "rating"
+    t.text     "answer_text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sheet_answer_relations", :force => true do |t|
     t.integer  "survey_sheet_id"
     t.integer  "answer_id"
+    t.integer  "question_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -96,6 +107,7 @@ ActiveRecord::Schema.define(:version => 20100419033456) do
   end
 
   create_table "survey_sheets", :force => true do |t|
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "modification_count"

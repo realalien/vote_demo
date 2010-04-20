@@ -1,0 +1,25 @@
+
+
+<!--TODO: add error message handling code here-->
+
+<%= error_messages_for :survey_sheet %>
+
+
+<!-- display questions with preset answers, 
+    IDEA: maybe we can use view helper to group each question/response -->	
+<% @survey_sheet.questions.each do | question| %>   <!--TODO: remember to -->
+	<!-- question section -->
+	<b><%= question.title %></b><br/>
+	Question:  <%= question.description%> <br/>
+	<!-- response/answer section -->
+	<!-- one question to one answer , not a copy of object, a direct reference, can it be?-->
+	
+
+<% end %>
+
+<!-- Add save button -->
+<div class="submit">
+<p>
+<%= submit_tag 'Press to Save/Update your answers', :disable_with => "Saving&hellip;" %>
+</p>                        
+</div> 
