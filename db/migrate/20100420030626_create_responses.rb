@@ -1,7 +1,7 @@
 class CreateResponses < ActiveRecord::Migration
   def self.up
     create_table :responses do |t|
-      t.integer :survey_id
+      t.integer :survey_sheet_id
       t.integer :user_id
       t.integer :question_id
       t.integer :rating

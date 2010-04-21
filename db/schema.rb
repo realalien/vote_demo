@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(:version => 20100420030626) do
   end
 
   create_table "responses", :force => true do |t|
-    t.integer  "survey_id"
+    t.integer  "survey_sheet_id"
     t.integer  "user_id"
     t.integer  "question_id"
     t.integer  "rating"

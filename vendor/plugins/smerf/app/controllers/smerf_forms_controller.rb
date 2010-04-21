@@ -42,7 +42,7 @@ class SmerfFormsController < ApplicationController
       render(:action => "edit")
     else
       # Render in create mode if the user have not completed this form
-      render(:action => "create")      
+      render(:action => "create") 
     end        
   end
 

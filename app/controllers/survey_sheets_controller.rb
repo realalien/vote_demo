@@ -13,14 +13,14 @@ class SurveySheetsController < ApplicationController
     def show
       if params["id"]
         suppose_survey_def_id = params["id"]
-        @survey = Survey.find(suppose_survey_def_id)
-        @questions = @survey.questions  # TODO: sort by sequence
+        @survey_def = Survey.find(suppose_survey_def_id)
+        #@questions = @survey.questions  # TODO: sort by sequence or some columns
         #@answers ||= QuestionAnswerByUser.find(:all, :conditions => { :user_id => self.current_user } )  
         #TODO: if @answers are in version, try to load the latest answers
         
         # get responses, if any, render 'edit'; it not , render 'create'
         # TODO: revise the code to ellaminate the sql queries
-        any_responses = Response.find(:first, :conditions => ["user_id = :user_id and survey_id = :survey_id", 
+        any_responses = Response.find(:first, :conditions => ["user_id = :user_id and survey_sheet_id = :survey_id", 
                                                           { :user_id => self.current_user.id, 
                                                             :survey_id => suppose_survey_def_id }  ] )
         
@@ -28,95 +28,122 @@ class SurveySheetsController < ApplicationController
         if any_responses
           # load survey_sheet 
            @survey_sheet = SurveySheet.find(:first, 
-                                          :conditions => ["user_id = :user_id and survey_id = :survey_id", 
+                                          :conditions => ["user_id = :user_id and survey_sheet_id = :survey_id", 
                                                           { :user_id => self.current_user.id, 
                                                             :survey_id => suppose_survey_def_id }  ] )
-          
-          render(:action => "edit")
-        else
-           @survey_sheet = SurveySheet.find(:first, 
-                                          :conditions => ["user_id = :user_id and survey_id = :survey_id", 
-                                                          { :user_id => self.current_user.id, 
-                                                            :survey_id => suppose_survey_def_id }  ] )
-          render(:action => "create")
-        end
-      end
+           logger.info(@survey_sheet || "No sheet found!?")
+           logger.info("------------------------")
+           render(:action => "edit")
+        else  # no responses
+           # make sure there also has No survey_sheet.
+             
+           # create a SurveySheet according to the Survey(definition)
+           suppose_survey_def_id = params["id"]
+           survey_def = Survey.find(suppose_survey_def_id)
+           
+           if not survey_def:  
+               render :text => "There is no such survey!"  # flash and redirect
+           else
+               # construct a new instance of survey_sheet to get template render correctly!
+               @survey_sheet = SurveySheet.new
+               @survey_sheet.survey_id = @survey_def.id
+               @survey_sheet.user_id = self.current_user.id
+               @survey_sheet.questions << survey_def.questions  # Q: what about the change of survey_def?
+               @survey_sheet.save!  # in order to let responses recognize
+               @survey_sheet.questions.each do |question|
+                      # create a response object
+                      r = Response.new()
+                      r.survey_sheet_id = @survey_sheet.id
+                      r.question_id = question.id
+                      r.user_id = self.current_user.id
+                      @survey_sheet.responses << r 
+               end
+               @survey_sheet.save!
+               if @survey_sheet.errors.empty?
+                  render(:action => "create")
+               else
+                  # print the error
+                  render(:text => @survey_sheet.errors.to_s)
+               end # if @survey_sheet.errors.empty?
+           end  # not survey_def:  
+        end # if any_responses
+      end # if params["id"]
     end
   
-    # POST /smerf_forms
+    # POST /survey_sheet/id
     # why new? 
     # create a record of question_answer_by_user?
     # TODO: how to make user into such controller/action?
     def create
-        if params["id"]
-          suppose_survey_def_id = params["id"]
-          # create a SurveySheet according to the Survey(definition) 
-          survey_def = Survey.find(suppose_survey_def_id)
-          
-          
-          if not survey_def:  
-              render :text => "no such survey definition!"  # flash and redirect
-          else
-              # find if login user has that sheet, if any, go to edit page
-              # Q: if find(:first) not sequently first, else how?
-              
-              # * SUG 20100419: like smerf, I think it could be easier to load 
-              #   the form_defintion(question with ids) 
-              #   and all the response to the form(responses with question_id, call model) 
-              #   then, we can display one by one ( a response has a question id.)
-              @survey_sheet = SurveySheet.find(:first, 
-                                          :conditions => ["user_id = :user_id and survey_id = :survey_id", 
+        # parse the parameters hash to create a object
+        logger.info "in action create ............."
+        if (params.has_key?(/response\d+/))
+            #Q: if client fake the responses in the params, hwo to avoid those operations?
+            # load the survey_sheet and its responses.
+            
+            
+            
+            
+            render :text => "in create methods."
+        else
+            render :text => "no response found in create!"
+        end
+        
+        
+    end
+    
+    # PUT /survey_sheet/1
+    def update
+        if (has_survey_responses(params))
+            #render :text => "in update, params has responses, so we can parse and update!"
+            # * parse and update the survey_sheet and responses, see if we can DRY by doing sth 
+            #   in helper or rails multiple model updating.
+            sheet_id = params["survey_sheet_id"]
+            
+            
+            @survey_sheet = SurveySheet.find(:first, :conditions => ["user_id = :user_id and survey_id = :survey_id", 
                                                           { :user_id => self.current_user.id, 
-                                                            :survey_id => suppose_survey_def_id }  ] )
-              # TODO: log here!
-              
-              if @survey_sheet
-                  # load all the responses of the users, to the specified survey for editing
-                  rs = Response.find(:all, :condition => [ "user_id = :user_id and survey_id = :survey_id", 
-                                                          { :user_id => self.current_user.id, 
-                                                            :survey_id => suppose_survey_def_id }   ] )
-                  
-                  @survey_sheet.responses << rs  # if we eagerly retrieve the data, maybe there is no need to do this op!
-
-                  # TODO: go to edit page   edit/:target_survey_id
-                  render(:action => "edit")
-                  
-              else # create a new survey_sheet
-                @survey_sheet = SurveySheet.new
-                
-                
-                @survey_sheet.questions << survey_def.questions # create a new survey_sheet
-                # Q: what about the change of survey_def?
-                
-                # 20100419 Be sure to setup responses with question id
-                # wrong: @survey_sheet.questions.size.times { @survey_sheet.answers.build } # we can not setup the response's attr this way.
-                
-                # To make it clear, the response model should include 
-                # 'user_id','question_id','rate_value'(if rateable),'comment text(if commentable)'  (later include privilege setting)
-                
-                @survey_sheet.questions.each do |question|
-                  # create a response object
-                  r = Response.new()
-                  r.survey_id = suppose_survey_def_id
-                  r.question_id = question.id
-                  r.user_id = self.current_user.id
-                  @survey_sheet.responses << r 
-                  # link response object, user_id, survey_id into a model for later ref. 
-                end
-                
-              end
-          end
-          
-           
-          
+                                                            :survey_id => sheet_id }  ] )
+            
+            @survey_sheet.responses.each do | response | 
+              response.answer_text = params["response#{response.question_id}"]
+            end
+            @survey_sheet.save!
+            render :action => "edit"
+        else
+            render :text => "no response found!"
         end
     end
+
+    def index
+      @previous_sheets = SurveySheet.find(:all, :conditions => ["user_id = :user_id ", 
+                                                          { :user_id => self.current_user.id, }  ] )
+      # @available_sheets
+      @available_sheets = Survey.find(:all)
+    end
   
-    # PUT /smerf/1
-    def update
-      
+  
+    def edit
+      @survey_sheet = SurveySheet.find(:first, :conditions => ["id = :sheet_id and user_id = :user_id ", 
+                                                          { :sheet_id => params["id"],:user_id => self.current_user.id }  ]) # Q: why first?
     end
 
-  
-  
+
+    private
+    def has_survey_responses(params_hash)
+       # assertion or sanity check  hash
+       if params_hash.is_a?(Hash)
+          params_hash.each_key do |key|
+            if key =~ /response\d+/
+              return true
+            end
+          end
+          return false
+       else
+           return false
+       end
+    end
+    
 end
+
+
