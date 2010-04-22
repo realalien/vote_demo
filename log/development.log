@@ -35034,3 +35034,75 @@ Rendering survey_sheets/edit
   [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `rates` WHERE (`rates`.`rater_id` = 1) AND (`rates`.rateable_id = 2 AND `rates`.rateable_type = 'Question' AND (`rates`.`dimension` IS NULL)) LIMIT 1[0m
 Rendered survey_sheets/_survey_sheet_form (327.0ms)
 Completed in 443ms (View: 311, DB: 53) | 200 OK [http://localhost/survey_sheets/1]
+** vote_fu: setting up load paths
+** vote_fu: initialized properly.
+** vote_fu: setting up load paths
+** vote_fu: initialized properly.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTravelPlaces (20100401123342)
+Migrating to VoteFuMigration (20100401123420)
+Migrating to CreateUsers (20100401132628)
+Migrating to CreateQuestions (20100412053608)
+Migrating to CreateComments (20100412062450)
+Migrating to CreateSurveys (20100412065253)
+Migrating to CreateSurveyQuestionAssignments (20100412070644)
+Migrating to CreateAnswers (20100413095259)
+Migrating to QuestionAnswerByUsers (20100413095950)
+Migrating to CreateSurveySheets (20100414063344)
+Migrating to CreateSheetQuestionRelations (20100414071014)
+Migrating to CreateSheetAnswerRelations (20100415011737)
+Migrating to CreateSmerfs (20100419033456)
+Migrating to CreateResponses (20100420030626)
+Migrating to CreateRates (20100422015940)
+Migrating to AddVersioning (20100422085348)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mResponse Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `responses`[0m
+** vote_fu: setting up load paths
+** vote_fu: initialized properly.
+** vote_fu: setting up load paths
+** vote_fu: initialized properly.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTravelPlaces (20100401123342)
+Migrating to VoteFuMigration (20100401123420)
+Migrating to CreateUsers (20100401132628)
+Migrating to CreateQuestions (20100412053608)
+Migrating to CreateComments (20100412062450)
+Migrating to CreateSurveys (20100412065253)
+Migrating to CreateSurveyQuestionAssignments (20100412070644)
+Migrating to CreateAnswers (20100413095259)
+Migrating to QuestionAnswerByUsers (20100413095950)
+Migrating to CreateSurveySheets (20100414063344)
+Migrating to CreateSheetQuestionRelations (20100414071014)
+Migrating to CreateSheetAnswerRelations (20100415011737)
+Migrating to CreateSmerfs (20100419033456)
+Migrating to CreateResponses (20100420030626)
+Migrating to CreateRates (20100422015940)
+Migrating to AddVersioning (20100422085348)
+** vote_fu: setting up load paths
+** vote_fu: initialized properly.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTravelPlaces (20100401123342)
+Migrating to VoteFuMigration (20100401123420)
+Migrating to CreateUsers (20100401132628)
+Migrating to CreateQuestions (20100412053608)
+Migrating to CreateComments (20100412062450)
+Migrating to CreateSurveys (20100412065253)
+Migrating to CreateSurveyQuestionAssignments (20100412070644)
+Migrating to CreateAnswers (20100413095259)
+Migrating to QuestionAnswerByUsers (20100413095950)
+Migrating to CreateSurveySheets (20100414063344)
+Migrating to CreateSheetQuestionRelations (20100414071014)
+Migrating to CreateSheetAnswerRelations (20100415011737)
+Migrating to CreateSmerfs (20100419033456)
+Migrating to CreateResponses (20100420030626)
+Migrating to CreateRates (20100422015940)
+Migrating to AddVersioning (20100422085348)

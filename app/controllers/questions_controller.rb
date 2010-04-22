@@ -103,6 +103,7 @@ class QuestionsController < ApplicationController
     response.rating = params[:stars]
     response.save!
     
+    # TODO: The page gives error!
     render :update do |page|
       logger.info "----------------------------------"
       logger.info "#{@question.wrapper_dom_id(params)}"
@@ -111,6 +112,8 @@ class QuestionsController < ApplicationController
       logger.info "----------------------------------"
       logger.info params
       logger.info "----------------------------------"
+      
+      
       # try to remove the heading underline to test if the id caused the RJS update error.
       if @question.wrapper_dom_id(params)[0] == "_"
         idd = @question.wrapper_dom_id(params).slice(1,@question.wrapper_dom_id(params).size)
