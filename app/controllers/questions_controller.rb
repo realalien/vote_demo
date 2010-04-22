@@ -90,6 +90,37 @@ class QuestionsController < ApplicationController
   end
 
   def get_survey
-	@survey = Survey.find(params[:survey_id])
+	   @survey = Survey.find(params[:id])
   end
+  
+  # for each user
+  def rate
+    @question = Question.find(params[:id])
+    @question.rate(params[:stars], current_user, params[:dimension])
+    
+    # update the responses table to make it archievale/versionable?
+    response = Response.find(:first, :conditions => [ "user_id = :user_id and question_id = :question_id" , { :user_id=> current_user.id, :question_id => @question.id } ])
+    response.rating = params[:stars]
+    response.save!
+    
+    render :update do |page|
+      logger.info "----------------------------------"
+      logger.info "#{@question.wrapper_dom_id(params)}"
+      logger.info "----------------------------------"
+      logger.info "#{ratings_for(@question, params.merge(:wrap => false))}"
+      logger.info "----------------------------------"
+      logger.info params
+      logger.info "----------------------------------"
+      # try to remove the heading underline to test if the id caused the RJS update error.
+      if @question.wrapper_dom_id(params)[0] == "_"
+        idd = @question.wrapper_dom_id(params).slice(1,@question.wrapper_dom_id(params).size)
+      else
+        idd = @question.wrapper_dom_id(params)
+      end
+      page.replace_html idd, ratings_for(@question, params.merge(:wrap => false))
+      page.visual_effect :highlight, idd
+    end
+  end
+  
+  
 end

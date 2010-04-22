@@ -27,7 +27,8 @@ ActionController::Routing::Routes.draw do |map|
 		 map.resources :votes
   end
 
-  
+  # for rating
+  map.resources :questions, :member => {:rate => :post}
 
   map.connect 'user/vote_for/:id', :controller => :user,:action=>'vote_for'
 		  		

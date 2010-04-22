@@ -28,7 +28,7 @@ class SurveySheetsController < ApplicationController
         if any_responses
           # load survey_sheet 
            @survey_sheet = SurveySheet.find(:first, 
-                                          :conditions => ["user_id = :user_id and survey_sheet_id = :survey_id", 
+                                          :conditions => ["user_id = :user_id and survey_id = :survey_id", 
                                                           { :user_id => self.current_user.id, 
                                                             :survey_id => suppose_survey_def_id }  ] )
            logger.info(@survey_sheet || "No sheet found!?")
@@ -107,6 +107,8 @@ class SurveySheetsController < ApplicationController
             
             @survey_sheet.responses.each do | response | 
               response.answer_text = params["response#{response.question_id}"]
+              logger.info "Responce_#{response.id}  has content #{response.answer_text}"
+              response.save!
             end
             @survey_sheet.save!
             render :action => "edit"

@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   has_and_belongs_to_many :travel_places
   acts_as_voter
+  ajaxful_rater
 
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40

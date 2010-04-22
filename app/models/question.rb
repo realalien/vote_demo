@@ -1,5 +1,8 @@
 class Question < ActiveRecord::Base
+  
+  ajaxful_rateable :stars => 10
 	acts_as_commentable
+  
 	has_many :survey_question_assignments, :dependent => :nullify
 	has_many :surveys,	:through => :survey_question_assignments
 	
@@ -22,16 +25,6 @@ class Question < ActiveRecord::Base
 #    end
 #  end
 
-
-  # select the corresponding response from the @survey_sheet.responses
-  # to one question in @survey_sheet.questions
-  def that_response
-    if self.current_user   #I doubt mingle privilege control here!
-      
-      
-      
-    end
-  end
   
   
   

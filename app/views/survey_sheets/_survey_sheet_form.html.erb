@@ -13,11 +13,13 @@
 	Question:  <%= question.description%> <br/>
 	<!-- response/answer section -->
 	<!-- one question to one answer , not a copy of object, a direct reference, can it be?-->
-	
-	
-	<textarea cols="40" rows="15" id="response<%=question.id%>" name="response<%=question.id%>" class="">
-		<%= "#{that_user_response(question).answer_text}" %>
-    </textarea><br/>
+	<br/>
+	<% if question.is_rateable%>
+	Rating:
+	<%= ratings_for(question, :show_user_rating => true)%>
+	<% end %>
+	<br/>
+	<textarea cols="40" rows="15" id="response<%=question.id%>" name="response<%=question.id%>" class=""><%= "#{that_user_response(question).answer_text}" %></textarea><br/>
 	<hr/>
 
 <% end %>
