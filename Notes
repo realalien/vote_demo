@@ -1,3 +1,30 @@
+
+
+20100423
+* though we'd like to use resourceful to handle editing, I found it difficult to make a new def
+ into a sheet. 
+
+ I think it would be better if URL would be like 'http://localhost:3000/survey_sheets/?survey=1'
+ instead of http://localhost:3000/survey_sheets/1 (1=> the id of survey definition)
+
+* Since one survey 
+
+
+* modify the acts_as_versioned.rb line 120, change 'Inflector' to 'ActiveSupport::Inflector'
+
+* INFO: discard the acts_as_versioned and begin to use verion_fu because the dirty update?
+ start trying http://github.com/jmckible/version_fu
+
+
+* Regarding the requirement of multiple user editing, I am thinking of introducing the role
+based functions
+ e.g. questions answer only by some people(people belongs to a group, )
+ 
+ SUG. http://github.com/timcharper/role_requirement
+
+
+
+
 20100422
 * add new gem/plugin ajax-rating
   from http://github.com/edgarjs/ajaxful-rating, 

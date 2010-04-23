@@ -78,6 +78,9 @@ ActionController::Routing::Routes.draw do |map|
   # map.connect 'survey_sheets/:action', :controller => 'survey_sheets'
   # resourceful routing.
   map.resources :survey_sheets
+  
+  #map.connect 'survey_sheets/:id', :controller => "survey_sheets", :action => "show"
+                                  # :conditions=> {:method => :get}
 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'

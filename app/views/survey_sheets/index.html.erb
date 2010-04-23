@@ -3,17 +3,16 @@
 <% if @previous_sheets %>
 	<table>
 	  <tr>
-	    <th>id</th>
 	    <th>title</th>
 	    <th>source survey_definition</th>
+		<th>operations</th>
 	  </tr>
 	
 	<% for sheet in @previous_sheets %>
 	  <tr>
-	    <td><%=h sheet.id %></td>
 	    <td><%=h sheet.title %></td>
 		<td><%=h sheet.survey_id %></td>
-	    <td><%= link_to 'Edit', edit_survey_sheet_path(sheet) %></td>
+	    <td><%= link_to 'Edit', survey_sheet_path(sheet.id)%></td>
 	  </tr>
 	<% end %>
 	</table>
@@ -23,9 +22,10 @@
 
 <br />
 
+
 <h1>Listing of available surveys</h1>
 
-<% if @available_sheets %>
+<% if @available_surveys %>
 	<table border="1">
 	  <tr>
 	    <th>title</th>
@@ -34,12 +34,13 @@
 		<th>target_audience</th>
 	  </tr>
 	
-	<% for sheet in @available_sheets ||[]%>
+	<% for sheet in @available_surveys %>
 	  <tr>
 	    <td><%=h sheet.title %></td>
 	    <td><%=h sheet.description %></td>
 		<td><%=h sheet.category %></td>
 		<td><%=h sheet.target_audience %></td>
+		<td><%=link_to "Take this survey", survey_sheet_path(sheet)  %></td>
 	  </tr>
 	<% end %>
 	</table>

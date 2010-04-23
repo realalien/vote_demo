@@ -90,7 +90,7 @@ class QuestionsController < ApplicationController
   end
 
   def get_survey
-	   @survey = Survey.find(params[:id])
+	   @survey = Survey.find(params[:survey_id])
   end
   
   # for each user

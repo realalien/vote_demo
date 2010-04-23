@@ -5,9 +5,9 @@ module SurveySheetsHelper
   # Q: how do I debug this function? in script/console, then how?
   # ESP: it is ensured that questions and responses are constructed correctly 
   def that_user_response(question)
-    if @survey_sheet.respond_to?("responses") 
+    if @survey_sheet.respond_to?("responses")
       @survey_sheet.responses.each do | r |
-        if r.question_id = question.id
+        if r.question_id == question.id
           return r
         end
       end

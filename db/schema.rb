@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100422015940) do
+ActiveRecord::Schema.define(:version => 20100423055137) do
 
   create_table "answers", :force => true do |t|
     t.text     "description"
@@ -63,6 +63,14 @@ ActiveRecord::Schema.define(:version => 20100422015940) do
   add_index "rates", ["rateable_id", "rateable_type"], :name => "index_rates_on_rateable_id_and_rateable_type"
   add_index "rates", ["rater_id"], :name => "index_rates_on_rater_id"
 
+  create_table "response_versions", :force => true do |t|
+    t.integer "response_id"
+    t.integer "version"
+    t.integer "user_id"
+    t.integer "rating"
+    t.text    "answer_text"
+  end
+
   create_table "responses", :force => true do |t|
     t.integer  "survey_sheet_id"
     t.integer  "user_id"
@@ -71,6 +79,7 @@ ActiveRecord::Schema.define(:version => 20100422015940) do
     t.text     "answer_text"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "version",         :default => 1
   end
 
   create_table "sheet_answer_relations", :force => true do |t|
@@ -128,14 +137,8 @@ ActiveRecord::Schema.define(:version => 20100422015940) do
     t.integer  "survey_id"
   end
 
-  create_table "surveys", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "category"
-    t.string   "target_audience"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+# Could not dump table "surveys" because of following ActiveRecord::StatementInvalid
+#   Mysql::Error: Can't create/write to file 'C:\Windows\TEMP\#sql_be0_0.MYI' (Errcode: 13): describe `surveys`
 
   create_table "travel_places", :force => true do |t|
     t.string   "name"

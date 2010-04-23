@@ -12,6 +12,9 @@ class SurveySheetsController < ApplicationController
     # or name
     def show
       if params["id"]
+        
+        # SUG: it is not suggested to treate id as definition 
+        
         suppose_survey_def_id = params["id"]
         @survey_def = Survey.find(suppose_survey_def_id)
         #@questions = @survey.questions  # TODO: sort by sequence or some columns
@@ -31,11 +34,44 @@ class SurveySheetsController < ApplicationController
                                           :conditions => ["user_id = :user_id and survey_id = :survey_id", 
                                                           { :user_id => self.current_user.id, 
                                                             :survey_id => suppose_survey_def_id }  ] )
-           logger.info(@survey_sheet || "No sheet found!?")
-           logger.info("------------------------")
+           logger.info("------------------------  #{@survey_sheet.responses.size}!")
+           logger.info("------------------------survey definition question size:  #{@survey_def.questions.size} ---")
+           # if newly create a question for the sheet, no corresponding responses, create one to let user fill in
+           
+           existing_questions_ids_in_responses = []
+           @survey_sheet.responses.each { | r | existing_questions_ids_in_responses << r.id }
+           logger.info("------------------------  #{existing_questions_ids_in_responses}!")
+           
+           existing_questions_ids_in_questions = []
+           @survey_sheet.questions.each { | r | existing_questions_ids_in_questions << r.id }
+           logger.info("------------------------  #{existing_questions_ids_in_questions}!")
+           
+           if @survey_sheet.questions.size < @survey_def.questions.size 
+             for q in @survey_def.questions
+                if not existing_questions_ids_in_questions.include? q.id
+                # import new question.
+                @survey_sheet.questions << q
+                end
+             end
+           end
+           
+           if @survey_sheet.responses.size < @survey_def.questions.size 
+             for q in @survey_def.questions
+                # create new response
+                if not existing_questions_ids_in_responses.include? q.id
+                r = Response.new()
+                r.survey_sheet_id = @survey_sheet.id
+                r.question_id = q.id
+                r.user_id = self.current_user.id
+                @survey_sheet.responses << r 
+                end
+             end
+           end
+           
+           
            render(:action => "edit")
         else  # no responses
-           # make sure there also has No survey_sheet.
+           # make sure there also has No survey_sheet
              
            # create a SurveySheet according to the Survey(definition)
            suppose_survey_def_id = params["id"]
@@ -70,7 +106,7 @@ class SurveySheetsController < ApplicationController
       end # if params["id"]
     end
   
-    # POST /survey_sheet/id
+    # POST /survey_sheets/id
     # why new? 
     # create a record of question_answer_by_user?
     # TODO: how to make user into such controller/action?
@@ -79,9 +115,7 @@ class SurveySheetsController < ApplicationController
         logger.info "in action create ............."
         if (params.has_key?(/response\d+/))
             #Q: if client fake the responses in the params, hwo to avoid those operations?
-            # load the survey_sheet and its responses.
-            
-            
+            # load the survey_sheet and its responses
             
             
             render :text => "in create methods."
@@ -92,12 +126,12 @@ class SurveySheetsController < ApplicationController
         
     end
     
-    # PUT /survey_sheet/1
+    # PUT /survey_sheets/1
     def update
         if (has_survey_responses(params))
             #render :text => "in update, params has responses, so we can parse and update!"
             # * parse and update the survey_sheet and responses, see if we can DRY by doing sth 
-            #   in helper or rails multiple model updating.
+            #   in helper or rails multiple model updating
             sheet_id = params["survey_sheet_id"]
             
             
@@ -106,8 +140,8 @@ class SurveySheetsController < ApplicationController
                                                             :survey_id => sheet_id }  ] )
             
             @survey_sheet.responses.each do | response | 
-              response.answer_text = params["response#{response.question_id}"]
-              logger.info "Responce_#{response.id}  has content #{response.answer_text}"
+              response.update_attribute(:updated_at ,Time.now)
+              response.update_attribute(:answer_text, params["response#{response.question_id}"] )
               response.save!
             end
             @survey_sheet.save!
@@ -117,17 +151,24 @@ class SurveySheetsController < ApplicationController
         end
     end
 
+    #/survey_sheets/
     def index
       @previous_sheets = SurveySheet.find(:all, :conditions => ["user_id = :user_id ", 
-                                                          { :user_id => self.current_user.id, }  ] )
-      # @available_sheets
-      @available_sheets = Survey.find(:all)
+                                                          { :user_id => self.current_user.id }  ] )
+      existing_ids = []
+      @previous_sheets.each { |s| existing_ids << s.survey_id }
+      @all_def = Survey.find(:all)
+      @available_surveys = [] 
+      
+      @all_def.each do | s |
+        @available_surveys << s  unless existing_ids.include?(s.id)
+      end
+       
     end
   
   
     def edit
-      @survey_sheet = SurveySheet.find(:first, :conditions => ["id = :sheet_id and user_id = :user_id ", 
-                                                          { :sheet_id => params["id"],:user_id => self.current_user.id }  ]) # Q: why first?
+     
     end
 
 
