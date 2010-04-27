@@ -137,8 +137,14 @@ ActiveRecord::Schema.define(:version => 20100423055137) do
     t.integer  "survey_id"
   end
 
-# Could not dump table "surveys" because of following ActiveRecord::StatementInvalid
-#   Mysql::Error: Can't create/write to file 'C:\Windows\TEMP\#sql_be0_0.MYI' (Errcode: 13): describe `surveys`
+  create_table "surveys", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "category"
+    t.string   "target_audience"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "travel_places", :force => true do |t|
     t.string   "name"

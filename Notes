@@ -1,8 +1,16 @@
 
 
-20100426
+20100426-27
 * [TODO]
    make active directory work for the rails project and set it up on a win box,
+   
+   >>> basic rails setup on Apache,Windows, ref to 'Deploying Rails Applications' p.193
+   
+   
+   
+   >>> READ
+   http://www.ruby-forum.com/topic/83067
+   
    
    >>> [trying]: 
    http://docs.moodle.org/en/NTLM_authentication#Using_the_mod_auth_sspi_Module_for_Apache_2_on_Windows
@@ -14,8 +22,8 @@
    >>> a wiki setup maual
    http://wiki.apache.org/httpd/HelpOnInstalling/ApacheOnWin32withDomainAuthentication
    
-   
-   
+   >>> though the links in the articles are dead, 
+   http://www.zorched.net/2007/06/04/active-directory-authentication-for-ruby-on-rails/
    
 * [TODO]
    try to make survey, survey_sheet resourceful, so that we can call it like survey_sheet/?survey_id=3 

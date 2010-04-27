@@ -1,0 +1,234 @@
+
+
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-27 14:10:00) [GET]
+Rendering template within layouts/surveys
+Rendering surveys/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/surveys]
+
+
+Processing SessionsController#create_from_windows_login (for 127.0.0.1 at 2010-04-27 15:25:02) [GET]
+
+
+ActionController::UnknownAction (No action responded to create_from_windows_login. Actions: create, destroy, and new):
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:76:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:74:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:159:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:158:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:158:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:285:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:285:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:268:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:268:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:268:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/configurator.rb:282:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/configurator.rb:281:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/configurator.rb:281:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:128:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/command.rb:212:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:281
+    D:/zjc/devtools/Ruby/bin/mongrel_rails:19:in `load'
+    D:/zjc/devtools/Ruby/bin/mongrel_rails:19
+
+Rendering D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing SessionsController#create_from_windows_login (for 127.0.0.1 at 2010-04-27 15:25:45) [GET]
+Browser did not provide Windows domain user name
+Rendering sessions/new
+Completed in 407ms (View: 404, DB: 0) | 200 OK [http://localhost/winlogin]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-27 15:25:57) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"89763ad6da04263ab2bc6afd2a6fa180cf636243", "login"=>"zjc", "password"=>"123"}
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Failed login for 'zjc' from 127.0.0.1 at Tue Apr 27 07:25:57 UTC 2010
+Rendering sessions/new
+Completed in 14ms (View: 3, DB: 8) | 200 OK [http://localhost/session]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-27 15:40:41) [GET]
+Rendering sessions/new
+Completed in 3ms (View: 3, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-27 15:45:56) [GET]
+Rendering sessions/new
+Completed in 3ms (View: 3, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-27 15:47:38) [GET]
+Rendering sessions/new
+Completed in 3ms (View: 3, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-27 15:48:43) [GET]
+Rendering sessions/new
+Completed in 8ms (View: 4, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#create_from_windows_login (for 127.0.0.1 at 2010-04-27 15:49:22) [GET]
+SERVER_NAME127.0.0.1HTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; zh-CN; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 GTBDFff GTB7.0 (.NET CLR 3.5.30729)HTTP_ACCEPT_ENCODINGgzip,deflateHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/winloginHTTP_HOST127.0.0.1:4001HTTP_ACCEPT_LANGUAGEzh-cn,zh;q=0.5SERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/winloginSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_VERSIONHTTP/1.1HTTP_ACCEPT_CHARSETGB2312,utf-8;q=0.7,*;q=0.7HTTP_COOKIE_vote_demo_session=BAh7BzoMY3NyZl9pZCIlNGMyYThjOTUyY2YxNjllZWQ2MTA0Y2M3ZDAyZjkyZGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA%3D--d7b9b36626ca14a3aceddbf758db9b520dc4fd4eREQUEST_URI/winloginHTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT4001GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
+Browser did not provide Windows domain user name
+Rendering sessions/new
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/winlogin]
+
+
+Processing SessionsController#create_from_windows_login (for 127.0.0.1 at 2010-04-27 15:58:59) [GET]
+SERVER_NAME127.0.0.1HTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; zh-CN; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 GTBDFff GTB7.0 (.NET CLR 3.5.30729)HTTP_ACCEPT_ENCODINGgzip,deflateHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/winloginHTTP_HOST127.0.0.1:4001HTTP_ACCEPT_LANGUAGEzh-cn,zh;q=0.5HTTP_IF_NONE_MATCH"479299461011f0d4266753ed157a3af4"-gzipSERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/winloginSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_VERSIONHTTP/1.1HTTP_ACCEPT_CHARSETGB2312,utf-8;q=0.7,*;q=0.7HTTP_COOKIE_vote_demo_session=BAh7CDoMY3NyZl9pZCIlNGMyYThjOTUyY2YxNjllZWQ2MTA0Y2M3ZDAyZjkyZGY6DHVzZXJfaWQwIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewY6CmVycm9yIjVCcm93c2VyIGRpZCBub3QgcHJvdmlkZSBXaW5kb3dzIGRvbWFpbiB1c2VyIG5hbWUGOgpAdXNlZHsGOwhG--d87eba03b513f3068cbfbce24a312139f071a7d5REQUEST_URI/winloginHTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT4001GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
+Browser did not provide Windows domain user name
+Rendering sessions/new
+Completed in 7ms (View: 4, DB: 1) | 200 OK [http://localhost/winlogin]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-27 17:10:53) [GET]
+
+
+ActionController::RoutingError (No route matches "/index.cgi" with {:method=>:get}):
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/routing/route_set.rb:390:in `recognize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:76:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:74:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:159:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:158:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:158:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:285:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:285:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:268:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:268:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:268:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/configurator.rb:282:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/configurator.rb:281:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/configurator.rb:281:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:128:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/command.rb:212:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:281
+    D:/zjc/devtools/Ruby/bin/mongrel_rails:19:in `load'
+    D:/zjc/devtools/Ruby/bin/mongrel_rails:19
+
+Rendering D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-27 17:11:02) [GET]
+
+
+ActionController::RoutingError (No route matches "/index.cgi" with {:method=>:get}):
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/routing/route_set.rb:390:in `recognize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:76:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:74:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:159:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:158:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:158:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:285:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:285:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:268:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:268:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:268:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/configurator.rb:282:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/configurator.rb:281:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/configurator.rb:281:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:128:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/command.rb:212:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:281
+    D:/zjc/devtools/Ruby/bin/mongrel_rails:19:in `load'
+    D:/zjc/devtools/Ruby/bin/mongrel_rails:19
+
+Rendering D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing SessionsController#create_from_windows_login (for 127.0.0.1 at 2010-04-27 17:11:18) [GET]
+SERVER_NAME127.0.0.1HTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; zh-CN; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 GTBDFff GTB7.0 (.NET CLR 3.5.30729)HTTP_ACCEPT_ENCODINGgzip,deflateHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/winloginHTTP_HOST127.0.0.1:4001HTTP_ACCEPT_LANGUAGEzh-cn,zh;q=0.5HTTP_IF_NONE_MATCH"479299461011f0d4266753ed157a3af4"-gzipSERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/winloginSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_VERSIONHTTP/1.1HTTP_ACCEPT_CHARSETGB2312,utf-8;q=0.7,*;q=0.7HTTP_COOKIE_vote_demo_session=BAh7CDoMY3NyZl9pZCIlNGMyYThjOTUyY2YxNjllZWQ2MTA0Y2M3ZDAyZjkyZGY6DHVzZXJfaWQwIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--2fc9093a9b71ef5de8041cbf37f10201a7c10845REQUEST_URI/winloginHTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT4001GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
+Browser did not provide Windows domain user name
+Rendering sessions/new
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://localhost/winlogin]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-27 17:11:24) [GET]
+Rendering sessions/new
+Completed in 3ms (View: 3, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-27 17:11:32) [GET]
+Rendering sessions/new
+Completed in 3ms (View: 3, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-27 17:11:50) [GET]
+Rendering template within layouts/surveys
+Rendering surveys/index
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/surveys]
+
+
+Processing SurveysController#new (for 127.0.0.1 at 2010-04-27 17:12:17) [GET]
+Rendering template within layouts/surveys
+Rendering surveys/new
+Completed in 18ms (View: 10, DB: 6) | 200 OK [http://localhost/surveys/new]
+
+
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-27 17:20:44) [GET]
+Rendering template within layouts/surveys
+Rendering surveys/index
+Completed in 3ms (View: 1, DB: 1) | 200 OK [http://localhost/surveys/]
+
+
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-27 17:26:18) [GET]
+Rendering template within layouts/surveys
+Rendering surveys/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/surveys/]
+
+
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-27 18:05:56) [GET]
+Rendering template within layouts/surveys
+Rendering surveys/index
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/surveys/]
+
+
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-27 18:08:38) [GET]
+Rendering template within layouts/surveys
+Rendering surveys/index
+Completed in 3ms (View: 2, DB: 1) | 200 OK [http://localhost/surveys/]

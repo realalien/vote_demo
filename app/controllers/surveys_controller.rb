@@ -1,4 +1,19 @@
 class SurveysController < ApplicationController
+  
+  include RemoteUser
+  
+  before_filter :login_required, :only => [ :update, :create, :destroy ]
+
+  def find_user(remote_name)
+     User.find_by_name(remote_name)
+   end
+   
+   def access_denied!
+     render :text => "access denied!"
+     #redirect_to access_denied_path and return false
+   end
+
+
   # GET /surveys
   # GET /surveys.xml
   def index

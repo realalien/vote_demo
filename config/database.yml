@@ -40,6 +40,6 @@ production:
   encoding: utf8
   database: vote_demo_production
   pool: 5
-  username: root
+  username: zjc
   password: 
   socket: /var/run/mysqld/mysqld.sock
