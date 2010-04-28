@@ -70,7 +70,7 @@ protected
 #private
   def forwarded_user
     logger.error "#{request.headers}"
-    return nil unless x_forwarded_user = request.headers['X-Forwarded-User']
+    return nil unless x_forwarded_user = request.headers['HTTP_X_REMOTE_USER_6E3RZQKX ']
     users = x_forwarded_user.split(',')
     users.delete('(null)')
     users.first

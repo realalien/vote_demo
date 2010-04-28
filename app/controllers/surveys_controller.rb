@@ -17,6 +17,8 @@ class SurveysController < ApplicationController
   # GET /surveys
   # GET /surveys.xml
   def index
+    logger.info request.headers
+    
     @surveys = Survey.find(:all)
 
     respond_to do |format|

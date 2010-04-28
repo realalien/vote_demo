@@ -1,114 +1,193 @@
 
 
-Processing SurveysController#index (for 127.0.0.1 at 2010-04-27 14:10:00) [GET]
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-28 14:39:28) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+SERVER_NAME127.0.0.1HTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; zh-CN; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 GTBDFff GTB7.0 (.NET CLR 3.5.30729)HTTP_ACCEPT_ENCODINGgzip,deflateHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/surveysHTTP_HOST127.0.0.1:4001HTTP_ACCEPT_LANGUAGEzh-cn,zh;q=0.5HTTP_IF_NONE_MATCH"59f62ae74036d49686e29d185a0964c8"-gzipSERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/surveysSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_X_REMOTE_USER_6E3RZQKX(null)HTTP_VERSIONHTTP/1.1HTTP_ACCEPT_CHARSETGB2312,utf-8;q=0.7,*;q=0.7HTTP_COOKIE_vote_demo_session=BAh7CDoMY3NyZl9pZCIlZDE3ZjQ0MWQxMTdhMTA1ZTExYmFlODI5MzFjMjljOTc6DHVzZXJfaWQwIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--eb2cc2e96d483e5230173618c08715e85868ab5bREQUEST_URI/surveysHTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT4001GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
+  [4;36;1mSurvey Load (1.0ms)[0m   [0;1mSELECT * FROM `surveys` [0m
 Rendering template within layouts/surveys
 Rendering surveys/index
-Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/surveys]
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/surveys]
 
 
-Processing SessionsController#create_from_windows_login (for 127.0.0.1 at 2010-04-27 15:25:02) [GET]
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-28 14:39:29) [GET]
+SERVER_NAME127.0.0.1HTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; zh-CN; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 GTBDFff GTB7.0 (.NET CLR 3.5.30729)HTTP_ACCEPT_ENCODINGgzip,deflateHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/surveysHTTP_HOST127.0.0.1:4001HTTP_ACCEPT_LANGUAGEzh-cn,zh;q=0.5HTTP_IF_NONE_MATCH"59f62ae74036d49686e29d185a0964c8"-gzipSERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/surveysSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_X_REMOTE_USER_6E3RZQKX(null)HTTP_VERSIONHTTP/1.1HTTP_ACCEPT_CHARSETGB2312,utf-8;q=0.7,*;q=0.7HTTP_COOKIE_vote_demo_session=BAh7CDoMY3NyZl9pZCIlZDE3ZjQ0MWQxMTdhMTA1ZTExYmFlODI5MzFjMjljOTc6DHVzZXJfaWQwIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--eb2cc2e96d483e5230173618c08715e85868ab5bREQUEST_URI/surveysHTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT4001GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
+  [4;35;1mSurvey Load (0.0ms)[0m   [0mSELECT * FROM `surveys` [0m
+Rendering template within layouts/surveys
+Rendering surveys/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/surveys]
 
 
-ActionController::UnknownAction (No action responded to create_from_windows_login. Actions: create, destroy, and new):
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
-    D:/zjc/devtools/Ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:76:in `process'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:74:in `synchronize'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:74:in `process'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:159:in `process_client'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:158:in `each'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:158:in `process_client'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:285:in `run'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:285:in `initialize'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:285:in `new'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:285:in `run'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:268:in `initialize'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:268:in `new'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:268:in `run'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/configurator.rb:282:in `run'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/configurator.rb:281:in `each'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/configurator.rb:281:in `run'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:128:in `run'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/command.rb:212:in `run'
-    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:281
-    D:/zjc/devtools/Ruby/bin/mongrel_rails:19:in `load'
-    D:/zjc/devtools/Ruby/bin/mongrel_rails:19
-
-Rendering D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (not_found)
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-28 14:39:30) [GET]
+SERVER_NAME127.0.0.1HTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; zh-CN; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 GTBDFff GTB7.0 (.NET CLR 3.5.30729)HTTP_ACCEPT_ENCODINGgzip,deflateHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/surveysHTTP_HOST127.0.0.1:4001HTTP_ACCEPT_LANGUAGEzh-cn,zh;q=0.5HTTP_IF_NONE_MATCH"59f62ae74036d49686e29d185a0964c8"-gzipSERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/surveysSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_X_REMOTE_USER_6E3RZQKX(null)HTTP_VERSIONHTTP/1.1HTTP_ACCEPT_CHARSETGB2312,utf-8;q=0.7,*;q=0.7HTTP_COOKIE_vote_demo_session=BAh7CDoMY3NyZl9pZCIlZDE3ZjQ0MWQxMTdhMTA1ZTExYmFlODI5MzFjMjljOTc6DHVzZXJfaWQwIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--eb2cc2e96d483e5230173618c08715e85868ab5bREQUEST_URI/surveysHTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT4001GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
+  [4;36;1mSurvey Load (0.0ms)[0m   [0;1mSELECT * FROM `surveys` [0m
+Rendering template within layouts/surveys
+Rendering surveys/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/surveys]
 
 
-Processing SessionsController#create_from_windows_login (for 127.0.0.1 at 2010-04-27 15:25:45) [GET]
+Processing SurveySheetsController#index (for 127.0.0.1 at 2010-04-28 14:39:37) [GET]
+Redirected to /session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/survey_sheets]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-28 14:39:37) [GET]
+Rendering sessions/new
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-28 14:47:14) [GET]
+SERVER_NAME127.0.0.1HTTP_USER_AGENTMozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; WOW64; Trident/4.0; GTB0.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.5.30729; .NET CLR 3.0.30618; OfficeLiveConnector.1.3; OfficeLivePatch.0.0)HTTP_ACCEPT_ENCODINGgzip, deflateHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/surveysHTTP_HOST127.0.0.1:4001HTTP_ACCEPT_LANGUAGEen-usHTTP_IF_NONE_MATCH"59f62ae74036d49686e29d185a0964c8"-gzipSERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/surveysSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_X_REMOTE_USER_6E3RZQKX(null)HTTP_VERSIONHTTP/1.1REQUEST_URI/surveysHTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT4001GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTimage/gif, image/jpeg, image/pjpeg, application/x-ms-application, application/vnd.ms-xpsdocument, application/xaml+xml, application/x-ms-xbap, application/x-shockwave-flash, application/msword, application/vnd.ms-powerpoint, application/vnd.ms-excel, */*HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
+  [4;35;1mSurvey Load (0.0ms)[0m   [0mSELECT * FROM `surveys` [0m
+Rendering template within layouts/surveys
+Rendering surveys/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/surveys]
+
+
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-28 14:47:28) [GET]
+SERVER_NAME127.0.0.1HTTP_USER_AGENTMozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; WOW64; Trident/4.0; GTB0.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.5.30729; .NET CLR 3.0.30618; OfficeLiveConnector.1.3; OfficeLivePatch.0.0)HTTP_ACCEPT_ENCODINGgzip, deflateHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/surveysHTTP_HOST127.0.0.1:4001HTTP_ACCEPT_LANGUAGEen-usHTTP_IF_NONE_MATCH"59f62ae74036d49686e29d185a0964c8"-gzipSERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/surveysSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_X_REMOTE_USER_6E3RZQKX(null)HTTP_VERSIONHTTP/1.1HTTP_COOKIE_vote_demo_session=BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--e055047301cf4dba26f29f0aa6ba4261f9e5f697REQUEST_URI/surveysHTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT4001GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTimage/gif, image/jpeg, image/pjpeg, application/x-ms-application, application/vnd.ms-xpsdocument, application/xaml+xml, application/x-ms-xbap, application/x-shockwave-flash, application/msword, application/vnd.ms-powerpoint, application/vnd.ms-excel, */*HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
+  [4;36;1mSurvey Load (0.0ms)[0m   [0;1mSELECT * FROM `surveys` [0m
+Rendering template within layouts/surveys
+Rendering surveys/index
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/surveys]
+
+
+Processing SessionsController#create_from_windows_login (for 127.0.0.1 at 2010-04-28 14:47:36) [GET]
+SERVER_NAME127.0.0.1HTTP_USER_AGENTMozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; WOW64; Trident/4.0; GTB0.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.5.30729; .NET CLR 3.0.30618; OfficeLiveConnector.1.3; OfficeLivePatch.0.0)HTTP_ACCEPT_ENCODINGgzip, deflateHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/winloginHTTP_HOST127.0.0.1:4001HTTP_ACCEPT_LANGUAGEen-usSERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/winloginSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_X_REMOTE_USER_6E3RZQKX(null)HTTP_VERSIONHTTP/1.1HTTP_COOKIE_vote_demo_session=BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--e055047301cf4dba26f29f0aa6ba4261f9e5f697REQUEST_URI/winloginHTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT4001GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTimage/gif, image/jpeg, image/pjpeg, application/x-ms-application, application/vnd.ms-xpsdocument, application/xaml+xml, application/x-ms-xbap, application/x-shockwave-flash, application/msword, application/vnd.ms-powerpoint, application/vnd.ms-excel, */*HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
 Browser did not provide Windows domain user name
 Rendering sessions/new
-Completed in 407ms (View: 404, DB: 0) | 200 OK [http://localhost/winlogin]
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/winlogin]
 
 
-Processing SessionsController#create (for 127.0.0.1 at 2010-04-27 15:25:57) [POST]
-  Parameters: {"commit"=>"Log in", "authenticity_token"=>"89763ad6da04263ab2bc6afd2a6fa180cf636243", "login"=>"zjc", "password"=>"123"}
-Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
-Failed login for 'zjc' from 127.0.0.1 at Tue Apr 27 07:25:57 UTC 2010
-Rendering sessions/new
-Completed in 14ms (View: 3, DB: 8) | 200 OK [http://localhost/session]
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-28 15:14:13) [GET]
+SERVER_NAME127.0.0.1HTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; en-US) AppleWebKit/525.19 (KHTML, like Gecko) Chrome/1.0.154.65 Safari/525.19HTTP_ACCEPT_ENCODINGgzip,deflate,bzip2,sdchHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/surveysHTTP_HOST127.0.0.1:4001HTTP_ACCEPT_LANGUAGEzh-CN,zhHTTP_IF_NONE_MATCH"59f62ae74036d49686e29d185a0964c8"-gzipSERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/surveysSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_X_REMOTE_USER_6E3RZQKX(null)HTTP_VERSIONHTTP/1.1HTTP_COOKIE_vote_demo_session=BAh7CDoMY3NyZl9pZCIlYTQ5YWQzMjIyNGZhYzcxODQ0ZmZhYjA5YjQ1ZDRiMjM6DHVzZXJfaWQwIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewY6CmVycm9yIjVCcm93c2VyIGRpZCBub3QgcHJvdmlkZSBXaW5kb3dzIGRvbWFpbiB1c2VyIG5hbWUGOgpAdXNlZHsGOwhG--902839f73f987c50bab9009bc5fa401c7934d72fHTTP_ACCEPT_CHARSETgb18030,*,utf-8REQUEST_URI/surveysHTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT4001GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
+  [4;35;1mSurvey Load (1.0ms)[0m   [0mSELECT * FROM `surveys` [0m
+Rendering template within layouts/surveys
+Rendering surveys/index
+Completed in 5ms (View: 2, DB: 1) | 200 OK [http://localhost/surveys]
 
 
-Processing SessionsController#new (for 127.0.0.1 at 2010-04-27 15:40:41) [GET]
-Rendering sessions/new
-Completed in 3ms (View: 3, DB: 0) | 200 OK [http://localhost/login]
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-28 15:14:17) [GET]
+SERVER_NAME127.0.0.1HTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; en-US) AppleWebKit/525.19 (KHTML, like Gecko) Chrome/1.0.154.65 Safari/525.19HTTP_ACCEPT_ENCODINGgzip,deflate,bzip2,sdchHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/surveysHTTP_HOST127.0.0.1:4001HTTP_CACHE_CONTROLmax-age=0HTTP_ACCEPT_LANGUAGEzh-CN,zhHTTP_IF_NONE_MATCH"59f62ae74036d49686e29d185a0964c8"-gzipSERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/surveysSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_X_REMOTE_USER_6E3RZQKX(null)HTTP_VERSIONHTTP/1.1HTTP_COOKIE_vote_demo_session=BAh7CDoMY3NyZl9pZCIlYTQ5YWQzMjIyNGZhYzcxODQ0ZmZhYjA5YjQ1ZDRiMjM6DHVzZXJfaWQwIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewY6CmVycm9yIjVCcm93c2VyIGRpZCBub3QgcHJvdmlkZSBXaW5kb3dzIGRvbWFpbiB1c2VyIG5hbWUGOgpAdXNlZHsGOwhU--3dd4aa2ba9ff58b3e5499a181338c47d139a3032HTTP_ACCEPT_CHARSETgb18030,*,utf-8REQUEST_URI/surveysHTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT4001GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
+  [4;36;1mSurvey Load (0.0ms)[0m   [0;1mSELECT * FROM `surveys` [0m
+Rendering template within layouts/surveys
+Rendering surveys/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/surveys]
 
 
-Processing SessionsController#new (for 127.0.0.1 at 2010-04-27 15:45:56) [GET]
-Rendering sessions/new
-Completed in 3ms (View: 3, DB: 0) | 200 OK [http://localhost/login]
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-28 15:14:17) [GET]
+SERVER_NAME127.0.0.1HTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; en-US) AppleWebKit/525.19 (KHTML, like Gecko) Chrome/1.0.154.65 Safari/525.19HTTP_ACCEPT_ENCODINGgzip,deflate,bzip2,sdchHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/surveysHTTP_HOST127.0.0.1:4001HTTP_CACHE_CONTROLmax-age=0HTTP_ACCEPT_LANGUAGEzh-CN,zhHTTP_IF_NONE_MATCH"59f62ae74036d49686e29d185a0964c8"-gzipSERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/surveysSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_X_REMOTE_USER_6E3RZQKX(null)HTTP_VERSIONHTTP/1.1HTTP_COOKIE_vote_demo_session=BAh7CDoMY3NyZl9pZCIlYTQ5YWQzMjIyNGZhYzcxODQ0ZmZhYjA5YjQ1ZDRiMjM6DHVzZXJfaWQwIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--6da530713ae146c60b37a412977bafa3f4bc5d1aHTTP_ACCEPT_CHARSETgb18030,*,utf-8REQUEST_URI/surveysHTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT4001GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
+  [4;35;1mSurvey Load (0.0ms)[0m   [0mSELECT * FROM `surveys` [0m
+Rendering template within layouts/surveys
+Rendering surveys/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/surveys]
 
 
-Processing SessionsController#new (for 127.0.0.1 at 2010-04-27 15:47:38) [GET]
-Rendering sessions/new
-Completed in 3ms (View: 3, DB: 0) | 200 OK [http://localhost/login]
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-28 15:14:18) [GET]
+SERVER_NAME127.0.0.1HTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; en-US) AppleWebKit/525.19 (KHTML, like Gecko) Chrome/1.0.154.65 Safari/525.19HTTP_ACCEPT_ENCODINGgzip,deflate,bzip2,sdchHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/surveysHTTP_HOST127.0.0.1:4001HTTP_CACHE_CONTROLmax-age=0HTTP_ACCEPT_LANGUAGEzh-CN,zhHTTP_IF_NONE_MATCH"59f62ae74036d49686e29d185a0964c8"-gzipSERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/surveysSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_X_REMOTE_USER_6E3RZQKX(null)HTTP_VERSIONHTTP/1.1HTTP_COOKIE_vote_demo_session=BAh7CDoMY3NyZl9pZCIlYTQ5YWQzMjIyNGZhYzcxODQ0ZmZhYjA5YjQ1ZDRiMjM6DHVzZXJfaWQwIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--6da530713ae146c60b37a412977bafa3f4bc5d1aHTTP_ACCEPT_CHARSETgb18030,*,utf-8REQUEST_URI/surveysHTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT4001GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
+  [4;36;1mSurvey Load (1.0ms)[0m   [0;1mSELECT * FROM `surveys` [0m
+Rendering template within layouts/surveys
+Rendering surveys/index
+Completed in 4ms (View: 1, DB: 1) | 200 OK [http://localhost/surveys]
 
 
-Processing SessionsController#new (for 127.0.0.1 at 2010-04-27 15:48:43) [GET]
-Rendering sessions/new
-Completed in 8ms (View: 4, DB: 1) | 200 OK [http://localhost/login]
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-28 15:14:18) [GET]
+SERVER_NAME127.0.0.1HTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; en-US) AppleWebKit/525.19 (KHTML, like Gecko) Chrome/1.0.154.65 Safari/525.19HTTP_ACCEPT_ENCODINGgzip,deflate,bzip2,sdchHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/surveysHTTP_HOST127.0.0.1:4001HTTP_CACHE_CONTROLmax-age=0HTTP_ACCEPT_LANGUAGEzh-CN,zhHTTP_IF_NONE_MATCH"59f62ae74036d49686e29d185a0964c8"-gzipSERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/surveysSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_X_REMOTE_USER_6E3RZQKX(null)HTTP_VERSIONHTTP/1.1HTTP_COOKIE_vote_demo_session=BAh7CDoMY3NyZl9pZCIlYTQ5YWQzMjIyNGZhYzcxODQ0ZmZhYjA5YjQ1ZDRiMjM6DHVzZXJfaWQwIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--6da530713ae146c60b37a412977bafa3f4bc5d1aHTTP_ACCEPT_CHARSETgb18030,*,utf-8REQUEST_URI/surveysHTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT4001GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
+  [4;35;1mSurvey Load (0.0ms)[0m   [0mSELECT * FROM `surveys` [0m
+Rendering template within layouts/surveys
+Rendering surveys/index
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/surveys]
 
 
-Processing SessionsController#create_from_windows_login (for 127.0.0.1 at 2010-04-27 15:49:22) [GET]
-SERVER_NAME127.0.0.1HTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; zh-CN; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 GTBDFff GTB7.0 (.NET CLR 3.5.30729)HTTP_ACCEPT_ENCODINGgzip,deflateHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/winloginHTTP_HOST127.0.0.1:4001HTTP_ACCEPT_LANGUAGEzh-cn,zh;q=0.5SERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/winloginSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_VERSIONHTTP/1.1HTTP_ACCEPT_CHARSETGB2312,utf-8;q=0.7,*;q=0.7HTTP_COOKIE_vote_demo_session=BAh7BzoMY3NyZl9pZCIlNGMyYThjOTUyY2YxNjllZWQ2MTA0Y2M3ZDAyZjkyZGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA%3D--d7b9b36626ca14a3aceddbf758db9b520dc4fd4eREQUEST_URI/winloginHTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT4001GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-28 15:14:31) [GET]
+SERVER_NAME127.0.0.1HTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; en-US) AppleWebKit/525.19 (KHTML, like Gecko) Chrome/1.0.154.65 Safari/525.19HTTP_ACCEPT_ENCODINGgzip,deflate,bzip2,sdchHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/surveysHTTP_HOST127.0.0.1:4001HTTP_CACHE_CONTROLmax-age=0HTTP_ACCEPT_LANGUAGEzh-CN,zhHTTP_IF_NONE_MATCH"59f62ae74036d49686e29d185a0964c8"-gzipSERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/surveysSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_X_REMOTE_USER_6E3RZQKX(null)HTTP_VERSIONHTTP/1.1HTTP_COOKIE_vote_demo_session=BAh7CDoMY3NyZl9pZCIlYTQ5YWQzMjIyNGZhYzcxODQ0ZmZhYjA5YjQ1ZDRiMjM6DHVzZXJfaWQwIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--6da530713ae146c60b37a412977bafa3f4bc5d1aHTTP_ACCEPT_CHARSETgb18030,*,utf-8REQUEST_URI/surveysHTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT4001GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
+  [4;36;1mSurvey Load (0.0ms)[0m   [0;1mSELECT * FROM `surveys` [0m
+Rendering template within layouts/surveys
+Rendering surveys/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/surveys]
+
+
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-28 15:35:57) [GET]
+SERVER_NAME127.0.0.1HTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; zh-CN; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 GTBDFff GTB7.0 (.NET CLR 3.5.30729)HTTP_ACCEPT_ENCODINGgzip,deflateHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/surveysHTTP_HOST127.0.0.1:4001HTTP_ACCEPT_LANGUAGEzh-cn,zh;q=0.5HTTP_IF_NONE_MATCH"59f62ae74036d49686e29d185a0964c8"-gzipSERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/surveysSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_X_REMOTE_USER_6E3RZQKX(null)HTTP_VERSIONHTTP/1.1HTTP_ACCEPT_CHARSETGB2312,utf-8;q=0.7,*;q=0.7HTTP_COOKIE_vote_demo_session=BAh7CToMY3NyZl9pZCIlZDE3ZjQ0MWQxMTdhMTA1ZTExYmFlODI5MzFjMjljOTc6DHVzZXJfaWQwIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsAOg5yZXR1cm5fdG8iEy9zdXJ2ZXlfc2hlZXRz--fdcf2b0882b45395fb874a4345ac2f0566b50a3bREQUEST_URI/surveysHTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT4001GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
+  [4;35;1mSurvey Load (0.0ms)[0m   [0mSELECT * FROM `surveys` [0m
+Rendering template within layouts/surveys
+Rendering surveys/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/surveys]
+
+
+Processing SessionsController#create_from_windows_login (for 127.0.0.1 at 2010-04-28 15:40:23) [GET]
+SERVER_NAME127.0.0.1HTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; zh-CN; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 GTBDFff GTB7.0 (.NET CLR 3.5.30729)HTTP_ACCEPT_ENCODINGgzip,deflateHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/winloginHTTP_HOST127.0.0.1:4001HTTP_ACCEPT_LANGUAGEzh-cn,zh;q=0.5HTTP_IF_NONE_MATCH"aecba6ae203b8748c0404b9c94cb14a3"-gzipSERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/winloginSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_X_REMOTE_USER_6E3RZQKX(null)HTTP_VERSIONHTTP/1.1HTTP_ACCEPT_CHARSETGB2312,utf-8;q=0.7,*;q=0.7HTTP_COOKIE_vote_demo_session=BAh7CToMY3NyZl9pZCIlZDE3ZjQ0MWQxMTdhMTA1ZTExYmFlODI5MzFjMjljOTc6DHVzZXJfaWQwOg5yZXR1cm5fdG8iEy9zdXJ2ZXlfc2hlZXRzIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--b4bfcc1469fad59f09a59446f96389c630763afdREQUEST_URI/winloginHTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT4001GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
 Browser did not provide Windows domain user name
 Rendering sessions/new
-Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/winlogin]
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/winlogin]
 
 
-Processing SessionsController#create_from_windows_login (for 127.0.0.1 at 2010-04-27 15:58:59) [GET]
-SERVER_NAME127.0.0.1HTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; zh-CN; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 GTBDFff GTB7.0 (.NET CLR 3.5.30729)HTTP_ACCEPT_ENCODINGgzip,deflateHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/winloginHTTP_HOST127.0.0.1:4001HTTP_ACCEPT_LANGUAGEzh-cn,zh;q=0.5HTTP_IF_NONE_MATCH"479299461011f0d4266753ed157a3af4"-gzipSERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/winloginSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_VERSIONHTTP/1.1HTTP_ACCEPT_CHARSETGB2312,utf-8;q=0.7,*;q=0.7HTTP_COOKIE_vote_demo_session=BAh7CDoMY3NyZl9pZCIlNGMyYThjOTUyY2YxNjllZWQ2MTA0Y2M3ZDAyZjkyZGY6DHVzZXJfaWQwIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewY6CmVycm9yIjVCcm93c2VyIGRpZCBub3QgcHJvdmlkZSBXaW5kb3dzIGRvbWFpbiB1c2VyIG5hbWUGOgpAdXNlZHsGOwhG--d87eba03b513f3068cbfbce24a312139f071a7d5REQUEST_URI/winloginHTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT4001GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-28 15:51:54) [GET]
+SERVER_NAMElocalhostHTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; zh-CN; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 GTBDFff GTB7.0 (.NET CLR 3.5.30729)HTTP_ACCEPT_ENCODINGgzip,deflateHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/surveysHTTP_HOSTlocalhost:8080HTTP_ACCEPT_LANGUAGEzh-cn,zh;q=0.5HTTP_IF_NONE_MATCH"59f62ae74036d49686e29d185a0964c8"-gzipSERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/surveysSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_X_REMOTE_USER_6E3RZQKX(null)HTTP_VERSIONHTTP/1.1HTTP_ACCEPT_CHARSETGB2312,utf-8;q=0.7,*;q=0.7HTTP_COOKIE_vote_demo_session=BAh7CToMY3NyZl9pZCIlZDE3ZjQ0MWQxMTdhMTA1ZTExYmFlODI5MzFjMjljOTc6DHVzZXJfaWQwIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewY6CmVycm9yIjVCcm93c2VyIGRpZCBub3QgcHJvdmlkZSBXaW5kb3dzIGRvbWFpbiB1c2VyIG5hbWUGOgpAdXNlZHsGOwhGOg5yZXR1cm5fdG8iEy9zdXJ2ZXlfc2hlZXRz--e3eec392e1311bf1cc065e2b89a998b5146d4e0dREQUEST_URI/surveysHTTP_X_REMOTE_USER(null)HTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT8080GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
+  [4;36;1mSurvey Load (0.0ms)[0m   [0;1mSELECT * FROM `surveys` [0m
+Rendering template within layouts/surveys
+Rendering surveys/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/surveys]
+
+
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-28 15:53:05) [GET]
+SERVER_NAMElocalhostHTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; zh-CN; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 GTBDFff GTB7.0 (.NET CLR 3.5.30729)HTTP_ACCEPT_ENCODINGgzip,deflateHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/surveysHTTP_HOSTlocalhost:8080HTTP_ACCEPT_LANGUAGEzh-cn,zh;q=0.5HTTP_IF_NONE_MATCH"59f62ae74036d49686e29d185a0964c8"-gzipSERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/surveysSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_X_REMOTE_USER_6E3RZQKX(null)HTTP_VERSIONHTTP/1.1HTTP_ACCEPT_CHARSETGB2312,utf-8;q=0.7,*;q=0.7HTTP_COOKIE_vote_demo_session=BAh7CToMY3NyZl9pZCIlZDE3ZjQ0MWQxMTdhMTA1ZTExYmFlODI5MzFjMjljOTc6DHVzZXJfaWQwOg5yZXR1cm5fdG8iEy9zdXJ2ZXlfc2hlZXRzIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewY6CmVycm9yIjVCcm93c2VyIGRpZCBub3QgcHJvdmlkZSBXaW5kb3dzIGRvbWFpbiB1c2VyIG5hbWUGOgpAdXNlZHsGOwlU--c4c38800a5e82dc706a689d67af4e067b9e3bd0eREQUEST_URI/surveysHTTP_X_REMOTE_USER(null)HTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT8080GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
+  [4;35;1mSurvey Load (1.0ms)[0m   [0mSELECT * FROM `surveys` [0m
+Rendering template within layouts/surveys
+Rendering surveys/index
+Completed in 4ms (View: 1, DB: 1) | 200 OK [http://localhost/surveys]
+
+
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-28 15:54:38) [GET]
+SERVER_NAMElocalhostHTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; zh-CN; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 GTBDFff GTB7.0 (.NET CLR 3.5.30729)HTTP_ACCEPT_ENCODINGgzip,deflateHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/surveysHTTP_HOSTlocalhost:8080HTTP_ACCEPT_LANGUAGEzh-cn,zh;q=0.5HTTP_IF_NONE_MATCH"59f62ae74036d49686e29d185a0964c8"-gzipSERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/surveysSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_X_REMOTE_USER_6E3RZQKX(null)HTTP_VERSIONHTTP/1.1HTTP_ACCEPT_CHARSETGB2312,utf-8;q=0.7,*;q=0.7HTTP_COOKIE_vote_demo_session=BAh7CToMY3NyZl9pZCIlZDE3ZjQ0MWQxMTdhMTA1ZTExYmFlODI5MzFjMjljOTc6DHVzZXJfaWQwIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsAOg5yZXR1cm5fdG8iEy9zdXJ2ZXlfc2hlZXRz--fdcf2b0882b45395fb874a4345ac2f0566b50a3bREQUEST_URI/surveysHTTP_X_REMOTE_USER(null)HTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT8080GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
+  [4;36;1mSurvey Load (0.0ms)[0m   [0;1mSELECT * FROM `surveys` [0m
+Rendering template within layouts/surveys
+Rendering surveys/index
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/surveys]
+
+
+Processing SessionsController#create_from_windows_login (for 127.0.0.1 at 2010-04-28 15:54:45) [GET]
+SERVER_NAMElocalhostHTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; zh-CN; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 GTBDFff GTB7.0 (.NET CLR 3.5.30729)HTTP_ACCEPT_ENCODINGgzip,deflateHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/winloginHTTP_HOSTlocalhost:8080HTTP_ACCEPT_LANGUAGEzh-cn,zh;q=0.5HTTP_IF_NONE_MATCH"aecba6ae203b8748c0404b9c94cb14a3"-gzipSERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/winloginSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_X_REMOTE_USER_6E3RZQKX(null)HTTP_VERSIONHTTP/1.1HTTP_ACCEPT_CHARSETGB2312,utf-8;q=0.7,*;q=0.7HTTP_COOKIE_vote_demo_session=BAh7CToMY3NyZl9pZCIlZDE3ZjQ0MWQxMTdhMTA1ZTExYmFlODI5MzFjMjljOTc6DHVzZXJfaWQwOg5yZXR1cm5fdG8iEy9zdXJ2ZXlfc2hlZXRzIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--b4bfcc1469fad59f09a59446f96389c630763afdREQUEST_URI/winloginHTTP_X_REMOTE_USER(null)HTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT8080GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
 Browser did not provide Windows domain user name
 Rendering sessions/new
-Completed in 7ms (View: 4, DB: 1) | 200 OK [http://localhost/winlogin]
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/winlogin]
 
 
-Processing ApplicationController#index (for 127.0.0.1 at 2010-04-27 17:10:53) [GET]
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-28 15:55:55) [GET]
+SERVER_NAMElocalhostHTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; zh-CN; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 GTBDFff GTB7.0 (.NET CLR 3.5.30729)HTTP_ACCEPT_ENCODINGgzip,deflateHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/surveysHTTP_HOSTlocalhost:8080HTTP_ACCEPT_LANGUAGEzh-cn,zh;q=0.5HTTP_IF_NONE_MATCH"59f62ae74036d49686e29d185a0964c8"-gzipSERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/surveysSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_X_REMOTE_USER_6E3RZQKX(null)HTTP_VERSIONHTTP/1.1HTTP_ACCEPT_CHARSETGB2312,utf-8;q=0.7,*;q=0.7HTTP_COOKIE_vote_demo_session=BAh7CToMY3NyZl9pZCIlZDE3ZjQ0MWQxMTdhMTA1ZTExYmFlODI5MzFjMjljOTc6DHVzZXJfaWQwIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewY6CmVycm9yIjVCcm93c2VyIGRpZCBub3QgcHJvdmlkZSBXaW5kb3dzIGRvbWFpbiB1c2VyIG5hbWUGOgpAdXNlZHsGOwhGOg5yZXR1cm5fdG8iEy9zdXJ2ZXlfc2hlZXRz--e3eec392e1311bf1cc065e2b89a998b5146d4e0dREQUEST_URI/surveysHTTP_X_REMOTE_USER(null)HTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT8080GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
+  [4;35;1mSurvey Load (0.0ms)[0m   [0mSELECT * FROM `surveys` [0m
+Rendering template within layouts/surveys
+Rendering surveys/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/surveys]
 
 
-ActionController::RoutingError (No route matches "/index.cgi" with {:method=>:get}):
+Processing SessionsController#create_from_windows_login (for 127.0.0.1 at 2010-04-28 17:42:26) [GET]
+SERVER_NAMElocalhostHTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; zh-CN; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 GTBDFff GTB7.0 (.NET CLR 3.5.30729)HTTP_ACCEPT_ENCODINGgzip,deflateHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/winloginHTTP_HOSTlocalhost:8080HTTP_ACCEPT_LANGUAGEzh-cn,zh;q=0.5SERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/winloginSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_VERSIONHTTP/1.1HTTP_ACCEPT_CHARSETGB2312,utf-8;q=0.7,*;q=0.7HTTP_COOKIE_vote_demo_session=BAh7CToMY3NyZl9pZCIlZDE3ZjQ0MWQxMTdhMTA1ZTExYmFlODI5MzFjMjljOTc6DHVzZXJfaWQwOg5yZXR1cm5fdG8iEy9zdXJ2ZXlfc2hlZXRzIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewY6CmVycm9yIjVCcm93c2VyIGRpZCBub3QgcHJvdmlkZSBXaW5kb3dzIGRvbWFpbiB1c2VyIG5hbWUGOgpAdXNlZHsGOwlU--c4c38800a5e82dc706a689d67af4e067b9e3bd0eREQUEST_URI/winloginHTTP_X_REMOTE_USER(null)HTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT8080GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
+Browser did not provide Windows domain user name
+Rendering sessions/new
+Completed in 4ms (View: 4, DB: 0) | 200 OK [http://localhost/winlogin]
+
+
+Processing SessionsController#create_from_windows_login (for 127.0.0.1 at 2010-04-28 17:52:40) [GET]
+SERVER_NAMElocalhostHTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; zh-CN; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 GTBDFff GTB7.0 (.NET CLR 3.5.30729)HTTP_ACCEPT_ENCODINGgzip,deflateHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/winloginHTTP_HOSTlocalhost:8080HTTP_ACCEPT_LANGUAGEzh-cn,zh;q=0.5HTTP_IF_NONE_MATCH"aecba6ae203b8748c0404b9c94cb14a3"-gzipSERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/winloginSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_VERSIONHTTP/1.1HTTP_ACCEPT_CHARSETGB2312,utf-8;q=0.7,*;q=0.7HTTP_COOKIE_vote_demo_session=BAh7CToMY3NyZl9pZCIlZDE3ZjQ0MWQxMTdhMTA1ZTExYmFlODI5MzFjMjljOTc6DHVzZXJfaWQwIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewY6CmVycm9yIjVCcm93c2VyIGRpZCBub3QgcHJvdmlkZSBXaW5kb3dzIGRvbWFpbiB1c2VyIG5hbWUGOgpAdXNlZHsGOwhGOg5yZXR1cm5fdG8iEy9zdXJ2ZXlfc2hlZXRz--e3eec392e1311bf1cc065e2b89a998b5146d4e0dREQUEST_URI/winloginHTTP_X_REMOTE_USER(null)HTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT8080GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
+Browser did not provide Windows domain user name
+Rendering sessions/new
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/winlogin]
+
+
+Processing SurveysController#index (for 127.0.0.1 at 2010-04-28 17:52:47) [GET]
+SERVER_NAMElocalhostHTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; zh-CN; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 GTBDFff GTB7.0 (.NET CLR 3.5.30729)HTTP_ACCEPT_ENCODINGgzip,deflateHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/surveysHTTP_HOSTlocalhost:8080HTTP_ACCEPT_LANGUAGEzh-cn,zh;q=0.5SERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/surveysSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_VERSIONHTTP/1.1HTTP_ACCEPT_CHARSETGB2312,utf-8;q=0.7,*;q=0.7HTTP_COOKIE_vote_demo_session=BAh7CToMY3NyZl9pZCIlZDE3ZjQ0MWQxMTdhMTA1ZTExYmFlODI5MzFjMjljOTc6DHVzZXJfaWQwOg5yZXR1cm5fdG8iEy9zdXJ2ZXlfc2hlZXRzIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewY6CmVycm9yIjVCcm93c2VyIGRpZCBub3QgcHJvdmlkZSBXaW5kb3dzIGRvbWFpbiB1c2VyIG5hbWUGOgpAdXNlZHsGOwlG--7552d8bc7c92f817a9f718d95801ea753604ed4dREQUEST_URI/surveysHTTP_X_REMOTE_USER(null)HTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT8080GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
+  [4;36;1mSurvey Load (0.0ms)[0m   [0;1mSELECT * FROM `surveys` [0m
+Rendering template within layouts/surveys
+Rendering surveys/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/surveys]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-28 17:54:02) [GET]
+
+
+ActionController::RoutingError (No route matches "/SS" with {:method=>:get}):
     D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
     D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/routing/route_set.rb:390:in `recognize'
     D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:183:in `handle_request'
@@ -143,10 +222,10 @@ ActionController::RoutingError (No route matches "/index.cgi" with {:method=>:ge
 Rendering D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (not_found)
 
 
-Processing ApplicationController#index (for 127.0.0.1 at 2010-04-27 17:11:02) [GET]
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-28 17:54:07) [GET]
 
 
-ActionController::RoutingError (No route matches "/index.cgi" with {:method=>:get}):
+ActionController::RoutingError (No route matches "/ss" with {:method=>:get}):
     D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
     D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/routing/route_set.rb:390:in `recognize'
     D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:183:in `handle_request'
@@ -181,54 +260,39 @@ ActionController::RoutingError (No route matches "/index.cgi" with {:method=>:ge
 Rendering D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (not_found)
 
 
-Processing SessionsController#create_from_windows_login (for 127.0.0.1 at 2010-04-27 17:11:18) [GET]
-SERVER_NAME127.0.0.1HTTP_USER_AGENTMozilla/5.0 (Windows; U; Windows NT 6.0; zh-CN; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9 GTBDFff GTB7.0 (.NET CLR 3.5.30729)HTTP_ACCEPT_ENCODINGgzip,deflateHTTP_X_FORWARDED_HOSTlocalhost:8080PATH_INFO/winloginHTTP_HOST127.0.0.1:4001HTTP_ACCEPT_LANGUAGEzh-cn,zh;q=0.5HTTP_IF_NONE_MATCH"479299461011f0d4266753ed157a3af4"-gzipSERVER_PROTOCOLHTTP/1.1SCRIPT_NAME/REQUEST_PATH/winloginSERVER_SOFTWAREMongrel 1.1.5REMOTE_ADDR127.0.0.1HTTP_VERSIONHTTP/1.1HTTP_ACCEPT_CHARSETGB2312,utf-8;q=0.7,*;q=0.7HTTP_COOKIE_vote_demo_session=BAh7CDoMY3NyZl9pZCIlNGMyYThjOTUyY2YxNjllZWQ2MTA0Y2M3ZDAyZjkyZGY6DHVzZXJfaWQwIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--2fc9093a9b71ef5de8041cbf37f10201a7c10845REQUEST_URI/winloginHTTP_X_FORWARDED_SERVERlocalhostSERVER_PORT4001GATEWAY_INTERFACECGI/1.2HTTP_ACCEPTtext/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8HTTP_X_FORWARDED_FOR127.0.0.1REQUEST_METHODGETHTTP_CONNECTIONKeep-Alive
-Browser did not provide Windows domain user name
-Rendering sessions/new
-Completed in 7ms (View: 3, DB: 1) | 200 OK [http://localhost/winlogin]
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-28 17:54:35) [GET]
 
 
-Processing SessionsController#new (for 127.0.0.1 at 2010-04-27 17:11:24) [GET]
-Rendering sessions/new
-Completed in 3ms (View: 3, DB: 0) | 200 OK [http://localhost/login]
+ActionController::RoutingError (No route matches "/ss" with {:method=>:get}):
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/routing/route_set.rb:390:in `recognize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:76:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:74:in `process'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:159:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:158:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:158:in `process_client'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:285:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:285:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:285:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:268:in `initialize'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:268:in `new'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel.rb:268:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/configurator.rb:282:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/configurator.rb:281:in `each'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/configurator.rb:281:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:128:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/command.rb:212:in `run'
+    D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:281
+    D:/zjc/devtools/Ruby/bin/mongrel_rails:19:in `load'
+    D:/zjc/devtools/Ruby/bin/mongrel_rails:19
 
-
-Processing SessionsController#new (for 127.0.0.1 at 2010-04-27 17:11:32) [GET]
-Rendering sessions/new
-Completed in 3ms (View: 3, DB: 0) | 200 OK [http://localhost/login]
-
-
-Processing SurveysController#index (for 127.0.0.1 at 2010-04-27 17:11:50) [GET]
-Rendering template within layouts/surveys
-Rendering surveys/index
-Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/surveys]
-
-
-Processing SurveysController#new (for 127.0.0.1 at 2010-04-27 17:12:17) [GET]
-Rendering template within layouts/surveys
-Rendering surveys/new
-Completed in 18ms (View: 10, DB: 6) | 200 OK [http://localhost/surveys/new]
-
-
-Processing SurveysController#index (for 127.0.0.1 at 2010-04-27 17:20:44) [GET]
-Rendering template within layouts/surveys
-Rendering surveys/index
-Completed in 3ms (View: 1, DB: 1) | 200 OK [http://localhost/surveys/]
-
-
-Processing SurveysController#index (for 127.0.0.1 at 2010-04-27 17:26:18) [GET]
-Rendering template within layouts/surveys
-Rendering surveys/index
-Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/surveys/]
-
-
-Processing SurveysController#index (for 127.0.0.1 at 2010-04-27 18:05:56) [GET]
-Rendering template within layouts/surveys
-Rendering surveys/index
-Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/surveys/]
-
-
-Processing SurveysController#index (for 127.0.0.1 at 2010-04-27 18:08:38) [GET]
-Rendering template within layouts/surveys
-Rendering surveys/index
-Completed in 3ms (View: 2, DB: 1) | 200 OK [http://localhost/surveys/]
+Rendering D:/zjc/devtools/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (not_found)
