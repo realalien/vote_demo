@@ -8,10 +8,10 @@ class SurveysController < ApplicationController
      User.find_by_name(remote_name)
    end
    
-   def access_denied!
-     render :text => "access denied!"
-     #redirect_to access_denied_path and return false
-   end
+#   def access_denied!
+#     render :text => "access denied!"
+#     #redirect_to access_denied_path and return false
+#   end
 
 
   # GET /surveys

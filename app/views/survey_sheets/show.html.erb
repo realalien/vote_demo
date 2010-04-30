@@ -1,9 +1,9 @@
 
 <%= javascript_include_tag :defaults %>
 
-
-Survey answer sheet demo<br />
-
+<% form_tag survey_sheet_path(@survey_sheet), :method => :get, :class => "" do -%>
+    <%= render(:partial => 'survey_sheet_form') %>
+<% end %>
 
 
 

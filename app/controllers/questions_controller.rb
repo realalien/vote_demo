@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
 
-  before_filter :get_survey
+  #before_filter :get_survey
 	
   # GET /questions
   # GET /questions.xml
@@ -115,13 +115,13 @@ class QuestionsController < ApplicationController
       
       
       # try to remove the heading underline to test if the id caused the RJS update error.
-      if @question.wrapper_dom_id(params)[0] == "_"
-        idd = @question.wrapper_dom_id(params).slice(1,@question.wrapper_dom_id(params).size)
-      else
-        idd = @question.wrapper_dom_id(params)
-      end
-      page.replace_html idd, ratings_for(@question, params.merge(:wrap => false))
-      page.visual_effect :highlight, idd
+#      if @question.wrapper_dom_id(params)[0] == "_"
+#        idd = @question.wrapper_dom_id(params).slice(1,@question.wrapper_dom_id(params).size)
+#      else
+#        idd = @question.wrapper_dom_id(params)
+#      end
+      page.replace_html @question.wrapper_dom_id(params), ratings_for(@question, params.merge(:wrap => false))
+      page.visual_effect :highlight, @question.wrapper_dom_id(params)
     end
   end
   

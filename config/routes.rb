@@ -29,6 +29,8 @@ ActionController::Routing::Routes.draw do |map|
 
   # for rating
   map.resources :questions, :member => {:rate => :post}
+  
+  #map.connect 'ntlm/login', :controller => 'sessions', :action => 'new'
 
   map.connect 'user/vote_for/:id', :controller => :user,:action=>'vote_for'
 		  		
@@ -82,7 +84,7 @@ ActionController::Routing::Routes.draw do |map|
   #map.connect 'survey_sheets/:id', :controller => "survey_sheets", :action => "show"
                                   # :conditions=> {:method => :get}
 
-  map.winlogin 'winlogin', :controller => 'sessions', :action => 'create_from_windows_login'
+  #map.winlogin 'winlogin', :controller => 'sessions', :action => 'create_from_windows_login'
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end

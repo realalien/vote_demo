@@ -12,7 +12,7 @@
 	  <tr>
 	    <td><%=h sheet.title %></td>
 		<td><%=h sheet.survey_id %></td>
-	    <td><%= link_to 'Edit', survey_sheet_path(sheet.id)%></td>
+	    <td><%= link_to 'Show', survey_sheet_path(sheet.id)%></td>
 	  </tr>
 	<% end %>
 	</table>
@@ -40,7 +40,7 @@
 	    <td><%=h sheet.description %></td>
 		<td><%=h sheet.category %></td>
 		<td><%=h sheet.target_audience %></td>
-		<td><%=link_to "Take this survey", survey_sheet_path(sheet)  %></td>
+		<td><%=link_to "Take this survey", new_survey_sheet_path(:survey_id => sheet.id )  %></td>
 	  </tr>
 	<% end %>
 	</table>

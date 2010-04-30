@@ -9,6 +9,14 @@ class SessionsController < ApplicationController
 
   def create
     logout_keeping_session!
+        logger.info "-----------------------------------------"
+    request.params['REMOTE_USER'] 
+    logger.info "-----------------------------------------"
+    logger.info request.env['REMOTE_USER']
+    logger.info "-----------------------------------------"
+    logger.info request.env
+    logger.info "-----------------------------------------"
+    
     user = User.authenticate(params[:login], params[:password])
     if user
       # Protects against session fixation attacks, causes request forgery
