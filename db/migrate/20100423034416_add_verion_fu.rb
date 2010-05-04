@@ -8,7 +8,7 @@ class AddVerionFu < ActiveRecord::Migration
 	       t.integer :user_id  # user_id is to record the multiple users if collab
 	       t.integer :rating
          t.text :answer_text
-         t.timestamp
+         t.timestamp :updated_at
       end
   end
 

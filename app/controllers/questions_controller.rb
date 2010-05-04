@@ -105,21 +105,6 @@ class QuestionsController < ApplicationController
     
     # TODO: The page gives error!
     render :update do |page|
-      logger.info "----------------------------------"
-      logger.info "#{@question.wrapper_dom_id(params)}"
-      logger.info "----------------------------------"
-      logger.info "#{ratings_for(@question, params.merge(:wrap => false))}"
-      logger.info "----------------------------------"
-      logger.info params
-      logger.info "----------------------------------"
-      
-      
-      # try to remove the heading underline to test if the id caused the RJS update error.
-#      if @question.wrapper_dom_id(params)[0] == "_"
-#        idd = @question.wrapper_dom_id(params).slice(1,@question.wrapper_dom_id(params).size)
-#      else
-#        idd = @question.wrapper_dom_id(params)
-#      end
       page.replace_html @question.wrapper_dom_id(params), ratings_for(@question, params.merge(:wrap => false))
       page.visual_effect :highlight, @question.wrapper_dom_id(params)
     end

@@ -16,13 +16,14 @@
 	<br/>
 	<% if question.is_rateable%>
 	Rating:
-	<%= ratings_for(question, :show_user_rating => true)%>
+	<%= ratings_for(question, :dimension => :description, :show_user_rating => true)%>
 	<% end %>
 	<br/>
 	<textarea cols="100" rows="3" id="response<%=question.id%>" name="response<%=question.id%>" class=""><%= "#{that_user_response(question).answer_text}" %></textarea><br/>
 	
 	<br/> Total version
 	<% prev_versions = that_user_response(question).versions %>
+	
 	<table border="1">
 	<tr>
 		<td>versions</td><td>rating</td> <td>answer</td><td></td>

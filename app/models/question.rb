@@ -1,6 +1,6 @@
 class Question < ActiveRecord::Base
   
-  ajaxful_rateable :stars => 10
+  ajaxful_rateable :stars => 10 ,  :dimensions => [:description]
 	acts_as_commentable
   
 	has_many :survey_question_assignments, :dependent => :nullify

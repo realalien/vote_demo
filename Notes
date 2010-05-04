@@ -1,5 +1,22 @@
 
 
+
+20100503
+* [DONE] FIX THE rjs error!
+   see: http://github.com/edgarjs/ajaxful-rating/issues#issue/21
+   SEE: http://github.com/odorcicd/ajaxful-rating/blob/master/lib/axr/model.rb  ca.line 97
+
+* [TODO] create a basic layout of the application
+   
+
+* [TODO] make a starndard admin privilege to control the basic operations like deleting resources or managing surveys 
+    ...sug: mak
+    
+    
+* [TODO] create a basic boardcasting service for mailing.
+
+
+
 20100426-27
 * [TODO]
    make active directory work for the rails project and set it up on a win box,
