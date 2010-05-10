@@ -1,0 +1,21 @@
+
+
+<% if @users%>
+<table>
+	<% @users.each do | user | %> 
+		<tr>
+			<td><%= user.login %> has taken  <%= user.survey_sheets.count%>  survey(s).</td> 
+			<td>
+				<ul>
+					<% user.survey_sheets.each do |sheet| %>
+						 <%= link_to (sheet.survey.title || "No title"), survey_sheet_url(sheet) %>: <%= sheet.survey.description %>
+					<% end %>
+				</ul>
+			</td>	
+			<% end %>
+		</tr>
+</table>
+
+<% else %>
+It's unbelieveable that no one exists in this system.
+<% end %>
