@@ -11,6 +11,8 @@
 	<!-- question section -->
 	<b><%= question.title %></b><br/>
 	Question:  <%= question.description%> <br/>
+	<% q_cn = translate(question.description, "zh-CN") %>
+	chinese: <%= q_cn %> <br/>
 	<!-- response/answer section -->
 	<!-- one question to one answer , not a copy of object, a direct reference, can it be?-->
 	<br/>
@@ -45,4 +47,4 @@
 <%= submit_tag 'Press to Save/Update your answers', :disable_with => "Saving&hellip;" %>
 </p>                        
 </div> 
-<%= hidden_field_tag("survey_sheet_id", @survey_sheet.id) %>
+<%= hidden_field_tag("survey_id", @survey_sheet.survey.id) %>

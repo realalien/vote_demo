@@ -19,6 +19,6 @@ class SurveySheet < ActiveRecord::Base
     validates_presence_of(:user_id, :message => "must login to take a survey sheet! But no user_id found!")
     validates_presence_of(:survey_id, :message => "must reference to a survey definition! Survey ID not assigned! ")
 
-
-
+    belongs_to :user
+    belongs_to :survey
 end

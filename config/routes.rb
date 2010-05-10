@@ -7,20 +7,23 @@ ActionController::Routing::Routes.draw do |map|
   	survey.resources :questions
   end
 
-  #map.resources :surveys, has_many :questions
-  map.resources :questions
+  #map.resources :surveys, has_many => [ :questions ]
+  #map.resources :questions
 
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.register '/register', :controller => 'users', :action => 'create'
   map.signup '/signup', :controller => 'users', :action => 'new'
+  
+  map.connect 'user/index', :controller => 'users', :action => 'index'
+  
   map.resources :users do |user|
 		  user.resources :votes
 		  user.resources :travel_places do | travel_place |
 				  travel_place.resources :votes
 		  end
   end
-
+  
   map.resource :session
 
   map.resources :travel_places do 
@@ -30,6 +33,13 @@ ActionController::Routing::Routes.draw do |map|
   # for rating
   map.resources :questions, :member => {:rate => :post}
   
+  map.resources :survey_sheets do | sheet |
+    sheet.resources :responses
+  end
+  
+  #map.connect "survey_sheets/:action" , :controller => 'survey_sheets', :action => 'action'
+  
+    
   #map.connect 'ntlm/login', :controller => 'sessions', :action => 'new'
 
   map.connect 'user/vote_for/:id', :controller => :user,:action=>'vote_for'
@@ -79,7 +89,7 @@ ActionController::Routing::Routes.draw do |map|
   # Non-restful controller
   # map.connect 'survey_sheets/:action', :controller => 'survey_sheets'
   # resourceful routing.
-  map.resources :survey_sheets
+
   
   #map.connect 'survey_sheets/:id', :controller => "survey_sheets", :action => "show"
                                   # :conditions=> {:method => :get}

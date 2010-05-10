@@ -1,4 +1,11 @@
 
+20100510
+* added Google translate api by example:
+  http://ruby.geraldbauer.ca/google-translation-api.html
+
+* it's quite uncomfortable to use id as a survey_def_id in SurveySheetController#show
+I can either change the link to the modification page by changing following code,
+<td><%= link_to 'Edit', survey_sheet_url(sheet.id), :survey_id => sheet.survey.id %></td>
 
 
 20100503
@@ -155,4 +162,39 @@ SUG: HINT: it probably could be easier if we have sheet-to-answer one-to-many re
   
   The problem lies in if the answers are corresponding to the questions.
   
+  
+  
+  
+  -------------------------------------------------
+  
+  req
+  
+  
+Please have a look at the document: 
+\\spicyfile\SpicyHorse\human_resources\Evals\Evaluation_Form.doc
+The purpose of the document is to drive more communication within the studio  and share the information of whether all employees are happy or not.We need to  make it a online survey system so that everyone can participate in it much  easier.
+
+Requirements:
+
+5 web pages: survey edit page, survey view page, employee survey list page,  survey result(statistics) page, main page
+database: store the survey result and history of every modification in mysql  server on spicydata
+
+survey edit page( high priority)
+     It contains the content in Evaluation_Form.doc pre-filled with the last  submitted modification(empty for the first time). Employees/managers should be  able to modify the content and submit to server. Every submisson(modification)  to the form should be saved in the employee's database as a new version. The  server should be able to recognize who submit the form by windows login name  and which employee's form it is by page context.
+
+survey view page( medium priority)
+     It displays the emplyee's last modified survey form and the name of who  made the modification(the employee or his manager). At the bottom of this page  there should be a list of links of the previous versions.
+
+employee survey list page(high priority)
+    It lists the all the employee's name with links to the edit page and the  view page. Only managers have access to this page(to be considered).
+
+survey result(statistics) page(medium priority)
+    It display the average scores of all employee's last submitted form.
+
+main page
+   A brief introduction of the survey and links to the other 4 pages.
+
+The system will be deployed on spicydata with a link in spicy WIKI.
+
+Pleae talk to chenbaowu if more detail required.  
   

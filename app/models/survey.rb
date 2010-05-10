@@ -1,4 +1,9 @@
 class Survey < ActiveRecord::Base
+  
+  validates_presence_of(:title, :message => "must give a title to make later modification easier!")
+  
 	has_many :survey_question_assignments, :dependent => :nullify
 	has_many :questions, :through => :survey_question_assignments
+  
+  has_many :sheets
 end

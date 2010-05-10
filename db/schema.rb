@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100423055137) do
+ActiveRecord::Schema.define(:version => 20100510070335) do
 
   create_table "answers", :force => true do |t|
     t.text     "description"
@@ -64,11 +64,12 @@ ActiveRecord::Schema.define(:version => 20100423055137) do
   add_index "rates", ["rater_id"], :name => "index_rates_on_rater_id"
 
   create_table "response_versions", :force => true do |t|
-    t.integer "response_id"
-    t.integer "version"
-    t.integer "user_id"
-    t.integer "rating"
-    t.text    "answer_text"
+    t.integer  "response_id"
+    t.integer  "version"
+    t.integer  "user_id"
+    t.integer  "rating"
+    t.text     "answer_text"
+    t.datetime "updated_at"
   end
 
   create_table "responses", :force => true do |t|
@@ -81,6 +82,18 @@ ActiveRecord::Schema.define(:version => 20100423055137) do
     t.datetime "updated_at"
     t.integer  "version",         :default => 1
   end
+
+  create_table "roles", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "roles_users", :id => false, :force => true do |t|
+    t.integer "role_id"
+    t.integer "user_id"
+  end
+
+  add_index "roles_users", ["role_id"], :name => "index_roles_users_on_role_id"
+  add_index "roles_users", ["user_id"], :name => "index_roles_users_on_user_id"
 
   create_table "sheet_answer_relations", :force => true do |t|
     t.integer  "survey_sheet_id"
@@ -114,11 +127,8 @@ ActiveRecord::Schema.define(:version => 20100423055137) do
     t.text    "responses",     :null => false
   end
 
-  create_table "smerf_responses", :force => true do |t|
-    t.integer "smerf_forms_user_id", :null => false
-    t.string  "question_code",       :null => false
-    t.text    "response",            :null => false
-  end
+# Could not dump table "smerf_responses" because of following ActiveRecord::StatementInvalid
+#   Mysql::Error: Can't create/write to file 'C:\Windows\TEMP\#sql_864_0.MYI' (Errcode: 13): describe `smerf_responses`
 
   create_table "survey_question_assignments", :force => true do |t|
     t.integer  "survey_id",   :null => false

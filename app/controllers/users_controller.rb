@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   # Be sure to include AuthenticationSystem in Application Controller instead
   include AuthenticatedSystem
-  
+
+  #require_role "admin", :for => :index
 
   # render new.rhtml
   def new
@@ -18,7 +19,8 @@ class UsersController < ApplicationController
       # button. Uncomment if you understand the tradeoffs.
       # reset session
       self.current_user = @user # !! now logged in
-      redirect_back_or_default('/')
+      redirect_to survey_sheets_url
+      #redirect_back_or_default('/')
       flash[:notice] = "Thanks for signing up!  We're sending you an email with your activation code."
     else
       flash[:error]  = "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
@@ -27,6 +29,11 @@ class UsersController < ApplicationController
   end
 
   def vote_for
-	current_user.vote_for(TravelPlace.find(params[:id]))
+	   current_user.vote_for(TravelPlace.find(params[:id]))
   end
+
+  def index
+    @users = User.find(:all)
+  end
+
 end
