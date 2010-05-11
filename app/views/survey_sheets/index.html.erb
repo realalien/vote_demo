@@ -3,15 +3,15 @@
 <% if @previous_sheets %>
 	<table>
 	  <tr>
-	    <th>title</th>
-	    <th>source survey_definition</th>
-		<th>operations</th>
+	    <th>Title</th>
+	    <th>Survey Description</th>
+		<th>Operations</th>
 	  </tr>
 	
 	<% for sheet in @previous_sheets %>
 	  <tr>
-	    <td><%=h sheet.title %></td>
-		<td><%=h sheet.survey_id %></td>
+	    <td><%=h sheet.survey.title %></td>
+		<td><%=h sheet.survey.description %></td>
 	    <td><%= link_to 'Edit', survey_sheet_url(sheet.id), :survey_id => sheet.survey.id %></td>
 	  </tr>
 	<% end %>
@@ -26,21 +26,21 @@
 <h1>Listing of available surveys</h1>
 
 <% if @available_surveys %>
-	<table border="1">
+	<table>
 	  <tr>
-	    <th>title</th>
-	    <th>description</th>
-	    <th>category</th>
-		<th>target_audience</th>
+	    <th>Title</th>
+	    <th>Survey Description</th>
+	    <th>Category</th>
+		<th>Target Audience</th>
 	  </tr>
 	
-	<% for sheet in @available_surveys %>
+	<% for survey in @available_surveys %>
 	  <tr>
-	    <td><%=h sheet.title %></td>
-	    <td><%=h sheet.description %></td>
-		<td><%=h sheet.category %></td>
-		<td><%=h sheet.target_audience %></td>
-		<td><%=link_to "Take this survey", new_survey_sheet_path(:survey_id => sheet.id )  %></td>
+	    <td><%=h survey.title %></td>
+	    <td><%=h survey.description %></td>
+		<td><%=h survey.category %></td>
+		<td><%=h survey.target_audience %></td>
+		<td><%=link_to "Take this survey", new_survey_sheet_path(:survey_id => survey.id )  %></td>
 	  </tr>
 	<% end %>
 	</table>

@@ -1,4 +1,8 @@
 
+20100511
+* about print, it looks like that we need to create another action to handle the 'Print' action.
+
+
 20100510
 * added Google translate api by example:
   http://ruby.geraldbauer.ca/google-translation-api.html
@@ -196,5 +200,5 @@ main page
 
 The system will be deployed on spicydata with a link in spicy WIKI.
 
-Pleae talk to chenbaowu if more detail required.  
+Please talk to chenbaowu if more detail required.  
   

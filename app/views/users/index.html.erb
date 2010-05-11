@@ -1,14 +1,15 @@
 
+TODO: add last updated column for sorting.
 
 <% if @users%>
-<table>
+<table border="1">
 	<% @users.each do | user | %> 
 		<tr>
 			<td><%= user.login %> has taken  <%= user.survey_sheets.count%>  survey(s).</td> 
 			<td>
 				<ul>
 					<% user.survey_sheets.each do |sheet| %>
-						 <%= link_to (sheet.survey.title || "No title"), survey_sheet_url(sheet) %>: <%= sheet.survey.description %>
+						 <li><%= link_to (sheet.survey.title || "No title"), survey_sheet_url(sheet) %>: <%= sheet.survey.description %></li>
 					<% end %>
 				</ul>
 			</td>	
