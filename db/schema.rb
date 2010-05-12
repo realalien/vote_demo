@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100510070335) do
+ActiveRecord::Schema.define(:version => 20100512071447) do
 
   create_table "answers", :force => true do |t|
     t.text     "description"
@@ -104,6 +104,13 @@ ActiveRecord::Schema.define(:version => 20100510070335) do
     t.datetime "updated_at"
   end
 
+  create_table "sheet_histories", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "when_submit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sheet_question_relations", :force => true do |t|
     t.integer  "survey_sheet_id"
     t.integer  "question_id"
@@ -127,8 +134,11 @@ ActiveRecord::Schema.define(:version => 20100510070335) do
     t.text    "responses",     :null => false
   end
 
-# Could not dump table "smerf_responses" because of following ActiveRecord::StatementInvalid
-#   Mysql::Error: Can't create/write to file 'C:\Windows\TEMP\#sql_864_0.MYI' (Errcode: 13): describe `smerf_responses`
+  create_table "smerf_responses", :force => true do |t|
+    t.integer "smerf_forms_user_id", :null => false
+    t.string  "question_code",       :null => false
+    t.text    "response",            :null => false
+  end
 
   create_table "survey_question_assignments", :force => true do |t|
     t.integer  "survey_id",   :null => false

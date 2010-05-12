@@ -21,4 +21,6 @@ class SurveySheet < ActiveRecord::Base
 
     belongs_to :user
     belongs_to :survey
+    
+    has_many :sheet_histories
 end

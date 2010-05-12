@@ -37,7 +37,7 @@ ActionController::Routing::Routes.draw do |map|
     sheet.resources :responses
   end
   
-  #map.connect "survey_sheets/:action" , :controller => 'survey_sheets', :action => 'action'
+  map.connect "survey_sheets/:action" , :controller => 'survey_sheets', :action => ':action'
   
     
   #map.connect 'ntlm/login', :controller => 'sessions', :action => 'new'

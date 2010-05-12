@@ -1,4 +1,31 @@
 
+
+
+
+
+
+20100512
+* [TODO] since we provide sheet history version, so edit page should allow the user to load/edit previous version. 
+		Though it's quite not convinient to see the difference.
+
+
+
+* [Q] I wonder if the cellphone page how to help re-arrange the action code?
+  [A] 
+
+* [Done] forward user to the the 'Employee Form' survey after logged in, rather than let user choose existing one.
+    >>>> created ApplicationController#forward_to_employee_form for temporary use
+    >>>> UserController, SessionController have references
+    
+* [TODO] modify the survey entry page, move out the version and make the version related to the survey instead of each question
+	>>>> 
+
+* [TODO] format the page with better design. 
+	>>>>  
+
+* [TODO] administration role of managing all users survey.
+	>>>> 
+
 20100511
 * about print, it looks like that we need to create another action to handle the 'Print' action.
 
@@ -10,6 +37,7 @@
 * it's quite uncomfortable to use id as a survey_def_id in SurveySheetController#show
 I can either change the link to the modification page by changing following code,
 <td><%= link_to 'Edit', survey_sheet_url(sheet.id), :survey_id => sheet.survey.id %></td>
+
 
 
 20100503

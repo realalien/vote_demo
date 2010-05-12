@@ -8,6 +8,9 @@
 <%= link_to "Go to page for printing this survey sheet!", :controller => "SurveySheet", :action => "print", :id => @survey_sheet.id %><br/><br/><br/><br/>
 </div>
 
+#TODO: LINK TO version history:
+
+
 <!-- display questions with preset answers, 
     IDEA: maybe we can use view helper to group each question/response -->	
 <% @survey_sheet.questions.each do | question| %>   <!--TODO: remember to -->
@@ -29,27 +32,7 @@
 	<textarea cols="100" rows="3" id="response<%=question.id%>" name="response<%=question.id%>" class=""><%= "#{that_user_response(question).answer_text}" %></textarea><br/>
 	
 	<br/>
-	<% prev_versions = that_user_response(question).versions %>
 	
-	<div id="version">
-		<a href="#" onclick="Element.toggle('version_info<%=question.id%>');return false">
-			Show history </a>
-		<fieldset id="version_info<%=question.id%>" class="version_info" style="display:none">
-			<legend>Previous versions</legend>
-			<table id="version_table" border="1" >
-				<tr>
-					<td>Versions</td><td>Rating</td> <td>Answer</td>
-				</tr>
-				<% for ver in prev_versions%>
-				<tr> 	
-					<td><%= ver.version - 1%></td>
-					<td><%= ver.rating%></td>
-					<td><%= ver.answer_text%></td>
-				<% end %>
-				</tr>
-			</table>
-		</fieldset>
-	</div>
 	<hr/>
 <% end %>
 

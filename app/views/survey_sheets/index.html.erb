@@ -1,50 +1,23 @@
-<h1>Listing of previous surveys</h1>
 
-<% if @previous_sheets %>
-	<table>
-	  <tr>
-	    <th>Title</th>
-	    <th>Survey Description</th>
-		<th>Operations</th>
-	  </tr>
+
+
+
+
+<% link_to "Continue to do the survey 'Spicy Horse Quarterly Teammate Evaluation Form'", @survey_sheet%>
+
+# TODO: allow user to load previous one
+
+<b>List of versions</b>
+
+ 
+<b>Modification History</b> ( Total <%= @survey_sheet.sheet_histories.size%> version(s).)
 	
-	<% for sheet in @previous_sheets %>
-	  <tr>
-	    <td><%=h sheet.survey.title %></td>
-		<td><%=h sheet.survey.description %></td>
-	    <td><%= link_to 'Edit', survey_sheet_url(sheet.id), :survey_id => sheet.survey.id %></td>
-	  </tr>
-	<% end %>
-	</table>
-<% else %>
-	 No previous sheet taken!
- <% end %>
 
-<br />
-
-
-<h1>Listing of available surveys</h1>
-
-<% if @available_surveys %>
-	<table>
-	  <tr>
-	    <th>Title</th>
-	    <th>Survey Description</th>
-	    <th>Category</th>
-		<th>Target Audience</th>
-	  </tr>
+<table>
 	
-	<% for survey in @available_surveys %>
-	  <tr>
-	    <td><%=h survey.title %></td>
-	    <td><%=h survey.description %></td>
-		<td><%=h survey.category %></td>
-		<td><%=h survey.target_audience %></td>
-		<td><%=link_to "Take this survey", new_survey_sheet_path(:survey_id => survey.id )  %></td>
-	  </tr>
+	<% @survey_sheet.sheet_histories.each do | hist | %>	
+		<tr><td><%= hist.user.login%></td><td><%= hist.when_submit %></td></tr>
 	<% end %>
-	</table>
-<% else %>
- No avaialbe sheet!
-<% end %>
+</table>
+
 

@@ -12,6 +12,8 @@ class SurveySheetsController < ApplicationController
   # GET /survey_sheet/id
   #  
   # or name
+  
+  # Notes: I think to make everything right from the beginning, even the sheet history should be made resourceful TODO
   def show
     if params["id"]
       @survey_sheet = SurveySheet.find_by_id(params[:id])
@@ -33,7 +35,7 @@ class SurveySheetsController < ApplicationController
       # test if user has done this survey, not always create a new copy.
       @user_did_sheet = SurveySheet.find(:all, :conditions => ["user_id = :user_id and survey_id = :survey_id", 
       { :user_id => self.current_user.id, 
-          :survey_id => params[:survey_id] }  ]) 
+        :survey_id => params[:survey_id] }  ]) 
       
       if @user_did_sheet and @user_did_sheet.size > 0
         # load sheet and render 
@@ -57,6 +59,7 @@ class SurveySheetsController < ApplicationController
           r.user_id = self.current_user.id
           @survey_sheet.responses << r 
         end  
+        
         @survey_sheet.save!  
         
         render :action => "edit"
@@ -69,6 +72,8 @@ class SurveySheetsController < ApplicationController
   
   # PUT /survey_sheets/1
   def update
+    # TODO: try to retrieve the survey_sheet then update, avoid hacking by faking a id of non-self survey_sheet
+    
     if (has_survey_responses(params))
       #render :text => "in update, params has responses, so we can parse and update!"
       # * parse and update the survey_sheet and responses, see if we can DRY by doing sth 
@@ -81,8 +86,15 @@ class SurveySheetsController < ApplicationController
       
       logger.debug "@survey_sheet has responses size:  #{@survey_sheet.responses.size}"
       
+      # TODO: make it a transaction to avoid dirty records
+      ts = Time.now
+      
+      @a_version = SheetHistory.new
+      @a_version.user_id = current_user.id
+      @a_version.when_submit =  ts
+      @survey_sheet.sheet_histories << @a_version
       @survey_sheet.responses.each do | response | 
-        response.update_attribute(:updated_at ,Time.now)
+        response.update_attribute(:updated_at ,ts )
         response.update_attribute(:answer_text, params["response#{response.question_id}"] )
         response.save!
       end
@@ -94,31 +106,39 @@ class SurveySheetsController < ApplicationController
     end
   end
   
-  #/survey_sheets/
+  # TODO: study the resourceful design and make the index action right
   def index
-    @previous_sheets = SurveySheet.find(:all, :conditions => ["user_id = :user_id ", 
-    { :user_id => self.current_user.id }  ] )
-    existing_ids = []
-    @previous_sheets.each { |s| existing_ids << s.survey_id }
-    @all_def = Survey.find(:all)
-    @available_surveys = [] 
+     @survey_sheet = find_user_employee_form
+     if @survey_sheet
+         # render index.html.erb
+     else
+        forward_to_employee_form
+     end
     
-    @all_def.each do | s |
-      @available_surveys << s  unless existing_ids.include?(s.id)
-    end
+    #forward_to_employee_form
     
+#    @previous_sheets = SurveySheet.find(:all, :conditions => ["user_id = :user_id ", 
+#    { :user_id => self.current_user.id }  ] )
+#    existing_ids = []
+#    @previous_sheets.each { |s| existing_ids << s.survey_id }
+#    @all_def = Survey.find(:all)
+#    @available_surveys = [] 
+#    
+#    @all_def.each do | s |
+#      @available_surveys << s  unless existing_ids.include?(s.id)
+#    end
   end
   
-  def edit
-    if params[:id]
-      @survey_sheet = SurveySheet.find(:first, 
-                       :conditions => ["user_id = :user_id and survey_id = :survey_id", 
-                        { :user_id => self.current_user.id, 
-                          :survey_id => params[:id] }  ] )
-    else
-      render :text => "Can not edit without an id!"  
-    end
-  end    
+#  def edit
+#    if params[:id]
+#      @survey_sheet = SurveySheet.find(:first, 
+#                       :conditions => ["user_id = :user_id and survey_id = :survey_id", 
+#                        { :user_id => self.current_user.id, 
+#                          :survey_id => params[:id] }  ] )
+#    else
+#      render :text => "Can not edit without an id!"  
+#    end
+#  end    
   
   def print
     

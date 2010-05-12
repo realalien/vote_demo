@@ -1,0 +1,88 @@
+
+<!-- _survey_sheet_form.html.erb : show response version history.-->
+<% prev_versions = that_user_response(question).versions %>
+	
+	<div id="version">
+		<a href="#" onclick="Element.toggle('version_info<%=question.id%>');return false">
+			Show history </a>
+		<fieldset id="version_info<%=question.id%>" class="version_info" style="display:none">
+			<legend>Previous versions</legend>
+			<table id="version_table" border="1" >
+				<tr>
+					<td>Versions</td><td>Rating</td> <td>Answer</td>
+				</tr>
+				<% for ver in prev_versions%>
+				<tr> 	
+					<td><%= ver.version - 1%></td>
+					<td><%= ver.rating%></td>
+					<td><%= ver.answer_text%></td>
+				<% end %>
+				</tr>
+			</table>
+		</fieldset>
+	</div>
+	
+<!-- vote_demo/app/views/survey_sheets/index.html.erb : displaying all the previously-did or newly-availabe surveys. -->
+<h1>Listing of previous surveys</h1>
+
+<% if @previous_sheets %>
+	<table>
+	  <tr>
+	    <th>Title</th>
+	    <th>Survey Description</th>
+		<th>Operations</th>
+	  </tr>
+	
+	<% for sheet in @previous_sheets %>
+	  <tr>
+	    <td><%=h sheet.survey.title %></td>
+		<td><%=h sheet.survey.description %></td>
+	    <td><%= link_to 'Edit', survey_sheet_url(sheet.id), :survey_id => sheet.survey.id %></td>
+	  </tr>
+	<% end %>
+	</table>
+<% else %>
+	 No previous sheet taken!
+ <% end %>
+
+<br />
+
+
+<h1>Listing of available surveys</h1>
+
+<% if @available_surveys %>
+	<table>
+	  <tr>
+	    <th>Title</th>
+	    <th>Survey Description</th>
+	    <th>Category</th>
+		<th>Target Audience</th>
+	  </tr>
+	
+	<% for survey in @available_surveys %>
+	  <tr>
+	    <td><%=h survey.title %></td>
+	    <td><%=h survey.description %></td>
+		<td><%=h survey.category %></td>
+		<td><%=h survey.target_audience %></td>
+		<td><%=link_to "Take this survey", new_survey_sheet_path(:survey_id => survey.id )  %></td>
+	  </tr>
+	<% end %>
+	</table>
+<% else %>
+ No avaialbe sheet!
+<% end %>
+
+<!-- vote_demo/app/views/survey_sheets/show.html.erb -->
+
+<% form_tag survey_sheet_path(@survey_sheet), :method => :get, :class => "" do -%>
+    <%= render(:partial => 'survey_sheet_form') %>
+<% end %>
+
+
+<!-- -->
+<!--here the survey should be non-editable.-->
+<% form_tag survey_sheet_path(@survey_sheet), :method => :get, :class => "" do -%>
+    <%= render(:partial => 'survey_sheet_form') %>
+<% end %>
+

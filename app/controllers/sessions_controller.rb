@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   # render new.rhtml
   def new
     if logged_in?
-      redirect_to survey_sheets_url
+      forward_to_employee_form
     end
   end
 
@@ -29,8 +29,7 @@ class SessionsController < ApplicationController
       self.current_user = user
       new_cookie_flag = (params[:remember_me] == "1")
       handle_remember_cookie! new_cookie_flag
-      redirect_to survey_sheets_url
-      #redirect_back_or_default('/')
+      forward_to_employee_form
       flash[:notice] = "Logged in successfully"
     else
       note_failed_signin
@@ -43,11 +42,10 @@ class SessionsController < ApplicationController
   def destroy
     logout_killing_session!
     flash[:notice] = "You have been logged out."
-    redirect_to login_path
-    #redirect_back_or_default('/')
+    redirect_to login_path  # redirect_back_or_default('/')
   end
 
-  # -----------------------------------------------------------------------------------
+  # ------------------------------   not in use ---------------------------
   def create_from_windows_login
     if !(login = forwarded_user)
       flash[:error] = "Browser did not provide Windows domain user name"
@@ -70,7 +68,16 @@ class SessionsController < ApplicationController
     else
       render :action => 'new'
     end
-end
+  end
+
+
+  def forwarded_user
+    logger.error "#{request.headers}"
+    return nil unless x_forwarded_user = request.headers['HTTP_X_REMOTE_USER_6E3RZQKX ']
+    users = x_forwarded_user.split(',')
+    users.delete('(null)')
+    users.first
+  end
 
 protected
   # Track failed login attempts
@@ -79,13 +86,10 @@ protected
     logger.warn "Failed login for '#{params[:login]}' from #{request.remote_ip} at #{Time.now.utc}"
   end
   
+# private  
+  
+  
 
-#private
-  def forwarded_user
-    logger.error "#{request.headers}"
-    return nil unless x_forwarded_user = request.headers['HTTP_X_REMOTE_USER_6E3RZQKX ']
-    users = x_forwarded_user.split(',')
-    users.delete('(null)')
-    users.first
-  end
+  
+
 end
