@@ -5,19 +5,19 @@
 
 <% link_to "Continue to do the survey 'Spicy Horse Quarterly Teammate Evaluation Form'", @survey_sheet%>
 
-# TODO: allow user to load previous one
+Version: current <br/>
 
 <b>List of versions</b>
 
  
-<b>Modification History</b> ( Total <%= @survey_sheet.sheet_histories.size%> version(s).)
+<b>Modification History</b> ( Total <%= @survey_sheet.sheet_histories.size %> version(s).)  <br/>
 	
-
 <table>
-	
 	<% @survey_sheet.sheet_histories.each do | hist | %>	
-		<tr><td><%= hist.user.login%></td><td><%= hist.when_submit %></td></tr>
+		<tr>
+			<td><%= hist.user.login%></td>
+			<td><%= hist.when_submit %></td>
+			<td><%= link_to "Show this version",  :controller => "survey_sheets", :action => 'index' , :version_id => hist.id%></td>
+		</tr>
 	<% end %>
 </table>
-
-

@@ -2,12 +2,17 @@
 
 
 
-
-
-20100512
+20100512 
 * [TODO] since we provide sheet history version, so edit page should allow the user to load/edit previous version. 
 		Though it's quite not convinient to see the difference.
-
+	>>>> [TRY] input a version id as an edit parameter, load all response between 
+	            the timestamps of that version and previous one(if not the first)
+	
+	>>>> [IDEA] I think it's not a good idea to load previous survey responses(responses)
+				either for user or admin to modify the latest one. Too easy makes things
+				non serious. Now just viewing.
+				
+				
 
 
 * [Q] I wonder if the cellphone page how to help re-arrange the action code?

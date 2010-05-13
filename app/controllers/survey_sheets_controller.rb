@@ -107,10 +107,34 @@ class SurveySheetsController < ApplicationController
   end
   
   # TODO: study the resourceful design and make the index action right
+  # DOING: allow user to display a previous version.
+  
   def index
      @survey_sheet = find_user_employee_form
      if @survey_sheet
-         # render index.html.erb
+        if params[:version_id]
+            # load responses' previous version to get make page object displaying old versions.
+            # the query criterior is:
+            timestamp_end_version = SheetHistory.find_by_id(params[:version_id]).when_submit
+            # ------ the right way is ------
+            # to get all the responses which with 
+            response_ids = []
+            old_responses = {}
+            
+            # ESP.TODO: following code makes maintenance very hard! Find another way!
+            @survey_sheet.responses.each do | resp |
+              response_ids << resp.id
+              old = ResponsesVersion.find(:first, :condition => ["user_id = ? and updated_at <= ? ", current_user.id, timestamp_end_version ], :order => "when_submit DESC" )
+              resp.rating = old.rating ; resp.answer_text = old.answer_text ;
+            end
+
+            # ------ following plan is wrong, because user may only modify one -----
+            # a) find 2 sheet_versions, 
+            # b) find responses in between the 2 sheets
+            # c) replace 'responses' data with old version one. 
+        else
+          # render :action = > "index"
+        end
      else
         forward_to_employee_form
      end

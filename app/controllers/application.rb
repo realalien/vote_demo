@@ -18,7 +18,11 @@ class ApplicationController < ActionController::Base
       if logged_in?
           @survey_sheet = find_user_employee_form
           if  @survey_sheet
-              redirect_to survey_sheet_path(@survey_sheet.id)
+              if not params[:version_id]  # TODO: validate version id, sanity check.
+                  redirect_to survey_sheet_path(@survey_sheet.id)
+              else
+                  render :text => "not implements to handle request with params [:version_id]"
+              end
           else
               survey_defs = find_user_employee_form
               if survey_defs

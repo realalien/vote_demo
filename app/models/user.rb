@@ -46,7 +46,7 @@ class User < ActiveRecord::Base
   # anything else you want your user to change should be added here.
   attr_accessible :login, :email, :name, :password, :password_confirmation
 
-  has_many :sheet_histories
+  has_many :sheet_histories   # TODO: there is potential problem, if there is more than one survey, that will 
 
 
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
