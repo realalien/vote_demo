@@ -9,6 +9,11 @@
 </p>
 
 <p>
+  <b>Guideline:</b>
+  <%=h @survey.guideline %>
+</p>
+
+<p>
   <b>Category:</b>
   <%=h @survey.category %>
 </p>
@@ -24,8 +29,27 @@
 <hr />
 <br />
 
+<strong>List of section ( Section includes a set of questions)</strong> <br>
+<%= link_to 'Add new section(to this survey)', new_survey_section_url(:survey_id => @survey.id)%> |
 
-<strong>List of questions</strong>
+<table>
+  <tr>
+    <th>Number</th>
+    <th>Description</th>
+  </tr>
+
+<% for @section in @sections %>
+    <%= render :partial => "/sections/section", :object  => @section %>
+<% end %>
+</table>
+
+<br />
+<hr />
+<br />
+
+<strong>List of questions</strong><br/>
+
+<%= link_to 'Add new question(to this survey)', new_survey_question_url(:survey_id => @survey.id)%> |
 
 <table>
   <tr>
@@ -43,5 +67,4 @@
 </table>
 
 
-<%= link_to 'Add new question(to this survey)', new_survey_question_url(:survey_id => @survey.id)%> |
 

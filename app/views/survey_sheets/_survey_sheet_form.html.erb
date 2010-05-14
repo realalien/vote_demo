@@ -8,38 +8,45 @@
 <%= link_to "Go to page for printing this survey sheet!", :controller => "SurveySheet", :action => "print", :id => @survey_sheet.id %><br/><br/><br/><br/>
 </div>
 
-<%= link_to "View Histories", survey_sheets_path %>
+<%= link_to "View Histories", survey_sheets_path %><br/><br/>
 
 
 <!-- display questions with preset answers, 
     IDEA: maybe we can use view helper to group each question/response -->	
 <% @survey_sheet.questions.each do | question| %>   <!--TODO: remember to -->
 	<!-- question section -->
-	<b><%= question.title %></b>  
-	<% t_cn = translate(question.title, "zh-CN") %>
-	( Chinese: <%= t_cn %> )<br/>
-	<b>Question:</b>  <%= question.description%> <br/>
-	<% q_cn = translate(question.description, "zh-CN") %>
-	<b>Question in Chinese (translated by Google):</b> <%= q_cn %> <br/>
-	<!-- response/answer section -->
-	<!-- one question to one answer , not a copy of object, a direct reference, can it be?-->
-	<br/>
-	<% if question.is_rateable%>
-	Rating:
-	<%= ratings_for(question, :dimension => :description, :show_user_rating => true)%>
-	<% end %>
-	<br/>
-	<textarea cols="100" rows="3" id="response<%=question.id%>" name="response<%=question.id%>" class=""><%= "#{that_user_response(question).answer_text}" %></textarea><br/>
-	
-	<br/>
-	
-	<hr/>
+	<div class="qagrouping">
+		<div class="question">
+			<b><%= question.title  || "" %></b><br />
+
+			<b>  <%= question.description%> </b><br/>
+			<!-- response/answer section -->
+			<!-- one question to one answer , not a copy of object, a direct reference, can it be?-->
+			<br/>
+		</div>
+		
+		<div class="rating">
+			<% if question.is_rateable%>
+			<!--Rating: -->
+			<%= ratings_for(question, :dimension => :description, :show_user_rating => true)%>
+			<br/>
+			<% end %>
+		</div>
+		
+		<div class="answer_text" >
+			Comment: <br/>
+			<textarea cols="80" rows="3" id="response<%=question.id%>" name="response<%=question.id%>" class="answer_text"><%= "#{that_user_response(question).answer_text}" %></textarea>
+			<br/><br/>
+		</div>
+			
+		<hr/>
+	</div>
 <% end %>
 
 <!-- Add save button -->
 <div class="submit">
 <p>
-<%= submit_tag 'Press to Save/Update your answers', :disable_with => "Saving&hellip;" %>
-</p>                        
+<%= submit_tag 'Press to Save/Update your answers', :disable_with => "Saving&hellip;", :class => "submission" %><br/><br/>
+</p>              
 </div> 
 <%= hidden_field_tag("survey_id", @survey_sheet.survey.id) %>

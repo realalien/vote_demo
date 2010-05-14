@@ -8,4 +8,5 @@ class Survey < ActiveRecord::Base
 	has_many :questions, :through => :survey_question_assignments
   
   has_many :sheets
+  has_many :sections
 end

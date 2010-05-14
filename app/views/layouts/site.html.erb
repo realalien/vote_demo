@@ -8,11 +8,18 @@
   <%= stylesheet_link_tag 'scaffold' %>
   <%= javascript_include_tag :defaults %>
   <%= ajaxful_rating_style %>
+  <%= stylesheet_link_tag "site" %>
 </head>
 <body>
 
 <div id="whole_page">
-	<div id="header"></div>
+	<div id="header">Spicy Horse Quarterly Teammate Evaluation Form</div>
+	<div id="banner">
+	 <br/>
+	 <%= image_tag("spicyhorse.trademark.jpeg", :alt=> "Spicyhorse trademark") %>
+	 <br/>
+	</div>
+	
 	<div id="nav">
 		<%= link_to "Home",root_url %> |
 		<%= link_to_unless_current "Help", :controller => "site", :action => "help" %> |
@@ -24,15 +31,20 @@
 		<% else %>
 			<%= link_to "Login" , :controller => "sessions", :action => "new"%>
 		<% end %>
+		<br /><br />
+	</div>
+	
+	<div id="error_message">
+		<%= flash[:notice] %>
 	</div>
 
-	<p style="color: green"><%= flash[:notice] %></p>
 	
-
-	
-
-	
+<div id="content">
+<!--%= @content_for_layout %-->
 <%= yield  %>
+</div>
+	
+
 
 
 <div class="site-footer">

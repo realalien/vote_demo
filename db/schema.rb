@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100512071447) do
+ActiveRecord::Schema.define(:version => 20100514084515) do
 
   create_table "answers", :force => true do |t|
     t.text     "description"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20100512071447) do
     t.boolean  "is_voteable"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "section_id"
   end
 
   create_table "rates", :force => true do |t|
@@ -95,6 +96,14 @@ ActiveRecord::Schema.define(:version => 20100512071447) do
   add_index "roles_users", ["role_id"], :name => "index_roles_users_on_role_id"
   add_index "roles_users", ["user_id"], :name => "index_roles_users_on_user_id"
 
+  create_table "sections", :force => true do |t|
+    t.integer  "number"
+    t.string   "description"
+    t.integer  "survey_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sheet_answer_relations", :force => true do |t|
     t.integer  "survey_sheet_id"
     t.integer  "answer_id"
@@ -109,6 +118,7 @@ ActiveRecord::Schema.define(:version => 20100512071447) do
     t.datetime "when_submit"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "survey_sheet_id"
   end
 
   create_table "sheet_question_relations", :force => true do |t|
@@ -164,6 +174,7 @@ ActiveRecord::Schema.define(:version => 20100512071447) do
     t.string   "target_audience"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "guideline"
   end
 
   create_table "travel_places", :force => true do |t|

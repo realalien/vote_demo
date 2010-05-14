@@ -1,7 +1,7 @@
 class SurveysController < ApplicationController
   
   include RemoteUser
-  
+  layout "site"  
   before_filter :login_required, :only => [ :update, :create, :destroy ]
 
   def find_user(remote_name)
@@ -32,6 +32,7 @@ class SurveysController < ApplicationController
   def show
     @survey = Survey.find(params[:id])
     @questions = @survey.questions  # for partial rendering
+    @sections = @survey.sections
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @survey }

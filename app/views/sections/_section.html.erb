@@ -1,0 +1,9 @@
+
+  <tr>
+    <td><%=h section.number %></td>
+    <td><%=h section.description %></td>
+    <td><%= link_to 'Show', survey_section_path(@survey, section) %></td>
+    <td><%= link_to 'Edit', edit_survey_section_path(@survey, section) %></td>
+    <td><%= link_to 'Destroy', section, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+

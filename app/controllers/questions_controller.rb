@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
 
+  layout "site"
   #before_filter :get_survey
 	
   # GET /questions
@@ -89,10 +90,10 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def get_survey
-	   @survey = Survey.find(params[:survey_id])
-  end
-  
+#  def get_survey
+#	   @survey = Survey.find(params[:survey_id])
+#  end
+
   # for each user
   def rate
     @question = Question.find(params[:id])

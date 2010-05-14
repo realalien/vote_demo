@@ -1,11 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :sections
+
   map.resources :smerf_forms
 
   map.resources :answers
 
   map.resources :surveys do | survey |
   	survey.resources :questions
-  end
+    survey.resources :sections
+ end
 
   #map.resources :surveys, has_many => [ :questions ]
   #map.resources :questions

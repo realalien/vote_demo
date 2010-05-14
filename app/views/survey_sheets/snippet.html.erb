@@ -89,3 +89,13 @@
 
 <!-- -->
 survey_sheet_path(@survey_sheet.id, {:version_id => hist.id} )
+
+<!-- site.html.erb -->
+<p style="color: green; background: white;"><%= flash[:notice] %></p>
+
+<!--__survey_sheet_form.html.erb -->
+			<% t_cn = translate(question.title, "zh-CN") %>
+			( Chinese: <%= t_cn %> )<br/>
+			
+			<% q_cn = translate(question.description, "zh-CN") %>
+			<b>in Chinese:</b> <%= q_cn %> <br/>

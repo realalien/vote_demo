@@ -4,7 +4,8 @@
   <tr>
     <th>Title</th>
     <th>Description</th>
-    <th>Category</th>
+	<th>Guideline</th>
+	<th>Category</th>
     <th>Target audience</th>
   </tr>
 
@@ -12,6 +13,7 @@
   <tr>
     <td><%=h survey.title %></td>
     <td><%=h survey.description %></td>
+	<td><%=h survey.guideline %></td>
     <td><%=h survey.category %></td>
     <td><%=h survey.target_audience %></td>
     <td><%= link_to 'Show', survey %></td>

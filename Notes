@@ -2,7 +2,20 @@
 
 
 
-20100512 
+20100512
+* [TODO] nested resource survey and its section and question can not be shown/edited correctly.
+
+* [TODO] administration role of managing all users survey.
+	>>>> 
+
+
+* [TODO] find a better way to implement the page layout "Section", hopefully
+         not the nested resources.
+         
+
+* [Q] How to put the rating into the center of the page?
+  [A] 
+ 
 * [TODO] since we provide sheet history version, so edit page should allow the user to load/edit previous version. 
 		Though it's quite not convinient to see the difference.
 	>>>> [TRY] input a version id as an edit parameter, load all response between 
@@ -11,7 +24,6 @@
 	>>>> [IDEA] I think it's not a good idea to load previous survey responses(responses)
 				either for user or admin to modify the latest one. Too easy makes things
 				non serious. Now just viewing.
-				
 				
 
 
@@ -28,8 +40,6 @@
 * [TODO] format the page with better design. 
 	>>>>  
 
-* [TODO] administration role of managing all users survey.
-	>>>> 
 
 20100511
 * about print, it looks like that we need to create another action to handle the 'Print' action.
