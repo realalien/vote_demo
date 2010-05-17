@@ -1,4 +1,8 @@
 class SectionsController < ApplicationController
+  
+  before_filter :login_required 
+  
+  
   # GET /sections
   # GET /sections.xml
   def index
@@ -35,6 +39,7 @@ class SectionsController < ApplicationController
 
   # GET /sections/1/edit
   def edit
+    @survey = Survey.find(params[:survey_id])
     @section = Section.find(params[:id])
   end
 
@@ -60,6 +65,7 @@ class SectionsController < ApplicationController
   # PUT /sections/1
   # PUT /sections/1.xml
   def update
+    @survey = Survey.find(params[:survey_id]) 
     @section = Section.find(params[:id])
 
     respond_to do |format|

@@ -40,5 +40,6 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', [@survey,@question] %> |
-<%= link_to 'Back', survey_questions_path %>
+<!--%= link_to 'Show', survey_question_path % --> |
+<!--%= link_to 'Back', survey_questions_path %-->
+<%= hidden_field_tag("survey_id", @survey.id) %>

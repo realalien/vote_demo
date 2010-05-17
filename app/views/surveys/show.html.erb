@@ -22,24 +22,26 @@
   <b>Target audience:</b>
   <%=h @survey.target_audience %>
 </p>
-<%= link_to 'Edit', edit_survey_path(@survey) %> |
-<%= link_to 'Back', surveys_path %>
-
+<%= link_to link_to image_tag("edit.jpg", :alt => "Edit", :width => "16", :height => "16" ), edit_survey_path(@survey) %> |
+<%= link_to 'Show All Surveys', surveys_path %> <br/>
+<b>You can also modify this survey by </b> <br/><br/>
+<%= link_to 'Add new section(to this survey)', new_survey_section_path(:survey_id => @survey.id)%> |
+<%= link_to 'Add new question(to this survey)', new_survey_question_url(:survey_id => @survey.id)%> |
 <br />
 <hr />
 <br />
 
 <strong>List of section ( Section includes a set of questions)</strong> <br>
-<%= link_to 'Add new section(to this survey)', new_survey_section_url(:survey_id => @survey.id)%> |
+<%= link_to 'Add new section(to this survey)', new_survey_section_path(:survey_id => @survey.id)%> |
 
-<table>
+<table class="listing">
   <tr>
     <th>Number</th>
     <th>Description</th>
   </tr>
 
-<% for @section in @sections %>
-    <%= render :partial => "/sections/section", :object  => @section %>
+<% @sections.each_with_index do | section, i | %>
+    <%= render :partial => "/sections/section", :locals => { :section => section, :survey => @survey, :i => i} %>   <!--  :object  => @section -->
 <% end %>
 </table>
 
@@ -51,7 +53,7 @@
 
 <%= link_to 'Add new question(to this survey)', new_survey_question_url(:survey_id => @survey.id)%> |
 
-<table>
+<table class="listing">
   <tr>
     <th>Title</th>
     <th>Description</th>
@@ -61,8 +63,9 @@
     <th>Is voteable</th>
   </tr>
 
-<% for @question in @questions %>
-    <%= render :partial => "/questions/question", :object  => @question %>
+<% @questions.each_with_index do | question , i | %>
+    <!--%= render :partial => "/questions/question", :object  => @question %-->
+	<%= render :partial => "/questions/question",  :locals => { :question => question, :survey => @survey, :i => i } %>
 <% end %>
 </table>
 

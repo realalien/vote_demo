@@ -2,7 +2,7 @@ class SurveysController < ApplicationController
   
   include RemoteUser
   layout "site"  
-  before_filter :login_required, :only => [ :update, :create, :destroy ]
+  before_filter :login_required   # , :only => [ :update, :create, :destroy ]
 
   def find_user(remote_name)
      User.find_by_name(remote_name)

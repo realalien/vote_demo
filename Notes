@@ -1,5 +1,20 @@
 
 
+20100517 
+* [TODO] allow user to later assign 'section' value for each question, therefore closer to the layout of the page.
+
+
+* [ESP.TODO] basic i18n setup
+
+* [TODO] try to using authrorization 
+		http://github.com/stffn/declarative_authorization/blob/master/README.rdoc
+
+	>>>> Q: I wonder if the authorization is based on declaration, then how to manage those via web front, otherwise I will have to log onto the server to get things 
+			done.
+		 A: 
+		 
+	>>>> 
+
 
 
 20100512
@@ -25,6 +40,7 @@
 				either for user or admin to modify the latest one. Too easy makes things
 				non serious. Now just viewing.
 				
+	>>>> 
 
 
 * [Q] I wonder if the cellphone page how to help re-arrange the action code?

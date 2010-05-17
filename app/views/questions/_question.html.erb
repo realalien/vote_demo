@@ -1,13 +1,14 @@
-
-  <tr>
+ <% row_class = i%2 == 0 ? "even" : "odd" %> 
+  <tr class="<%= row_class %>">
     <td><%=h question.title %></td>
     <td><%=h question.description %></td>
     <td><%=h question.hint %></td>
     <td><%=h question.is_commentable %></td>
     <td><%=h question.is_rateable %></td>
     <td><%=h question.is_voteable %></td>
-    <td><%= link_to 'Show', survey_question_path(@survey, question) %></td>
-    <td><%= link_to 'Edit', edit_survey_question_path(@survey, question) %></td>
-    <td><%= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete %></td>
+    <!--td><%= link_to 'Show', survey_question_path(@survey, question) %></td-->
+    <td><%= link_to image_tag("edit.jpg", :alt => "Edit", :width => "16", :height => "16" ), edit_survey_question_path(@survey, question) %></td>
+    <td><%= link_to image_tag("delete.jpg", :alt => "Destroy", :width => "16", :height => "16" ) , question, :confirm => 'Are you sure?', :method => :delete %></td>
+	<!--td><%= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete %></td-->
   </tr>
 

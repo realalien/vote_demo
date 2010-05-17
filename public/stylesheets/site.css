@@ -29,7 +29,7 @@ body {
 	background : white ;
 }
 
-#error_message {
+div.error_message {
 	
 	background : white ;	
 }
@@ -65,6 +65,12 @@ body {
 
 
 /* for survey_sheet edit*/
+div.survey_guideline{
+	font-size: 14pt;
+	padding : 10px 10px 10px 15px ;
+	t
+}
+
 div.qagrouping{
 	font-size: 12pt;
 	padding : 5px 10px 5px 15px ;
@@ -97,3 +103,23 @@ input.submission{
 	text-align : center;
 	padding : 5px 10px 5px 15px ;
 }
+
+
+/* for all tables style */
+
+/* 
+ table td {background-color: white; }
+table td.stripe {background-color: silver; }
+ */
+
+TR.even { background-color: #B1B1B1; }
+TR.odd { background-color: #4AA02C ; }
+
+
+table.listing {
+	width:100%
+}
+
+
+
+

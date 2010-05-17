@@ -1,9 +1,9 @@
-
-  <tr>
+ <% row_class = i%2 == 0 ? "even" : "odd" %> 
+  <tr class="<%= row_class %>">
     <td><%=h section.number %></td>
     <td><%=h section.description %></td>
-    <td><%= link_to 'Show', survey_section_path(@survey, section) %></td>
-    <td><%= link_to 'Edit', edit_survey_section_path(@survey, section) %></td>
-    <td><%= link_to 'Destroy', section, :confirm => 'Are you sure?', :method => :delete %></td>
+    <!--td><%= link_to 'Show', survey_section_path(@survey, section) %></td-->
+    <td><%= link_to image_tag("edit.jpg", :alt => "Edit", :width => "16", :height => "16" ), edit_survey_section_path(@survey, section) %></td>
+    <td><%= link_to image_tag("delete.jpg", :alt => "Destroy", :width => "16", :height => "16" ), section, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 

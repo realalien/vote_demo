@@ -11,6 +11,20 @@
 <%= link_to "View Histories", survey_sheets_path %><br/><br/>
 
 
+
+<!-- Survey Guideline-->
+<div class="survey_guideline">
+Guideline:
+<% @survey = Survey.find_by_id(@survey_sheet.survey_id) %>
+<% if @survey %>
+<% guides = @survey.guideline %> 
+<% guides.gsub!(".", ".<br/>") if guides.include?("."); %>
+<%= guides %>
+<% else %>
+No guideline.
+<% end %>
+</div>
+
 <!-- display questions with preset answers, 
     IDEA: maybe we can use view helper to group each question/response -->	
 <% @survey_sheet.questions.each do | question| %>   <!--TODO: remember to -->
