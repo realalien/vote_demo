@@ -115,6 +115,10 @@ table td.stripe {background-color: silver; }
 TR.even { background-color: #B1B1B1; }
 TR.odd { background-color: #4AA02C ; }
 
+thead.general {
+	color :maroon;
+	text-align: center;
+}
 
 table.listing {
 	width:100%

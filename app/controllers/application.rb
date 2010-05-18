@@ -2,15 +2,18 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
-  helper :all # include all helpers, all the time
 
+  include AuthenticatedSystem
+  include RoleRequirementSystem
+  
+  
+  helper :all # include all helpers, all the time
   layout "site"
+  
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
   protect_from_forgery # :secret => '9086dd55d844edef4f232916f64fa66a'
-  
-  include AuthenticatedSystem
-  
+
   # TEMP_USE
   # see bug#1770, the user should take the 'employee form' survey supposing we have only one survey at the moments.
   # this method should later be deprecated when there is more than one survey.
@@ -68,6 +71,14 @@ class ApplicationController < ActionController::Base
   # Uncomment this to filter the contents of submitted sensitive data parameters
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
+  
+
+  #  use model security, as in the http://github.com/stffn/declarative_authorization
+   before_filter :set_current_user
+   protected
+   def set_current_user
+     Authorization.current_user = current_user
+   end
   
   
 end

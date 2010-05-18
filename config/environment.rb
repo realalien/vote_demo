@@ -30,6 +30,7 @@ Rails::Initializer.run do |config|
   config.gem "ajaxful_rating"
   config.gem "nbudin-version_fu", :lib => "version_fu", :source => "http://gemcutter.org"
   config.gem "json"
+  config.gem "declarative_authorization"
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
   # :all can be used as a placeholder for all plugins not explicitly named

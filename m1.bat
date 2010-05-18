@@ -1,1 +1,2 @@
-mongrel_rails start -e production -p 4001  -S config/mongrel_ntlm.conf
+mongrel_rails start -e development -p 4001  
+REM -S config/mongrel_ntlm.conf

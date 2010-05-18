@@ -1,5 +1,11 @@
 
 
+20100518
+* model after the smerf application to accept a named parameter rather than a 
+  sequence number
+
+
+
 20100517 
 * [TODO] allow user to later assign 'section' value for each question, therefore closer to the layout of the page.
 
@@ -21,7 +27,19 @@
 * [TODO] nested resource survey and its section and question can not be shown/edited correctly.
 
 * [TODO] administration role of managing all users survey.
-	>>>> 
+	>>>> INFO: after investigating plugin, declarative_authorization, the weakness
+		 is it did not support online privilege editing. 
+		 Considering the later user magmt, admin function will still use
+		 role_requirement plugin, which has some limit when extending with new roles to be defined.
+		 [INFO] supposingly we only utilize 3 roles, admin, leader, user(normal)
+		 [INFO] the access logic will not configurable, but embedded in the each 
+		 		controller, 
+		 [AFM] See if it's easy and possible to let roles in 'declarative_authorization'
+		       editable.
+		 
+	>>>> Originally the online editing function is provided by the plugin role-requirement,
+		 but railcast#17 has much info
+
 
 
 * [TODO] find a better way to implement the page layout "Section", hopefully

@@ -2,19 +2,27 @@
 TODO: add last updated column for sorting.
 
 <% if @users%>
-<table border="1">
-	<% @users.each do | user | %> 
-		<tr>
-			<td><%= user.login %> has taken  <%= user.survey_sheets.count%>  survey(s).</td> 
+<table class="listing">
+	<thead class="general">
+		<th>User Name</th>
+		<th>Debug column</th>
+		<th>Surveys Taken</th>
+	</thead>	
+	<% @users.each_with_index do | user, i | %>
+		<% row_class = i%2 == 0 ? "even" : "odd" %> 
+  		<tr class="<%= row_class %>">
+			<td><%= link_to user.login, user_path(user.id) %> </td>
+			<td><%= user.roles.size  %></td> 
 			<td>
 				<ul>
 					<% user.survey_sheets.each do |sheet| %>
 						 <li><%= link_to (sheet.survey.title || "No title"), survey_sheet_url(sheet) %>: <%= sheet.survey.description %></li>
 					<% end %>
 				</ul>
-			</td>	
-			<% end %>
-		</tr>
+			</td>
+		</tr>	
+	<% end %>
+		
 </table>
 
 <% else %>

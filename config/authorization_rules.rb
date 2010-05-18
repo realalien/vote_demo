@@ -1,19 +1,20 @@
 authorization do
   role :guest do
     # add permissions for guests here, e.g.
-    #has_permission_on :conferences, :to => :read
+    has_permission_on :survey_sheets, :to => [:create, :update]
   end
   
   
   # allow all the ops on guests/users or whatever 
   role :leader do
+    has_permission_on :surveys, :to => :mamage
     
   end
   
   # permissions on other roles, such as
-  #role :admin do
-  #  has_permission_on :conferences, :to => :manage
-  #end
+  role :admin do
+    has_permission_on [:users ],  :to => :manage
+  end
 end
 
 privileges do

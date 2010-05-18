@@ -1,3 +1,4 @@
+# this roles generation is for role_requirement use. not in use
 class CreateRoles < ActiveRecord::Migration
   def self.up
     create_table "roles" do |t|
