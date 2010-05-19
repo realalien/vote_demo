@@ -124,7 +124,7 @@ class SurveySheetsController < ApplicationController
             # ESP.TODO: following code makes maintenance very hard! Find another way!
             @survey_sheet.responses.each do | resp |
               response_ids << resp.id
-              old = ResponseVersion.find(:first, :condition => ["user_id = ? and updated_at <= ? ", current_user.id, timestamp_end_version ], :order => "when_submit DESC" )
+              old = ResponseVersion.find(:first, :conditions => ["user_id = ? and updated_at <= ? ", current_user.id, timestamp_end_version ], :order => "when_submit DESC" )
               resp.rating = old.rating ; resp.answer_text = old.answer_text ;
             end
 

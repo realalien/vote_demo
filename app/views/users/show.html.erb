@@ -1,3 +1,4 @@
+<h1>User Info </h1>
 <p>
   <b>Login Name:</b>
   <%=h @user.login %>
@@ -13,4 +14,14 @@
   <%=h @user.email %>
 </p>
 
+<p>
+  <b>role involved:</b>
+  <% rs = []%>
+  <% for role in @user.roles%> 
+  		<% rs << role.name%> 
+  <% end %>
+  <%= rs.join(", ")%>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user)%> | 
 <%= link_to 'Back', users_path %>

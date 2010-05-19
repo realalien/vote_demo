@@ -1,0 +1,35 @@
+<h1>Editing user</h1>
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :login %><br />
+    <%= f.label @user.login %>
+  </p>
+  <p>
+    <%= f.label :real_name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <% for role in Role.find(:all) %>
+		<% if role.name == "employee" %>
+			<% disabled = true %>
+			<%= check_box_tag( "user[role_ids][]", role.id, true , :disabled => disabled ) %> <%= role.name %><br/>
+		<% else %>
+			<% disabled = false %>
+			<%= check_box_tag( "user[role_ids][]", role.id, @user.roles.include?(role) , :disabled => disabled ) %> <%= role.name %><br/>
+		<% end %>
+		
+	<% end %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', surveys_path %>

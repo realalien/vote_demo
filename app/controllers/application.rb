@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
   include AuthenticatedSystem
   include RoleRequirementSystem
   
-  
   helper :all # include all helpers, all the time
   layout "site"
   
@@ -24,6 +23,7 @@ class ApplicationController < ActionController::Base
               if not params[:version_id]  # TODO: validate version id, sanity check.
                   redirect_to survey_sheet_path(@survey_sheet.id)
               else
+                  #TODO
                   render :text => "not implements to handle request with params [:version_id]"
               end
           else

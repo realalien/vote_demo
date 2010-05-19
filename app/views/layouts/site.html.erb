@@ -31,8 +31,30 @@
 		<% else %>
 			<%= link_to "Login" , :controller => "sessions", :action => "new"%>
 		<% end %>
-		<br /><br />
+		<br /><hr/><br />
 	</div>
+	
+	<div id="nav_user">	
+		You are a member <br/><br/>
+		<% if current_user.roles.include?(Role.find_by_name("admin"))%>
+			of group 'Admin', you can <%= link_to "Manage Users(all) with their surveys", users_path %>.
+			<br /><br />
+		<% end %>
+		
+		<% if current_user.roles.include?(Role.find_by_name("leader"))%>
+			of group 'Leader', you can <%= link_to "Manage Users(team) with their surveys", users_path %> or <%= link_to "Manage Surveys", surveys_path%>.
+			<br /><br />
+		<% end %>
+		
+		<% if current_user.roles.include?(Role.find_by_name("employee"))%>
+			<!-- temp, find existing or create a new one -->
+			<% %>
+			of group 'Employee', you can <%= link_to "Take the survey 'Quarterly Review'" , :controller => "users", :action => "forward_to_employee_form" %>.
+			<br /><br />
+		<% end %>
+		<hr/>
+	</div>
+	
 	
 	<div id="error_message">
 		<%= flash[:notice] %>

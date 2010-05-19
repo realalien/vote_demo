@@ -2,8 +2,6 @@
 
 class User < ActiveRecord::Base
   
-  require_role "admin"
-  
   #after_save { self.roles.create(:title => "guest") }
   
   def role_symbols
@@ -19,7 +17,10 @@ class User < ActiveRecord::Base
   
   has_many :survey_sheets
   #has_many :roles
-  has_and_belongs_to_many :roles # not in use  
+  
+  has_and_belongs_to_many :roles,:join_table => "roles_users"
+                   
+  attr_accessible :role_ids
 
   # has_role? simply needs to return true or false whether a user has a role or not.  
   # It may be a good idea to have "admin" roles return true always

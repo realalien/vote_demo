@@ -12,7 +12,7 @@ body {
     padding: 0;
     text-align: left;
     border-width: 0 1px 1px 1px;
-    border-color: black;
+    border-color: white;
     border-style: solid;
 }
 
@@ -29,9 +29,13 @@ body {
 	background : white ;
 }
 
-div.error_message {
-	
-	background : white ;	
+#error_message {
+	color: green ;
+	background : white ;
+	margin:0px;
+	line-height: 20px ;
+	border-width: 0 0 0 0 ;
+	text-align : center;
 }
 
 #nav {
@@ -41,6 +45,21 @@ div.error_message {
     background: white;
     padding: 0.5em; 
 	text-align: left;
+	
+}
+
+#nav_user {
+    color: black; 
+    font-size: 8pt;
+    /* 
+     font-weight: bold; 
+     padding: 0.5em; 
+    */
+    background: white;
+	text-align: left;
+	padding: 0px 5px 5px 5px;
+	line-height : 13px ;
+	/* padding-bottom: 1em;*/
 }
 
 #nav a, #nav a:visited {
@@ -53,9 +72,12 @@ div.error_message {
 }
 
 #content {
+	padding-top : 16px ;
     height: 100%;
     background: white;
     /*  padding: 1em; */
+	margin: 0px;
+	border-width: 0 0 0 0 ;
 }
 
 

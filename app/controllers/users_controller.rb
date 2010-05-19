@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   include AuthenticatedSystem
 
   #require_role "admin", :for => :index
+  require_role "admin"
 
   # render new.rhtml
   def new
@@ -19,6 +20,11 @@ class UsersController < ApplicationController
       # button. Uncomment if you understand the tradeoffs.
       # reset session
       self.current_user = @user # !! now logged in
+      # create default role for user
+      employee_role = Role.find_by_name("employee")
+      if employee_role and @user.respond_to? "roles"
+        user.roles << employee_role unless user.roles.include? employee_role
+      end
       redirect_to forward_to_employee_form # redirect_back_or_default('/')
       flash[:notice] = "Thanks for signing up!" #   We're sending you an email with your activation code."
     else
@@ -39,7 +45,29 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def edit
+     @user = User.find(params[:id])
+  end
 
-
+  def update
+    params[:user][:role_ids] ||= []
+    @user = User.find(params[:id])
+    
+    # alway make 'employee' role effective. This code may amend formerly created data which has not been assigned
+    if params[:user][:role_ids]
+      params[:user][:role_ids] << 3
+    end
+    
+    respond_to do |format|
+      if @user.update_attributes(params[:user])
+        flash[:notice] = 'User was successfully updated.'
+        format.html { redirect_to(@user) }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
 
 end

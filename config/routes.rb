@@ -46,7 +46,7 @@ ActionController::Routing::Routes.draw do |map|
   #map.connect 'ntlm/login', :controller => 'sessions', :action => 'new'
 
   map.connect 'user/vote_for/:id', :controller => :user,:action=>'vote_for'
-		  		
+	map.connect 'user/forward_to_employee_form', :controller => "users" ,:action=>'forward_to_employee_form'  		
 
   # The priority is based upon order of creation: first created -> highest priority.
 

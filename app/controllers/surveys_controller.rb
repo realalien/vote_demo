@@ -1,6 +1,6 @@
 class SurveysController < ApplicationController
   
-  include RemoteUser
+  #include RemoteUser
   layout "site"  
   before_filter :login_required   # , :only => [ :update, :create, :destroy ]
 

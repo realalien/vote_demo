@@ -1,5 +1,12 @@
 
 
+* [Q] uses HABTM roles has a issue, how to avoid add two same view from 
+
+
+* [INFO] in HABTM, "WARNING: Can't mass-assign these protected attributes: role_ids" 
+		can be fixed by adding rule like "attr_accessible :role_ids" 
+		>>>> not verified.
+
 20100518
 * model after the smerf application to accept a named parameter rather than a 
   sequence number

@@ -17,7 +17,7 @@
 Guideline:
 <% @survey = Survey.find_by_id(@survey_sheet.survey_id) %>
 <% if @survey %>
-<% guides = @survey.guideline %> 
+<% guides = @survey.guideline || ""%> 
 <% guides.gsub!(".", ".<br/>") if guides.include?("."); %>
 <%= guides %>
 <% else %>
