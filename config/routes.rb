@@ -40,13 +40,14 @@ ActionController::Routing::Routes.draw do |map|
     sheet.resources :responses
   end
   
-  map.connect "survey_sheets/:action" , :controller => 'survey_sheets', :action => ':action'
+  map.connect 'site/forward_to_employee_form', :controller => "site" ,:action=>'forward_to_employee_form' 
+  #map.connect "survey_sheets/:action" , :controller => 'survey_sheets', :action => ':action'
   
     
   #map.connect 'ntlm/login', :controller => 'sessions', :action => 'new'
 
   map.connect 'user/vote_for/:id', :controller => :user,:action=>'vote_for'
-	map.connect 'user/forward_to_employee_form', :controller => "users" ,:action=>'forward_to_employee_form'  		
+ 		
 
   # The priority is based upon order of creation: first created -> highest priority.
 

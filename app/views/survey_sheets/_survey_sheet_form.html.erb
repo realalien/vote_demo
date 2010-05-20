@@ -42,7 +42,7 @@ No guideline.
 		<div class="rating">
 			<% if question.is_rateable%>
 			<!--Rating: -->
-			<%= ratings_for(question, :dimension => :description, :show_user_rating => true)%>
+			<%= ratings_for(question, @survey_sheet.user ,:dimension => :description, :show_user_rating => true)%>
 			<br/>
 			<% end %>
 		</div>

@@ -9,11 +9,13 @@
 		<% row_class = i%2 == 0 ? "even" : "odd" %> 
   		<tr class="<%= row_class %>">
 			<td><%= link_to user.login, user_path(user.id) %> </td>
-			<td><%= user.roles.size  %></td> 
+			<td>Roles size:<%= user.roles.size  %> </td> 
 			<td>
 				<ul>
 					<% user.survey_sheets.each do |sheet| %>
-						 <li><%= link_to (sheet.survey.title || "No title"), survey_sheet_url(sheet) %>: <%= sheet.survey.description %></li>
+						 <li><%= link_to (sheet.survey.title || "No title"), survey_sheet_url(sheet) %>: <%= sheet.survey.description %>
+						 <% p = sheet.sheet_histories.collect(&:version_num) ; p.delete(nil) %> 
+						 (<%=  p.empty? ? "No version since redesign" : p %> ) </li>
 					<% end %>
 				</ul>
 			</td>

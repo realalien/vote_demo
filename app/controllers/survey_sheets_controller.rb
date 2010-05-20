@@ -13,11 +13,24 @@ class SurveySheetsController < ApplicationController
   #  
   # or name
   
+  
   # Notes: I think to make everything right from the beginning, even the sheet history should be made resourceful TODO
   def show
-    if params["id"]
+    if params[:id]
       @survey_sheet = SurveySheet.find_by_id(params[:id])
-      render :action => "edit"
+      
+      # INFO: it looks like that we should employ more privilege control over object model, otherwise more hard code required
+      
+      if current_user.id != @survey_sheet.user.id
+         if current_user.has_role(:leader)
+            flash[:notice] = "You are viewing #{@survey_sheet.user.login}'s survey! Be careful when editing!"      
+            render :action => "edit"
+         else
+            flash[:notice] = "You are not allowed to view other's survey! Go back to your own one!"
+         end
+      else  
+          render :action => "edit"  
+      end
     else
       render :text => "invalid request for retrieving survey sheet!"
     end
@@ -35,7 +48,7 @@ class SurveySheetsController < ApplicationController
       # test if user has done this survey, not always create a new copy.
       @user_did_sheet = SurveySheet.find(:all, :conditions => ["user_id = :user_id and survey_id = :survey_id", 
       { :user_id => self.current_user.id, 
-        :survey_id => params[:survey_id] }  ]) 
+        :survey_id => params[:survey_id] } ]) 
       
       if @user_did_sheet and @user_did_sheet.size > 0
         # load sheet and render 
@@ -71,6 +84,7 @@ class SurveySheetsController < ApplicationController
   end
   
   # PUT /survey_sheets/1
+  # INFO: we don't stop user from editing others' survey, user will not reach edit page depends on 
   def update
     # TODO: try to retrieve the survey_sheet then update, avoid hacking by faking a id of non-self survey_sheet
     
@@ -81,15 +95,31 @@ class SurveySheetsController < ApplicationController
       sheet_id = params["id"]
       survey_id = params["survey_id"]
       
-      @survey_sheet = SurveySheet.find(:first, :include =>:responses ,:conditions => ["user_id = :user_id and survey_id = :survey_id", 
-      { :user_id => self.current_user.id, :survey_id => survey_id }  ] )
+#      @survey_sheet = SurveySheet.find(:first, :include =>:responses ,:conditions => ["user_id = :user_id and survey_id = :survey_id", 
+#      { :user_id => self.current_user.id, :survey_id => survey_id }  ] )
       
+       @survey_sheet = SurveySheet.find(:first, :include =>:responses ,:conditions => ["id = :sheet_id", 
+      { :sheet_id => sheet_id }  ] )
+      
+      logger.debug "==============================================================="
+      logger.debug "@survey_sheet info:  #{@survey_sheet.id}"
       logger.debug "@survey_sheet has responses size:  #{@survey_sheet.responses.size}"
       
       # TODO: make it a transaction to avoid dirty records
       ts = Time.now
       
+      # esp, delete method will rerturn nil instead of processed array
+      prev_vers = @survey_sheet.sheet_histories.collect(&:version_num)
+      prev_vers.delete(nil)
+      if prev_vers and not prev_vers.empty? # select the max and then plus one   
+        current_ver =  prev_vers.max + 1
+      else  # assign 1 to the first
+        current_ver = 1
+      end
+      
+      # create a sheet version entry
       @a_version = SheetHistory.new
+      @a_version.version_num = current_ver
       @a_version.user_id = current_user.id
       @a_version.when_submit =  ts
       @survey_sheet.sheet_histories << @a_version
@@ -139,30 +169,7 @@ class SurveySheetsController < ApplicationController
         forward_to_employee_form
      end
     
-    #forward_to_employee_form
-    
-#    @previous_sheets = SurveySheet.find(:all, :conditions => ["user_id = :user_id ", 
-#    { :user_id => self.current_user.id }  ] )
-#    existing_ids = []
-#    @previous_sheets.each { |s| existing_ids << s.survey_id }
-#    @all_def = Survey.find(:all)
-#    @available_surveys = [] 
-#    
-#    @all_def.each do | s |
-#      @available_surveys << s  unless existing_ids.include?(s.id)
-#    end
   end
-  
-#  def edit
-#    if params[:id]
-#      @survey_sheet = SurveySheet.find(:first, 
-#                       :conditions => ["user_id = :user_id and survey_id = :survey_id", 
-#                        { :user_id => self.current_user.id, 
-#                          :survey_id => params[:id] }  ] )
-#    else
-#      render :text => "Can not edit without an id!"  
-#    end
-#  end    
   
   def print
     

@@ -1,5 +1,18 @@
 
 
+
+* [Q] According to the requirement 'Employees/managers should be  able to modify the content'
+	The gem 'ajaxful-rating' does not provide such function(only be able to view other's rating, not modifying)
+
+	>>>> [SUG] if we can pass the current_user to the question controller remotely(remote ajax function),
+		then, the problem may be solvable!
+		
+	>>>> [HINT] it sounds irrational to allow manager to modify employees' rating. In worst scenario,
+		employee is not notified and 
+
+
+
+
 * [Q] uses HABTM roles has a issue, how to avoid add two same view from 
 
 

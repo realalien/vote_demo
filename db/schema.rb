@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100518091934) do
+ActiveRecord::Schema.define(:version => 20100520092941) do
 
   create_table "answers", :force => true do |t|
     t.text     "description"
@@ -128,15 +128,8 @@ ActiveRecord::Schema.define(:version => 20100518091934) do
     t.datetime "updated_at"
   end
 
-  create_table "smerf_forms", :force => true do |t|
-    t.string   "name",       :null => false
-    t.string   "code",       :null => false
-    t.integer  "active",     :null => false
-    t.text     "cache"
-    t.datetime "cache_date"
-  end
-
-  add_index "smerf_forms", ["code"], :name => "index_smerf_forms_on_code", :unique => true
+# Could not dump table "smerf_forms" because of following ActiveRecord::StatementInvalid
+#   Mysql::Error: Can't create/write to file 'C:\Windows\TEMP\#sql_a78_0.MYI' (Errcode: 13): describe `smerf_forms`
 
   create_table "smerf_forms_users", :force => true do |t|
     t.integer "user_id",       :null => false

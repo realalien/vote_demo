@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   has_many :survey_sheets
   #has_many :roles
   
-  has_and_belongs_to_many :roles,:join_table => "roles_users"
+  has_and_belongs_to_many :roles, :join_table => "roles_users"
                    
   attr_accessible :role_ids
 
@@ -30,6 +30,12 @@ class User < ActiveRecord::Base
     (@_list.include?(role_in_question.to_s) )
   end
   # ---------------------------------------
+  
+    def has_role(role_in_question)
+    @_list ||= self.roles.collect(&:name)
+    # return true if @_list.include?("admin")
+    (@_list.include?(role_in_question.to_s) )
+  end
   
   
   include Authentication
