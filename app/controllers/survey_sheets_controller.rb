@@ -17,8 +17,9 @@ class SurveySheetsController < ApplicationController
   # Notes: I think to make everything right from the beginning, even the sheet history should be made resourceful TODO
   def show
     if params[:id]
-      @survey_sheet = SurveySheet.find_by_id(params[:id])
-      
+      @survey_sheet = SurveySheet.find_by_id(params[:id], :include => :responses)
+      logger.debug "==============================================================="
+      logger.debug "@survey_sheet responses.size  #{@survey_sheet.responses.size}"
       # INFO: it looks like that we should employ more privilege control over object model, otherwise more hard code required
       
       if current_user.id != @survey_sheet.user.id
@@ -138,14 +139,31 @@ class SurveySheetsController < ApplicationController
   
   # TODO: study the resourceful design and make the index action right
   # DOING: allow user to display a previous version.
-  
   def index
-     @survey_sheet = find_user_employee_form
+     
+     # @survey_sheet = find_user_employee_form
+     
+     # make leader see other employee's 
+     if params[:user_id] and current_user.has_role("leader")
+        viewing_user = User.find_by_id(params[:user_id])  # sanity check.
+        if viewing_user
+          flash[:notice] = "You are viewing others survey"
+          @survey_sheet = SurveySheet.find(:conditions => ["user_id = ? and response_id = ? and updated_at <= ? ", viewing_user.id, resp.id , timestamp_end_version ], :order => "updated_at DESC" )   #          
+        else
+          viewing_user = current_user 
+          @survey_sheet = find_user_employee_form
+        end
+     else  
+        viewing_user = current_user 
+        @survey_sheet = find_user_employee_form 
+     end
+
+     # replace the 
      if @survey_sheet
-        if params[:version_id]
+        if params[:version_num]
             # load responses' previous version to get make page object displaying old versions.
             # the query criterior is:
-            timestamp_end_version = SheetHistory.find_by_id(params[:version_id]).when_submit
+            timestamp_end_version = SheetHistory.find_by_version_num(params[:version_num]).when_submit
             # ------ the right way is ------
             # to get all the responses which with 
             response_ids = []
@@ -153,16 +171,26 @@ class SurveySheetsController < ApplicationController
             
             # ESP.TODO: following code makes maintenance very hard! Find another way!
             @survey_sheet.responses.each do | resp |
-              response_ids << resp.id
-              old = ResponseVersion.find(:first, :conditions => ["user_id = ? and updated_at <= ? ", current_user.id, timestamp_end_version ], :order => "when_submit DESC" )
-              resp.rating = old.rating ; resp.answer_text = old.answer_text ;
+              # response_ids << resp.id
+              old = ResponseVersion.find(:first, :conditions => ["user_id = ? and response_id = ? and updated_at <= ? ", viewing_user.id, resp.id , timestamp_end_version ], :order => "updated_at DESC" )
+              logger.debug "---------------------------- #{resp}"
+              logger.debug "---------------------------- #{old}"
+              # ESP. just for viewing, not 
+              if not old
+                  old = ResponseVersion.find(:first, :conditions => ["user_id = ? and response_id = ?  ", viewing_user.id, resp.id ], :order => "updated_at ASC" )
+                  resp.rating = old.rating ; resp.answer_text = old.answer_text ;
+              else  # as uausally #ESP.TODO  the first version not collect correctly.
+                  resp.rating = old.rating ; resp.answer_text = old.answer_text ;
+              end
+               
             end
-
+            
             # ------ following plan is wrong, because user may only modify one -----
             # a) find 2 sheet_versions, 
             # b) find responses in between the 2 sheets
             # c) replace 'responses' data with old version one. 
         else
+          # render self 
           # render :action = > "index"
         end
      else
@@ -170,6 +198,23 @@ class SurveySheetsController < ApplicationController
      end
     
   end
+
+  
+  def history
+    if params[:id]
+        @survey_sheet = SurveySheet.find_by_id(params[:id])
+        
+        logger.debug "------------------------------------"
+        logger.debug "@survey_sheet.responses.size is #{@survey_sheet.responses.size}"
+  
+        ver_num = params[:version]
+        @survey_sheet.reload_history_by_version_num(ver_num)
+        
+        
+    end
+    
+  end
+  
   
   def print
     

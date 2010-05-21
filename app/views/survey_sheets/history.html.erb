@@ -1,0 +1,9 @@
+
+<b>Survey_sheet#history</b>
+
+<%= @survey_sheet.responses.size %>
+
+<% @survey_sheet.responses.each do | re |  %>
+	<%= re.question%><br/>	<%= re.rating%><br/> 	<%= re.answer_text%><br/><br/>
+
+<% end %>

@@ -6,6 +6,9 @@ class Question < ActiveRecord::Base
 	has_many :survey_question_assignments, :dependent => :nullify
 	has_many :surveys,	:through => :survey_question_assignments
 	
+  
+  has_many :responses;
+  
   # NOTE: 20100419, it looks like that the question is not  
  
 	#has_many :question_answer_by_users, :dependent => :nullify

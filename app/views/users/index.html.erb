@@ -15,7 +15,17 @@
 					<% user.survey_sheets.each do |sheet| %>
 						 <li><%= link_to (sheet.survey.title || "No title"), survey_sheet_url(sheet) %>: <%= sheet.survey.description %>
 						 <% p = sheet.sheet_histories.collect(&:version_num) ; p.delete(nil) %> 
-						 (<%=  p.empty? ? "No version since redesign" : p %> ) </li>
+						 ( <% if p.nil? or p.empty? %>
+						 		<%=  "No version since redesign" %>
+						   <% else %>
+						   		Ver.
+								<% p.each do | ver | %>
+									<%= link_to ver, survey_sheets_path(:version_num => ver ) %>
+								<% end %>
+						   <% end %>
+					     ) 
+						 
+						 </li>
 					<% end %>
 				</ul>
 			</td>

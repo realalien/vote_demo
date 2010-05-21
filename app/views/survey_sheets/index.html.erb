@@ -1,20 +1,37 @@
 
 <% link_to "Continue to do the survey 'Spicy Horse Quarterly Teammate Evaluation Form'", @survey_sheet%>
 
-<b>Version: current </b><br/>
+<% max_version = @survey_sheet.sheet_histories.collect(&:version_num) %>
+<% if params[:version_num].nil? or params[:version_num] == max_version%>
+	<% current_version = "latest" %>
+<% else %>
+	<% current_version =  params[:version_num] + " (old version)" %>
+<% end %>
 
-<b>Browse of versions</b>
+<div>
+	<%= flash[:notice]%>	
+</div>
 
-# TODO: the version id should 
- 
+
+<b>You are viewing version: <%= current_version%>   </b><br/>
+
+<!-- display of uneditable version -->
+
+<%  @survey_sheet.responses.each do | resp | %>
+	<%= resp.question.description%>  <br/>
+	| rating: <%= resp.rating %> | answer text :  <%= resp.answer_text || "None" %> <br/><br/>  
+<% end %>
+
+<!-- display of version histories for the sheet-->
+<br/>
 <b>Modification History</b> ( Total <%= @survey_sheet.sheet_histories.size %> version(s).)  <br/>
 	
 <table>
-	<% @survey_sheet.sheet_histories.each do | hist | %>	
+	<% @survey_sheet.sheet_histories.reverse.each do | hist | %>	
 		<tr>
 			<td><%= hist.user.login%></td>
 			<td><%= hist.when_submit %></td>
-			<td><%= link_to "Show this version",  :controller => "survey_sheets", :action => 'index' , :version_id => hist.id%></td>
+			<td><%= link_to "Show this version",  :controller => "survey_sheets", :action => 'index' , :version_num => hist.version_num%></td>
 		</tr>
 	<% end %>
 </table>

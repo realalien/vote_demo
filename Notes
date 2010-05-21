@@ -1,5 +1,15 @@
 
 
+* For function of 'employee/manager should view the history', I think route
+  could be
+  the choice should depends on the easiness of recognizing.
+  
+  >>> /survey_sheets/12/history?version=[num]
+  			
+  
+  >>> /survey_sheets?version=[num]&user_id=[num]
+		user can view his/her history without second request parameter
+
 
 * [Q] According to the requirement 'Employees/managers should be  able to modify the content'
 	The gem 'ajaxful-rating' does not provide such function(only be able to view other's rating, not modifying)
@@ -9,7 +19,6 @@
 		
 	>>>> [HINT] it sounds irrational to allow manager to modify employees' rating. In worst scenario,
 		employee is not notified and 
-
 
 
 

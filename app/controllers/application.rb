@@ -27,11 +27,11 @@ class ApplicationController < ActionController::Base
                   render :text => "not implements to handle request with params [:version_id]"
               end
           else
-              survey_defs = find_user_employee_form
+              survey_defs = Survey.find_by_title("Spicy Horse Quarterly Teammate Evaluation Form")
               if survey_defs
                 redirect_to new_survey_sheet_path(:survey_id => survey_defs.id )
               else
-                render :text => "You're supposed to take the survey named 'Spicy Horse Quarterly Teammate Evaluation Form', but it's not available right now! Contact IT dept. "     
+                render :text => "You're supposed to take the survey named 'Spicy Horse Quarterly Teammate Evaluation Form', but it's not available right now! Contact IT dept. Your user id is #{current_user.id} "     
               end
           end
       else

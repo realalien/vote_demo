@@ -23,4 +23,21 @@ class SurveySheet < ActiveRecord::Base
     belongs_to :survey
     
     has_many :sheet_histories
+    
+    def remove_all_responses
+      self.responses = []
+    end
+    
+    def reload_history_by_version_num(ver_num)
+      
+      logger.debug "------------------------------------"
+      logger.debug "Ver_num.nil? is #{ver_num.nil?}"
+      
+      if ver_num
+          self.remove_all_responses    
+      else
+          self.responses          
+      end
+    end
+    
 end
