@@ -1,0 +1,20 @@
+<h1>Listing photo_categories</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% for photo_categories in @photo_categories %>
+  <tr>
+    <td><%=h photo_categories.name %></td>
+    <td><%= link_to 'Show', photo_categories %></td>
+    <td><%= link_to 'Edit', edit_photo_categories_path(photo_categories) %></td>
+    <td><%= link_to 'Destroy', photo_categories, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New photo_categories', new_photo_categories_path %>

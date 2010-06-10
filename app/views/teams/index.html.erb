@@ -1,0 +1,22 @@
+<h1>Listing teams</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+
+<% for teams in @teams %>
+  <tr>
+    <td><%=h teams.name %></td>
+    <td><%=h teams.description %></td>
+    <td><%= link_to 'Show', teams %></td>
+    <td><%= link_to 'Edit', edit_teams_path(teams) %></td>
+    <td><%= link_to 'Destroy', teams, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New teams', new_teams_path %>
