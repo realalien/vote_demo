@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100520092941) do
+ActiveRecord::Schema.define(:version => 20100610033923) do
 
   create_table "answers", :force => true do |t|
     t.text     "description"
@@ -30,6 +30,20 @@ ActiveRecord::Schema.define(:version => 20100520092941) do
   add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
   add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
+  create_table "photo_categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "photos", :force => true do |t|
+    t.string   "name"
+    t.string   "server_path"
+    t.text     "exif"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "question_answer_by_users", :force => true do |t|
     t.integer  "question_id", :null => false
@@ -119,23 +133,24 @@ ActiveRecord::Schema.define(:version => 20100520092941) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "survey_sheet_id"
+    t.integer  "version_num"
   end
 
-  create_table "sheet_question_relations", :force => true do |t|
-    t.integer  "survey_sheet_id"
-    t.integer  "question_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+# Could not dump table "sheet_question_relations" because of following ActiveRecord::StatementInvalid
+#   Mysql::Error: Can't create/write to file 'C:\Windows\TEMP\#sql_bc0_0.MYI' (Errcode: 13): describe `sheet_question_relations`
+
+  create_table "smerf_forms", :force => true do |t|
+    t.string   "name",       :null => false
+    t.string   "code",       :null => false
+    t.integer  "active",     :null => false
+    t.text     "cache"
+    t.datetime "cache_date"
   end
 
-# Could not dump table "smerf_forms" because of following ActiveRecord::StatementInvalid
-#   Mysql::Error: Can't create/write to file 'C:\Windows\TEMP\#sql_a78_0.MYI' (Errcode: 13): describe `smerf_forms`
+  add_index "smerf_forms", ["code"], :name => "index_smerf_forms_on_code", :unique => true
 
-  create_table "smerf_forms_users", :force => true do |t|
-    t.integer "user_id",       :null => false
-    t.integer "smerf_form_id", :null => false
-    t.text    "responses",     :null => false
-  end
+# Could not dump table "smerf_forms_users" because of following ActiveRecord::StatementInvalid
+#   Mysql::Error: Can't create/write to file 'C:\Windows\TEMP\#sql_bc0_0.MYI' (Errcode: 13): describe `smerf_forms_users`
 
   create_table "smerf_responses", :force => true do |t|
     t.integer "smerf_forms_user_id", :null => false
@@ -170,13 +185,11 @@ ActiveRecord::Schema.define(:version => 20100520092941) do
     t.text     "guideline"
   end
 
-  create_table "travel_places", :force => true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.string   "photo"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+# Could not dump table "teams" because of following ActiveRecord::StatementInvalid
+#   Mysql::Error: Can't create/write to file 'C:\Windows\TEMP\#sql_bc0_0.MYI' (Errcode: 13): describe `teams`
+
+# Could not dump table "travel_places" because of following ActiveRecord::StatementInvalid
+#   Mysql::Error: Can't create/write to file 'C:\Windows\TEMP\#sql_bc0_0.MYI' (Errcode: 13): describe `travel_places`
 
   create_table "users", :force => true do |t|
     t.string   "login",                     :limit => 40
