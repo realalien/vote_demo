@@ -1,4 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :photos
+
+  map.resources :teams
+
+  map.resources :photo_categories
+
+  map.resources :photos
+
   map.resources :sections
 
   map.resources :smerf_forms
@@ -49,8 +57,11 @@ ActionController::Routing::Routes.draw do |map|
   #map.connect 'ntlm/login', :controller => 'sessions', :action => 'new'
 
   map.connect 'user/vote_for/:id', :controller => :user,:action=>'vote_for'
- 		
-
+ 	
+  map.connect 'zhang_jia_jie_photo_contest/:action', 
+              :controller => 'zhang_jia_jie_photo_contest', 
+              :action => ':action'  
+  
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   include AuthenticatedSystem
 
   #require_role "admin", :for => :index
-  require_role "admin"
+  #require_role "admin"
 
   # render new.rhtml
   def new
@@ -23,9 +23,9 @@ class UsersController < ApplicationController
       # create default role for user
       employee_role = Role.find_by_name("employee")
       if employee_role and @user.respond_to? "roles"
-        user.roles << employee_role unless user.roles.include? employee_role
+        @user.roles << employee_role unless @user.roles.include? employee_role
       end
-      redirect_to forward_to_employee_form # redirect_back_or_default('/')
+      forward_to_employee_form # redirect_back_or_default('/')
       flash[:notice] = "Thanks for signing up!" #   We're sending you an email with your activation code."
     else
       flash[:error]  = "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."

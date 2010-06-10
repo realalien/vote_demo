@@ -2,9 +2,9 @@
 
 
 
-<%# for @place in @travel_places %>
-	<%#= render :partial => "votes/travel_place_vote", :locals => {:travel_place => @place} %>
-<%# end  %> 
+<% for @place in @travel_places %>
+	<%= render :partial => "votes/travel_place_vote", :locals => {:travel_place => @place} %>
+<% end  %> 
 
 <table border="1">
   <tr>
