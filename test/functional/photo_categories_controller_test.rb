@@ -12,15 +12,15 @@ class PhotoCategoriesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create photo_categories" do
-    assert_difference('PhotoCategories.count') do
-      post :create, :photo_categories => { }
+  test "should create photo_category" do
+    assert_difference('PhotoCategory.count') do
+      post :create, :photo_category => { }
     end
 
-    assert_redirected_to photo_categories_path(assigns(:photo_categories))
+    assert_redirected_to photo_category_path(assigns(:photo_category))
   end
 
-  test "should show photo_categories" do
+  test "should show photo_category" do
     get :show, :id => photo_categories(:one).id
     assert_response :success
   end
@@ -30,13 +30,13 @@ class PhotoCategoriesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should update photo_categories" do
-    put :update, :id => photo_categories(:one).id, :photo_categories => { }
-    assert_redirected_to photo_categories_path(assigns(:photo_categories))
+  test "should update photo_category" do
+    put :update, :id => photo_categories(:one).id, :photo_category => { }
+    assert_redirected_to photo_category_path(assigns(:photo_category))
   end
 
-  test "should destroy photo_categories" do
-    assert_difference('PhotoCategories.count', -1) do
+  test "should destroy photo_category" do
+    assert_difference('PhotoCategory.count', -1) do
       delete :destroy, :id => photo_categories(:one).id
     end
 

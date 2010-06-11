@@ -1,4 +1,7 @@
 
+
+require 'RMagick'
+
 class ZhangJiaJiePhotoContestController < ApplicationController
   
   
@@ -36,8 +39,15 @@ class ZhangJiaJiePhotoContestController < ApplicationController
         
         logger.info "#{@files.size}"
         
+        logger.info ">>>>  -#{cat_dir}"
         @files.each do | img |
-          img.delete!(CONTEST_PHOTOS_SERVING_PATH)
+          # make thumbernail if not exists
+          @tmp = Magick::Image::read( File.expand_path(img) ) 
+          
+          
+          
+          # create database entry
+          img.gsub!(CONTEST_PHOTOS_SERVING_PATH, "")
           img_svr_path = img
           filename = File.basename(img)
           logger.info "#{filename} ; #{img_svr_path}"
@@ -47,9 +57,25 @@ class ZhangJiaJiePhotoContestController < ApplicationController
           else
               # update info?
           end
+          
+          img_path = File.join("/images/Photo Contest", File.basename(img_svr_path))
+          
+          filename = File.basename(img, File.extname(img) )+"_thumbnail"  + File.extname(img) 
+          
+          new_thumbenail_name = File.join(File.basename(img_path), filename)
+          
+          logger.info "----------------------#{new_thumbenail_name}"
+          
+          
+          make_thumbnail(@tmp[0], new_thumbenail_name)
+          
           @images << @img
         end
       end
+      
+      
+      # TODO: clean the database entry which has not correponding files
+      
       
     end
     
@@ -60,5 +86,30 @@ class ZhangJiaJiePhotoContestController < ApplicationController
 
   def showstats
   end
+
+  def make_thumbnail(img, new_name)
+    if img.is_a? Magick::Image
+      tmp = img.scale(__calc_scale_ratio(img))
+      tmp.write(new_name)
+    end
+  end
+
+  def __calc_scale_ratio(img)
+      thumbnail_height = 200.0 # max rows
+      if img.is_a? Magick::Image
+          return thumbnail_height / img.rows 
+      else
+        return nil
+      end
+  end
+  
+  
+
+
+  # display the photo in less small size to avoid multiple image loading
+  def create_thumbnail
+    
+  end
+
 
 end

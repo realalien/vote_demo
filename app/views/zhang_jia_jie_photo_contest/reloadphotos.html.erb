@@ -1,6 +1,5 @@
 <h1>ZhangJiaJiePhotoContest#reloadphotos</h1>
 
-
 <p>
 </p>
 
@@ -16,16 +15,29 @@
 <% end%>
 </p>
 
+<br/>
+<b><%= @images.size %></b><br/>
+<br/>
 
 <p>
-<% @images.each do | dir | %>
-	<%= dir%><br/>
+<% @images.each do | img | %>
+	<%= img.name%>   :   <%= img.server_path %><br/>
 <% end%>
 </p>
 
 
-<p>
-<% @images.each do | dir | %>
-	<%= dir%><br/>
+
+Demo for displaying images.
+
+<% @images.each do | img | %>
+	<% img_path = File.join("/images/Photo Contest", img.server_path) %>
+	<%= img.name%>   :   <%= img_path %><br/>
+	
+	<%= image_tag img_path, :size => "800x800", :alt => img.name  %>
 <% end%>
-</p>
+
+<br/>---------------------------<br/>
+
+<%= image_tag "/images/a/team a/edit-.-.jpg" %>
+<%= image_tag "/images/a/team a/1. Tianmen Shan/20100508143.jpg" %>
+
