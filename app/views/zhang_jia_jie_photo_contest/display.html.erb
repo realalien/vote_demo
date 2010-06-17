@@ -1,0 +1,44 @@
+
+
+<!--  basic layout of the table for photo contest overview
+
+     		 	Tech  | Mgmt  |  Animation | ...<teams> 
+-----------------------------------------------
+1. Tianmen Shan 	
+
+2. Bird
+
+3.
+
+<categories>...
+-->
+
+
+<table class="listing">
+  <tr>
+  	<!-- When voting, team info should not be exposed to avoid biases-->
+    <th>Category</th> <!--1st col. should be category, leave head empty-->
+	<th>Photos</th>
+  </tr>
+
+		
+<% @cat_ids.each_with_index do | cat_id, i | %>
+  <% row_class = i%2 == 0 ? "even" : "odd" %>
+  <tr class="<%= row_class %>"> 
+    <td><%= PhotoCategory.find_by_id(cat_id).name%></td>
+	<td>
+		<% ps = Photo.find(:all, :conditions => ["photo_category_id =  :catid" , 
+            { :catid => cat_id } ] )%> 
+		<% ps.each do |p| %>
+			<%= render(:partial => 'photos/thumbnail', :locals  => { :photo => p } ) %>
+		<% end %>
+	</td>
+  </tr>
+<% end %>
+</table>
+
+<b>-----------------------------</b>
+
+<% @photos.each do | p |%>
+	<%= render(:partial => 'photos/thumbnail', :locals  => { :photo => p } ) %>
+<% end %>
