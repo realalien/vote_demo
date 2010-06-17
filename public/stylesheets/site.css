@@ -7,7 +7,7 @@ body {
 }
 
 #whole_page {
-    width: 60em;
+    width: 100em ;/*60em;*/
     margin: auto;
     padding: 0;
     text-align: left;
