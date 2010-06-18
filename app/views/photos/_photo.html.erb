@@ -1,13 +1,20 @@
 <p>
   <b>Name:</b>
-  <%=h @photo.name %>
+  <%=h photo.name %>
 </p>
+
 
 <p>
-  <b>Exif:</b>
-  <%=h @photo.exif %>
+  <b>Exif:(NOT IMPLEMENTED)</b>
 </p>
+<%= render %>
+
+<div class="answer_text" >
+	Comments: <br/>
+	<% commentable = Photo.find(photo.id)
+ 	   comments = commentable.comments.recent.limit(10).all %>
+	<br/><br/>
+</div>
 
 
-<%= link_to 'Edit', edit_photos_path(@photos) %> |
-<%= link_to 'Back', photos_path %>
+<%= link_to 'Back To Lists', :controller => "zhang_jia_jie_photo_contest", :action => "display" %>

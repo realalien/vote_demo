@@ -19,6 +19,14 @@ module ZhangJiaJiePhotoContestHelper
     end
   end
   
+  def origin_path(photo)
+    if photo.is_a? Photo
+      return File.join(ZJJ_CONTEST_WEB_PATH, photo.origin_filepath)
+    else
+      return nil
+    end
+  end
+  
     def thumbnail_abspath(the_contest_path)
     #img_path = File.join("/images/Photo Contest", the_contest_path)
     #logger.debug "img_path----------------------#{img_path}"

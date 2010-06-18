@@ -10,9 +10,10 @@
 
 3.
 
-<categories>...
--->
+<categories>... -->
 
+
+<%= render :file => "zhang_jia_jie_photo_contest/_zjj_nav_bar.html.erb" %>
 
 <table class="listing">
   <tr>
@@ -20,6 +21,7 @@
     <th>Category</th> <!--1st col. should be category, leave head empty-->
 	<th>Photos</th>
   </tr>
+
 
 		
 <% @cat_ids.each_with_index do | cat_id, i | %>
@@ -42,3 +44,4 @@
 <% @photos.each do | p |%>
 	<%= render(:partial => 'photos/thumbnail', :locals  => { :photo => p } ) %>
 <% end %>
+<%= render :file => "zhang_jia_jie_photo_contest/_zjj_nav_bar.html.erb" %>

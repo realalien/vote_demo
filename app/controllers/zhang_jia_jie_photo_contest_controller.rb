@@ -5,13 +5,12 @@ require 'RMagick'
 class ZhangJiaJiePhotoContestController < ApplicationController
   
   include ZhangJiaJiePhotoContestHelper
+  layout "site"
   
   ## ----------      task specific infomation     -----------
-  ## 
   CONTEST_PHOTOS_SERVING_ABS_PATH = File.expand_path("public/images/Photo\ Contest", RAILS_ROOT)
   #RECOGNIZABLE_CATEGORY_NAMES = []
   
-  # TODO: make it a rake task, or at least made it a singleton!
   def reload
     # collect team info, those are the 1st dir under CONTEST_PHOTOS_SERVING_ABS_PATH
     @group_dirs = Dir.glob(File.join(CONTEST_PHOTOS_SERVING_ABS_PATH,"*"))
@@ -104,19 +103,16 @@ class ZhangJiaJiePhotoContestController < ApplicationController
           end
         end
       end
-      
-      
-      # TODO: clean the database entry which has not correponding files
-      
-      
     end
-    
-    
     
     @debug = CONTEST_PHOTOS_SERVING_ABS_PATH.inspect
   end
   
-  def showstats
+  def statistics
+     @top3 = Photo.find(:all, :order => "rating_average DESC" , :limit => 3)
+     
+     @team_scores = Photo.calculate(:sum, :rating_average, :group => :team_id)
+          
   end
   
   

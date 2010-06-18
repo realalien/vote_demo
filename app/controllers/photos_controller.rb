@@ -1,6 +1,8 @@
 class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.xml
+  #layout "zhang_jia_jie_photo_contest"
+  
   def index
     @photos = Photo.find(:all)
 
@@ -80,6 +82,15 @@ class PhotosController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(photos_url) }
       format.xml  { head :ok }
+    end
+  end
+  
+  def rate
+    @p = Photo.find(params[:id])
+    @p.rate(params[:stars], current_user, params[:dimension])
+    render :update do |page|
+      page.replace_html @p.wrapper_dom_id(params), ratings_for(@p, params.merge(:wrap => false))
+      page.visual_effect :highlight, @p.wrapper_dom_id(params)
     end
   end
 end

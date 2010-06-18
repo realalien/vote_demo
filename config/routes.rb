@@ -45,6 +45,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # for rating
   map.resources :questions, :member => {:rate => :post}
+  map.resources :photos, :member => {:rate => :post}
   
   map.connect 'survey_sheets/:id/history', :controller => "survey_sheets" , :action => "history"
   
