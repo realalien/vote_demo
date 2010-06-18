@@ -1,0 +1,39 @@
+
+
+<%= render :file => "zhang_jia_jie_photo_contest/_zjj_nav_bar.html.erb" %>
+<table>
+<tr>
+	<td>
+<div>
+<h1>Top Rating Photos for each category</h1>
+<br/>
+<% @top3.each_with_index do | p, i | %>
+	<% if p.rating_average != 0 %>
+	<p>
+	    <h2>No. <%=i + 1 %></h2>
+	    <br/>
+	    <%= render(:partial => 'photos/thumbnail_avg_score', :locals  => { :photo => p } ) %>
+	</p><br/><br/>
+	<% end %>
+<% end %>
+</div>
+<br/>
+<br/>
+<br/>
+</td>
+</tr>
+
+<tr><td>
+<div>
+<h1>Team Scores(Sum of Rating Points) </h1>
+<% @team_scores.each do |team_id,  scores| %>
+	<p>
+	<h2><%= Team.find_by_id(team_id).name %>: <div style="color:red"><%= scores %></div><h2>
+	<br/>
+	</p>
+<% end %>
+</div></td>
+</tr>
+</table>
+
+<%= render :file => "zhang_jia_jie_photo_contest/_zjj_nav_bar.html.erb" %>

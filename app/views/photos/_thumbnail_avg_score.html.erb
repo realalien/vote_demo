@@ -1,0 +1,17 @@
+
+<div style="float: left; padding:5px 5px 5px 5px">
+<p>
+  <%= image_tag thumbnail_path(photo), :rel=>"lightbox", :alt => photo.name %>
+</p>
+ 
+<p>  	
+<b>Name:</b>
+  <%=h photo.name %>
+</p>
+
+<h2>
+<p style="color:red">Average Score <%= photo.rating_average %> </p>
+</h2>
+<br/>
+
+</div>

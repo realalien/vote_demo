@@ -1,0 +1,8 @@
+<% form_tag :action => 'add_comment' do %>
+  <%= text_field 'comment', 'comment' %>
+
+  <%= submit_tag 'Add Your Comment' %>
+
+  <%= hidden_field 'commentable', 'commentable', :value => photo.type %>
+  <%= hidden_field 'commentable', 'commentable_id', :value => photo.id %>
+<% end %>
