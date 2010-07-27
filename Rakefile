@@ -12,15 +12,15 @@ require 'RMagick'
 
 desc "Add the default roles(admin, leader, employee)"
 task :user_role_init => :environment do
-#  Role.create( :name => 'admin' )
-#  Role.create( :name => 'leader' )
-#  Role.create( :name => 'employee' )
+  Role.create( :name => 'admin' )
+  Role.create( :name => 'leader' )
+  Role.create( :name => 'employee' )
 #  
-#  User.create( :name => "Admin" , 
-#               :login => "admin" , 
-#               :email => "ZhuJiaCheng@spicyhorse.com", 
-#               :password => "123456",
-#               :password_confirmation => "123456")
+  User.create( :name => "Admin" , 
+               :login => "admin" , 
+               :email => "ZhuJiaCheng@spicyhorse.com", 
+               :password => "123456",
+               :password_confirmation => "123456")
 #  
 #  User.create( :name => "Guest" , 
 #               :login => "guest" , 
@@ -29,7 +29,7 @@ task :user_role_init => :environment do
 #               :password_confirmation => "123456")
                
   r = Role.find_by_name("admin")
-  u = User.find_by_login("zhujiacheng2")
+  u = User.find_by_login("realalien")
   if r and u
     u.roles << r
     u.save!
@@ -140,8 +140,35 @@ task :gen_thumb => :environment do
       
     end
     
-    
+       
     
     @debug = CONTEST_PHOTOS_SERVING_ABS_PATH.inspect
 end
+
+
+desc ""
+task :dump_existing_surveys do
+  
+end
+
+
+desc "Import surveys data from excel to databasa"
+task :import_all_surveys => [:environment, :dump_existing_surveys] do
+   
+   # create backup directory if not exists
+   bak_dir = File.join(RAILS_ROOT,"db/backup")
+   if not File.exists? bak_dir
+        Dir.mkdir bak_dir
+   end
+   
+   
+   
+   puts "***************************************************"
+   puts " Remember to copy the /db/backup/* to a safe place! "
+   puts "***************************************************"
+end
+
+
+
+
 

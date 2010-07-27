@@ -8,9 +8,10 @@ class Question < ActiveRecord::Base
 	
   
   has_many :responses;
-  
+  belongs_to :section  
   # NOTE: 20100419, it looks like that the question is not  
  
+  
 	#has_many :question_answer_by_users, :dependent => :nullify
 	#has_many :answers, :through => :question_answer_by_users
   

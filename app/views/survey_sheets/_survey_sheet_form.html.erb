@@ -25,6 +25,16 @@ No guideline.
 <% end %>
 </div>
 
+
+<b>Display Sections</b>
+<% @survey_sheet.survey.sections.each do | sec | %>
+	<%= sec.description %> has <%= sec.questions.size%> question(s).
+<% end %>
+
+<br />
+<br />
+
+<b>Display Questions without Sections</b>
 <!-- display questions with preset answers, 
     IDEA: maybe we can use view helper to group each question/response -->	
 <% @survey_sheet.questions.each do | question| %>   <!--TODO: remember to -->

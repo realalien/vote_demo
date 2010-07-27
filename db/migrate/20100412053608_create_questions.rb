@@ -7,7 +7,6 @@ class CreateQuestions < ActiveRecord::Migration
       t.boolean :is_commentable
       t.boolean :is_rateable
       t.boolean :is_voteable   # not for individual users, public statistic use.
-
       t.timestamps
     end
   end

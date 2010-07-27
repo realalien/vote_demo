@@ -35,17 +35,16 @@ ActiveRecord::Schema.define(:version => 20100618022730) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "photo_id"
   end
 
   create_table "photos", :force => true do |t|
     t.string   "name"
     t.string   "server_path"
     t.text     "exif"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.integer  "team_id"
     t.integer  "photo_category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.decimal  "rating_average",    :precision => 6, :scale => 2, :default => 0.0
   end
 
@@ -117,7 +116,6 @@ ActiveRecord::Schema.define(:version => 20100618022730) do
   create_table "sections", :force => true do |t|
     t.integer  "number"
     t.string   "description"
-    t.integer  "survey_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -133,10 +131,10 @@ ActiveRecord::Schema.define(:version => 20100618022730) do
 
   create_table "sheet_histories", :force => true do |t|
     t.integer  "user_id"
+    t.integer  "survey_sheet_id"
     t.datetime "when_submit"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "survey_sheet_id"
     t.integer  "version_num"
   end
 
@@ -199,6 +197,7 @@ ActiveRecord::Schema.define(:version => 20100618022730) do
   create_table "teams", :force => true do |t|
     t.string   "name"
     t.text     "description"
+    t.integer  "photo_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

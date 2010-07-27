@@ -1,11 +1,14 @@
 
 <% link_to "Continue to do the survey 'Spicy Horse Quarterly Teammate Evaluation Form'", @survey_sheet%>
 
-<% max_version = @survey_sheet.sheet_histories.collect(&:version_num) %>
-<% if params[:version_num].nil? or params[:version_num] == max_version%>
-	<% current_version = "latest" %>
-<% else %>
-	<% current_version =  params[:version_num] + " (old version)" %>
+
+<% if @survey_sheet.sheet_histories %>
+	<% max_version = @survey_sheet.sheet_histories.collect(&:version_num) %>
+	<% if params[:version_num].nil? or params[:version_num] == max_version%>
+		<% current_version = "latest" %>
+	<% else %>
+		<% current_version =  params[:version_num] + " (old version)" %>
+	<% end %>
 <% end %>
 
 <div>

@@ -133,7 +133,7 @@ class SurveySheetsController < ApplicationController
       @survey_sheet = SurveySheet.find_by_id(@survey_sheet.id)
       render :action => "edit"
     else
-      render :text => "no response found!"
+      render :text => "There is no response for this survey sheet!"
     end
   end
   
