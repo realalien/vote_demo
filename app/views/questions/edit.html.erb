@@ -19,7 +19,7 @@
   	<%= f.label :section %><br />
     Display question section property: <%=@question.section_id || "Not assigned!"  %> <br/>
 	<% secs = Survey.find(params[:survey_id]).sections%>
-	<%= select(@question, :section_id, secs.collect{|p| [ p.id, p.description ] }, {:prompt => true, :include_blank => true }) %>	
+	<%= select(:question, :section_id, secs.collect{|p| [ p.description, p.id ] }, {:prompt => true, :include_blank => true }) %>	
   </p>
   <p>
     <%= f.label :hint %><br />

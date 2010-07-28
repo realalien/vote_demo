@@ -15,6 +15,11 @@
 </p>
 
 <p>
+  <b>team_name:</b>
+  <%=h @user.team_name || "Unspecified" %>
+</p>
+
+<p>
   <b>role involved:</b>
   <% rs = []%>
   <% for role in @user.roles%> 

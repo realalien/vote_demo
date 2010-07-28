@@ -5,6 +5,9 @@ class UsersController < ApplicationController
   #require_role "admin", :for => :index
   #require_role "admin"
 
+  # Team info for selection
+  
+
   # render new.rhtml
   def new
     @user = User.new
@@ -47,6 +50,10 @@ class UsersController < ApplicationController
 
   def edit
      @user = User.find(params[:id])
+     @teams = ['Programmers', 'Level Designers','Concept Artists',
+           'Technical Artists', 'Animators', 'Spicy Pony',
+           'Sound/Audio', 'IT']
+  
   end
 
   def update

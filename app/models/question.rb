@@ -1,5 +1,7 @@
 class Question < ActiveRecord::Base
   
+  
+  
   ajaxful_rateable :stars => 10 ,  :dimensions => [:description]
 	acts_as_commentable
   
@@ -11,7 +13,7 @@ class Question < ActiveRecord::Base
   belongs_to :section  
   # NOTE: 20100419, it looks like that the question is not  
  
-  
+
 	#has_many :question_answer_by_users, :dependent => :nullify
 	#has_many :answers, :through => :question_answer_by_users
   

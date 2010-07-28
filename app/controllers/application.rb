@@ -45,7 +45,8 @@ class ApplicationController < ActionController::Base
   end
 
   def find_user_employee_form
-    survey_defs = Survey.find_by_title("Spicy Horse Quarterly Teammate Evaluation Form")
+    survey_defs = Survey.find_by_id 1
+    #survey_defs = Survey.find_by_title("Spicy Horse Quarterly Teammate Evaluation Form")
     if survey_defs
         survey_sheet = SurveySheet.find(:first, 
             :conditions => ["user_id = :user_id and survey_id = :survey_id" , 

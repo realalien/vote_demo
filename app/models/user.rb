@@ -21,6 +21,15 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :roles, :join_table => "roles_users"
                    
   attr_accessible :role_ids
+  
+  # Team info for selection
+
+  attr_reader :team_name
+  
+  def team_name=(name)
+    self.team_name = name
+  end
+  
 
   # has_role? simply needs to return true or false whether a user has a role or not.  
   # It may be a good idea to have "admin" roles return true always

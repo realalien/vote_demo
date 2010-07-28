@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100618022730) do
+ActiveRecord::Schema.define(:version => 20100728102456) do
 
   create_table "answers", :force => true do |t|
     t.text     "description"
@@ -118,6 +118,7 @@ ActiveRecord::Schema.define(:version => 20100618022730) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "survey_id"
   end
 
   create_table "sheet_answer_relations", :force => true do |t|
@@ -220,6 +221,7 @@ ActiveRecord::Schema.define(:version => 20100618022730) do
     t.datetime "updated_at"
     t.string   "remember_token",            :limit => 40
     t.datetime "remember_token_expires_at"
+    t.string   "team_name"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

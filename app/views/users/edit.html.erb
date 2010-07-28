@@ -15,7 +15,16 @@
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </p>
+  
   <p>
+  	<%= f.label :team %><br />
+    
+	<%= select(:user, :team_name, @teams.collect{|p| [ p, p ] }, {:prompt => true, :include_blank => true }) %>	
+  
+  </p>
+  
+  <p>
+  	<%= f.label :role %><br />
     <% for role in Role.find(:all) %>
 		<% if role.name == "employee" %>
 			<% disabled = true %>
