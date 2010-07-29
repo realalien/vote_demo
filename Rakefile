@@ -9,6 +9,9 @@ require 'rake/rdoctask'
 
 require 'tasks/rails'
 require 'RMagick'
+require 'parseexcel'
+require "spreadsheet/excel" 
+
 
 desc "Add the default roles(admin, leader, employee)"
 task :user_role_init => :environment do
@@ -145,15 +148,46 @@ task :gen_thumb => :environment do
     @debug = CONTEST_PHOTOS_SERVING_ABS_PATH.inspect
 end
 
+def line_data(worksheet, row, array_of_data)
+    col = 0
+    array_of_data ||= []
+    array_of_data.each_with_index do | data, idx |
+      worksheet.write(row, idx, data)
+    end
+end
 
 desc ""
 task :dump_existing_surveys do
   
+  # create backup directory if not exists
+   bak_dir = File.join(RAILS_ROOT,"db/backup")
+   if not File.exists? bak_dir
+        Dir.mkdir bak_dir
+   end
+   
+   # default import files
+   default_file = "export.xls"
+   export_surveys_xls = File.join(RAILS_ROOT,"db/backup", default_file)
+   
+   
+  workbook = Spreadsheet::Excel.new(export_surveys_xls)
+
+  @survey_defs = Survey.find :all
+  
+  @survey_defs.each_with_index do | s , idx|
+      worksheet = workbook.add_worksheet(t.title || "Unspecified"+idx)
+      row = 0
+      line_data(worksheet, row, ["Title:", t.tile]) ; row += 1
+      
+      
+      
+  end
+ 
 end
 
 
 desc "Import surveys data from excel to databasa"
-task :import_all_surveys => [:environment, :dump_existing_surveys] do
+task :import_all_surveys => [:environment, :dump_existing_surveys] do |t, args|
    
    # create backup directory if not exists
    bak_dir = File.join(RAILS_ROOT,"db/backup")
@@ -161,13 +195,43 @@ task :import_all_surveys => [:environment, :dump_existing_surveys] do
         Dir.mkdir bak_dir
    end
    
+   # default import files
+   default_file = "import.xls"
+   import_surveys_xls = File.join(RAILS_ROOT,"db/backup", default_file)
    
+   if args.nil?
+     puts "No import Excel file given, using the default one..."
+     puts ">>> #{import_surveys_xls}\n"
+   end
+      
+   workbook = Spreadsheet::ParseExcel.parse(import_surveys_xls)
+   worksheet = workbook.worksheet(0)
+   worksheet.each { |row|
+      j=0
+      i=0
+      if row != nil
+      row.each { |cell|
+        if cell != nil
+          contents = cell.to_s('latin1')
+          puts "Row: #{j} Cell: #{i} #{contents}"
+          end
+          i = i+1
+        }
+        j = j +1
+        end
+      }
+         
    
    puts "***************************************************"
    puts " Remember to copy the /db/backup/* to a safe place! "
    puts "***************************************************"
 end
 
+
+desc "backup vote_demo_db, dump the db vote_demo_development to a .sql file for data backup"
+task :backup_db do
+  
+end
 
 
 
