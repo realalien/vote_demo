@@ -157,7 +157,7 @@ def line_data(worksheet, row, array_of_data)
 end
 
 desc ""
-task :dump_existing_surveys do
+task :dump_existing_surveys => :environment do
   
   # create backup directory if not exists
    bak_dir = File.join(RAILS_ROOT,"db/backup")
@@ -175,19 +175,42 @@ task :dump_existing_surveys do
   @survey_defs = Survey.find :all
   
   @survey_defs.each_with_index do | s , idx|
-      worksheet = workbook.add_worksheet(t.title || "Unspecified"+idx)
+      worksheet = workbook.add_worksheet(s.title || "Unspecified"+idx)
       row = 0
-      line_data(worksheet, row, ["Title:", t.tile]) ; row += 1
+      line_data(worksheet, row, ["Title:",        s.title])       ; row += 1
+      line_data(worksheet, row, ["Description:",  s.description]) ; row += 1
+      line_data(worksheet, row, ["Category:",     s.category]) ;    row += 1
+      line_data(worksheet, row, ["Target Audience:",     s.target_audience]) ;    row += 1
+      line_data(worksheet, row, ["Created At:",     s.created_at.to_s]) ;    row += 1
+      line_data(worksheet, row, ["Updated At:",     s.updated_at.to_s]) ;    row += 1
+      line_data(worksheet, row, ["Guideline: ",     s.guideline ]) ;    row += 1
       
-      
-      
+      tmp = ["Questions:"]
+      line_data(worksheet, row, tmp ) ;    row += 1
+       # print title
+      question_titles = ["title","description","hint","is_commentable","is_rateable","is_voteable","created_at","updated_at","section_id"]
+      line_data(worksheet, row, question_titles ) ;    row += 1
+      s.questions.each do | q| 
+          q_data = []
+          q_data << q.title
+          q_data << q.description
+          q_data << q.hint
+          q_data << q.is_commentable.to_s
+          q_data << q.is_rateable.to_s
+          q_data << q.is_voteable.to_s
+          q_data << q.created_at.to_s
+          q_data << q.updated_at.to_s
+          q_data << q.section_id
+          line_data(worksheet, row,  q_data ) ;    row += 1
+      end
   end
  
+   workbook.close
 end
 
 
 desc "Import surveys data from excel to databasa"
-task :import_all_surveys => [:environment, :dump_existing_surveys] do |t, args|
+task :import_all_surveys => [:environment, :dump_existing_surveys] do | args|
    
    # create backup directory if not exists
    bak_dir = File.join(RAILS_ROOT,"db/backup")
@@ -205,26 +228,67 @@ task :import_all_surveys => [:environment, :dump_existing_surveys] do |t, args|
    end
       
    workbook = Spreadsheet::ParseExcel.parse(import_surveys_xls)
-   worksheet = workbook.worksheet(0)
+   
+#     puts " -----------  book methods: "
+#   workbook.methods.sort.each  { | m| puts "#{m} "}
+  
+   num_sheets = workbook.sheet_count
+     
+  
+
+  puts " -----------  sheet methods: "
+  worksheet =  workbook.worksheet(0)
+  worksheet.methods.sort.each  { | m| puts "#{m} "}  
+
+   (1..num_sheets).each do | num |
+       worksheet = workbook.worksheet(num - 1)     
+       
+       survey_data_column_idx = 1
+       
+#       s = Survey.new
+#       s.title =            worksheet.row(0).at(survey_data_column_idx).to_s   ; puts s.title
+#       s.description =      worksheet.row(1).at(survey_data_column_idx).to_s   ; puts s.description
+#       s.category =         worksheet.row(2).at(survey_data_column_idx).to_s   ; puts  s.category
+#       s.target_audience =  worksheet.row(3).at(survey_data_column_idx).to_s   ; puts s.target_audience
+#       s.created_at =       worksheet.row(4).at(survey_data_column_idx).to_s   ; puts s.created_at 
+#       s.updated_at =       worksheet.row(5).at(survey_data_column_idx).to_s   ; puts s.updated_at 
+#       s.guideline =        worksheet.row(6).at(survey_data_column_idx).to_s   ; puts s.guideline 
+#       
+#       puts "New survey"
+#       puts s
+       
+   
+       ## get survey and its questions.
+#       worksheet.each o 
+
+
+
+
    worksheet.each { |row|
-      j=0
-      i=0
-      if row != nil
-      row.each { |cell|
-        if cell != nil
-          contents = cell.to_s('latin1')
-          puts "Row: #{j} Cell: #{i} #{contents}"
-          end
-          i = i+1
-        }
-        j = j +1
-        end
-      }
+      puts row.to_a
+   }
+#      j=0
+#      i=0
+#      if row != nil
+#      row.each { |cell|
+#        if cell != nil
+#          contents = cell.to_s('latin1')
+#          puts "Row: #{j} Cell: #{i} #{contents}"
+#          end
+#          i = i+1
+#        }
+#        j = j +1
+#        end
+#      }  
+    end
+   
          
    
    puts "***************************************************"
    puts " Remember to copy the /db/backup/* to a safe place! "
    puts "***************************************************"
+   
+   
 end
 
 

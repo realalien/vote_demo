@@ -133,9 +133,9 @@ input.submission{
  table td {background-color: white; }
 table td.stripe {background-color: silver; }
  */
-
-TR.even { background-color: #B1B1B1; }
-TR.odd { background-color: #4AA02C ; }
+th { background-color: #FF9955 ;}
+TR.even { background-color: #E9C2A6; }
+TR.odd { background-color:  #E6ECE1; }
 
 thead.general {
 	color :maroon;
@@ -143,7 +143,8 @@ thead.general {
 }
 
 table.listing {
-	width:100%
+	width:100%;
+	border: 0 0 0 0 
 }
 
 
