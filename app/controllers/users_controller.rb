@@ -28,6 +28,7 @@ class UsersController < ApplicationController
       if employee_role and @user.respond_to? "roles"
         @user.roles << employee_role unless @user.roles.include? employee_role
       end
+      send_welcome_to_new_user(@user)
       forward_to_employee_form # redirect_back_or_default('/')
       flash[:notice] = "Thanks for signing up!" #   We're sending you an email with your activation code."
     else
@@ -76,5 +77,27 @@ class UsersController < ApplicationController
       end
     end
   end
+  
+  def send_welcome_to_new_user(user)
+    #  mail(recipient, subject, message, sent_at = Time.now)
+    title = "Welcome to use the quarterly review survey!"
+    SignupMailer.deliver_mail(user.email, title, "Test message") 
+  end
+  
+  def send_notification_to_admin(user)
+    title = "User #{user.name} has signup to the quarterly review survey!"
+    # supposing using user.teams.leader
+    # SignupMailer.deliver_mail(user.email, title, "Test message") 
+  end
+  
+    def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(teams_url) }
+      format.xml  { head :ok }
+    end
+  end   
 
 end

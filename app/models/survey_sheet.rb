@@ -1,7 +1,7 @@
 class SurveySheet < ActiveRecord::Base
   
-    has_many :sheet_question_relations, :dependent => :nullify
-    has_many :questions, :through => :sheet_question_relations
+    has_many :sheet_question_relations   # do not delete that, maybe used in history recording. If use known, warning should be given.
+    has_many :questions, :through => :sheet_question_relations, :dependent => :destroy
     # note: the intermediate table is used to record data like 'sequence in the survey, difficulty or extra info'
     # note: 20100421, I think such info should be kept by the survey_def, instead of by individual sheet.
     #                 Sorry, to keep the load more easily, questioi

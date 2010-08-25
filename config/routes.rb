@@ -65,6 +65,8 @@ ActionController::Routing::Routes.draw do |map|
               :controller => 'zhang_jia_jie_photo_contest', 
               :action => ':action'  
   
+  map.connect 'stat/report', :controller => 'stat', :action => "report"
+  
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

@@ -52,7 +52,7 @@ class QuestionsController < ApplicationController
     respond_to do |format|
       if @survey.save #@question.save
         flash[:notice] = 'Question was successfully created into a survey.'
-        format.html { redirect_to(@survey, @question) }
+        format.html { redirect_to(@survey) }
         format.xml  { render :xml => @question, :status => :created, :location => @question }
       else
         format.html { render :action => "new" }
@@ -70,7 +70,7 @@ class QuestionsController < ApplicationController
     respond_to do |format|
       if @question.update_attributes(params[:question])
         flash[:notice] = 'Question was successfully updated.'
-        format.html { redirect_to(@survey,@question) }
+        format.html { redirect_to(@survey) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -82,11 +82,11 @@ class QuestionsController < ApplicationController
   # DELETE /questions/1
   # DELETE /questions/1.xml
   def destroy
-    @question = Question.find(params[:id])
+    @question = Question.find(params[:id])    
     @question.destroy
 
     respond_to do |format|
-      format.html { redirect_to(questions_url) }
+      format.html { redirect_to :back }
       format.xml  { head :ok }
     end
   end
@@ -111,6 +111,5 @@ class QuestionsController < ApplicationController
       page.visual_effect :highlight, @question.wrapper_dom_id(params)
     end
   end
-  
   
 end

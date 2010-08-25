@@ -51,7 +51,7 @@ class User < ActiveRecord::Base
   include Authentication::ByPassword
   include Authentication::ByCookieToken
 
-  has_and_belongs_to_many :travel_places
+  # has_and_belongs_to_many :travel_places
   acts_as_voter
   ajaxful_rater
 

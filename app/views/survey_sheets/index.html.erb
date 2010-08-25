@@ -19,6 +19,8 @@
 <b>You are viewing version: <%= current_version%>   </b><br/>
 
 <!-- display of uneditable version -->
+<% logger.debug "@survey_sheet.responses.size .......#{@survey_sheet.responses.size} " %>
+<% logger.debug "@survey_sheet.responses.size .......#{@survey_sheet.responses[0].question.id} " %>
 
 <%  @survey_sheet.responses.each do | resp | %>
 	<%= resp.question.description%>  <br/>

@@ -1,6 +1,6 @@
 <h1>Editing teams</h1>
 
-<% form_for(@teams) do |f| %>
+<% form_for(@team) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -16,5 +16,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', @teams %> |
+<%= link_to 'Show', @team %> |
 <%= link_to 'Back', teams_path %>

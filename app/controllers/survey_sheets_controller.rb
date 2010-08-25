@@ -1,3 +1,5 @@
+# TODO: if new questions is added to a survey, survey_sheet should reflect those newly created ones. 
+
 
 # Purpose: allow users/manager to give answer to a survey
 # INFO: not restful at the moment
@@ -19,9 +21,80 @@ class SurveySheetsController < ApplicationController
     if params[:id]
       @survey_sheet = SurveySheet.find_by_id(params[:id], :include => :responses)
       logger.debug "==============================================================="
-      logger.debug "@survey_sheet responses.size  #{@survey_sheet.responses.size}"
-      # INFO: it looks like that we should employ more privilege control over object model, otherwise more hard code required
+      logger.debug "For this survey_sheet, id: #{@survey_sheet.id}, "
+      logger.debug "corresponding survey defination id: ........ #{@survey_sheet.survey_id}"
       
+      q_ids_in_def = Survey.find_by_id(@survey_sheet.survey_id).questions.collect(&:id) || []
+      logger.debug "questsion ids ( in survey definition ) ........ #{q_ids_in_def.join(",")}"
+      
+      q_ids_in_sheet = @survey_sheet.questions.collect(&:id) || []
+      logger.debug "questsion ids ( in survey sheet ) ........ #{q_ids_in_sheet.join(",")}"
+      
+      q_ids_in_responses = @survey_sheet.responses.collect(&:question_id) || []
+      logger.debug "question ids ( in sheet responses) ........ #{q_ids_in_responses.join(",")}"
+      
+      
+      # check if the survey definition has changed. Scenarions includes "Deleted", "Added"
+      # TODO: counting is NOT safe, e.g. removed one and adding one, must use id
+      # TODO: make it in one transaction.
+      
+      
+      # ATTENTION, because the many-to-many relations for the model
+      #  survey<->questions  ( via table survey_question_assignments), 
+      #  and survey_sheet<->questions   ( via table sheet_question_relations)
+      #  any unsynchronized modification may cause troubles, 
+      #  So, when handling difference, be aware of the relation used.(e.g. create new obj. only when necessary.)
+      #  * the applying rule is survey_def is first consideration, sheet the second
+      #    handling response last.
+      #  * maybe the test cases will be very useful.
+
+
+      # ESP. preempt action for such scenario, adding new 
+      if (q_ids_in_sheet <=> q_ids_in_def ) == -1  # sheet has less questions than definition.
+           logger.debug "----  sheet has less questions than defination! "
+           diff = q_ids_in_def - q_ids_in_sheet
+           logger.debug "ids: #{diff.join(",")}"  
+           logger.debug "-----------------------------------------"
+           diff.each do | d |
+               @survey_sheet.questions << Question.find_by_id(d)
+           end
+           @survey_sheet.save!
+      elsif  (q_ids_in_sheet <=> q_ids_in_def ) == 1 # sheet has more questions than definition.
+          (q_ids_in_sheet - q_ids_in_def ).each do | q |
+              @survey_sheet.delete(q)
+          end
+      end
+      
+      # Q: do I need this step?
+      q_ids_in_sheet = @survey_sheet.questions.collect(&:id) || []
+      logger.debug "questsion ids ( in survey sheet, after resync sheet to def.) ........ #{q_ids_in_sheet.join(",")}"
+
+      # ESP. preempt action for such scenario, the survey<->questions definition NOT changed, but the response was removed.
+      if ( q_ids_in_responses <=> q_ids_in_sheet ) == -1 # response haswith less records  
+          logger.debug "----  Found new questions,  added to the survey_sheet! "
+          diff = q_ids_in_sheet - q_ids_in_responses
+          logger.debug "ids: #{diff.join(",")}"
+          logger.debug "-----------------------------------------"
+          
+          logger.debug "---------      sheet.questions.size .... #{@survey_sheet.questions.size} .... before creating responses"
+          # add responses (TODO: with null value? )           
+          # TODO: not current_user, should be user being inspected, e.g. when a user is inspected by admin
+          @survey_sheet.questions.each do | q |
+            if not q_ids_in_responses.include? q.id
+              r = handmade_response(@survey_sheet.id, q.id, self.current_user.id )  
+              @survey_sheet.responses << r
+            end
+          end
+          @survey_sheet.save!
+          logger.debug "---------      sheet.questions.size .... #{@survey_sheet.questions.size} .... after creating responses"
+          logger.debug "---------      sheet.responses.size .... #{@survey_sheet.responses.size} .... after creating responses"
+      elsif ( q_ids_in_responses <=> q_ids_in_sheet ) == 1     
+          # clean responses
+          logger.debug " !!!!!  going to remove responses data"
+          # not delete, keep it, at most the relation can be delete if there will be a intermediate table.
+      end
+      
+      # INFO: it looks like that we should employ more privilege control over object model, otherwise more hard code required
       if current_user.id != @survey_sheet.user.id
          if current_user.has_role(:leader)
             flash[:notice] = "You are viewing #{@survey_sheet.user.login}'s survey! Be careful when editing!"      
@@ -67,10 +140,7 @@ class SurveySheetsController < ApplicationController
         @survey_sheet.save!  # in order to let responses recognize
         @survey_sheet.questions.each do |question|
           # create a response object
-          r = Response.new()
-          r.survey_sheet_id = @survey_sheet.id
-          r.question_id = question.id
-          r.user_id = self.current_user.id
+          r = handmade_response(@survey_sheet.id, question.id, self.current_user.id )
           @survey_sheet.responses << r 
         end  
         
@@ -82,6 +152,16 @@ class SurveySheetsController < ApplicationController
     else
       render :text => "in valid request in answering a new survey!"
     end
+  end
+  
+  
+  # TODO: should be private
+  def handmade_response(sheet_id, question_id, user_id)
+     r = Response.new()
+     r.survey_sheet_id = sheet_id
+     r.question_id = question_id
+     r.user_id = user_id
+     return r
   end
   
   # PUT /survey_sheets/1

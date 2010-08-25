@@ -9,13 +9,15 @@
   <%= javascript_include_tag :defaults %>
   <%= ajaxful_rating_style %>
   <%= stylesheet_link_tag "site" %>
-   
+  <!-- for ActiveScaffold --> 
+  <%= active_scaffold_includes %>
   
   <script type="text/javascript" src="javascripts/prototype.js"></script>
   <script type="text/javascript" src="javascripts/scriptaculous.js?load=effects,builder"></script>
   
   <script type="text/javascript">
   	
+	
 	
   </script>
   <!--script type="text/javascript" src="javascripts/lightbox.js"></script-->
@@ -26,11 +28,6 @@
 
 <div>
 	
-	
-	
-Click the button to turn the page
- <input type="button" value="Black"/>
-
 <div id="whole_page">
 	<div id="header">Quaterly Review</div>
 	<div id="banner">
@@ -70,7 +67,7 @@ Click the button to turn the page
 		<% if  logged_in? and current_user.roles.include?(Role.find_by_name("employee"))%>
 			<!-- temp, find existing or create a new one -->
 			<% %>
-			of group 'Employee', you can <%= link_to "Take the survey 'Photo Contest'" , :controller => "site", :action => "forward_to_employee_form" %>.
+			of group 'Employee', you can <%= link_to "Take the survey 'Employee Survey'" , :controller => "site", :action => "forward_to_employee_form" %>.
 			<br /><br />
 		<% end %>
 		<hr/>
