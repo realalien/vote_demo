@@ -1,0 +1,19 @@
+
+20100817
+* TODO: after one user is deleted, the page is directed to the team index page!?
+
+* ONGOING: the signup notification email.
+
+
+* TODO: add an exception notification email if any error occurs to the applications.
+  ref: http://www.devarticles.com/c/a/Ruby-on-Rails/Error-Checking-and-Debugging-with-Ruby-on-Rails/
+  
+* ONGOING: survey data import and export
+
+
+
+20100825
+* TODO: when user rates a item, the response_version increases by 1, even before 
+         pressing the 'save' button, that's awful!
+         Any solution? 
+         
