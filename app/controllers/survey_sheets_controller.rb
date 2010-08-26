@@ -290,7 +290,6 @@ class SurveySheetsController < ApplicationController
         ver_num = params[:version]
         @survey_sheet.reload_history_by_version_num(ver_num)
         
-        
     end
     
   end
