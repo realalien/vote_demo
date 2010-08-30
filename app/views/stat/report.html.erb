@@ -1,4 +1,9 @@
 <h1>Stat#report</h1>
 <p>Find me in app/views/stat/report.html.erb</p>
 <script type="text/javascript" src="/javascripts/swfobject.js"></script>
-<%= @graph %>
+
+<% @qid_to_graph.each do | graph |%>
+	<%= graph %>	
+<% end %>
+
+
